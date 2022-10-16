@@ -1,4 +1,5 @@
 Name: Hardcore 34
 Logo: uploaded to the same folder as this file
+Concept: hardworking / hardcore!
 Colors: red & yellow
 Theme: fire
