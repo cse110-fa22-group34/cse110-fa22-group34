@@ -4,11 +4,11 @@
 
 ## Team Values
 ### Communication
-- Friendly, equal and frequent communication allows us to better face the difficulties in the project
-- If any member faces difficulties, they should always seek for help beforehand so that the group's workflow would not be influenced
+- Friendly, equal and frequent communication allows us to better face the difficulties in this project.
+- If any member faces difficulties, they should always seek for help beforehand so that the group's workflow would not be influenced.
 ### Cooperation
-- we promote self-volunteering as each of us know best about what we're capable of doing. If there are conflicts, the team lead and the members will then discuss to make accomodations. For this week, everyone is working on their desired tasks. 
-- Every team member should pay others respect and asking questions in any way is encouraged
+- We promote self-volunteering as each of us knows best what we are capable of doing. If there are conflicts, the team lead and the members will then discuss to make accomodations. For this week, everyone is working on their desired tasks. 
+- Every team member should pay others respect, and asking questions in any way is encouraged.
 
 ## Team Members (Names In Alphabetical Order)
 |Member's Photo| Member's Info|
@@ -22,4 +22,4 @@
 |<img style="float: left; " src="admin/../pictures/Sisy's%20Photo.jpg" width="100">|<blockquote> **Sisy Chen (hsc012@ucsd.edu)** [--Sisy's Github User Page](https://github.com/hsc012)<p>Hello! My name is Hsi but I go by Sisy.</P> <p>I’m a fourth year student majoring in cognitive science with a specialization in machine learning and minoring in computer science.</p> <p> I was born and raised in Taiwan. I love to write songs, film singing covers, and draw on my iPad during my free time.</p></blockquote>|
 |<img style="float: left; " src="admin/../pictures/Spencer's%20Photo.jpg" width="100">|<blockquote> **Spencer Marking (amarking@ucsd.edu)** [--Spencer's Github User Page](https://github.com/asmarking  )<p>Hi I am a senior studying MATH-CS who loves to make music and draw when he is not sitting behind the computer.</p></blockquote>|
 |<img style="float: left; " src="admin/../pictures/Xu's%20Photo.jpg" width="100">|<blockquote> **Xu Tang (xutang@ucsd.edu)** [--Xu's Github User Page](https://github.com/XuTang9)<p>Hi, my name is Xu Tang. I’m a fourth year Cognitive science major with a CS minor from Revelle.</p> <p>I am from Xi’an China. I love playing First person shooting games like Counter Strike.</p></blockquote>|
-|<img style="float: left; " src="admin/../pictures/Yash's%20Photo.jpg" width="100">|<blockquote> **Yash Patki(ypatki@ucsd.edu)** [--Yash's Github User Page]( https://github.com/YashPatki02 )<p>Hello, I am a 3rd-Year Computer Engineering major and Business minor from Sixth.</p> <p>I was born in Mumbai, India but have lived near Los Angeles since 2013.</p> <p>I love playing Cricket, most racquet sports, traveling, and photography. </p></blockquote>|
+|<img style="float: left; " src="admin/../pictures/Yash's%20Photo.jpg" width="100">|<blockquote> **Yash Patki (ypatki@ucsd.edu)** [--Yash's Github User Page]( https://github.com/YashPatki02 )<p>Hello, I am a 3rd-Year Computer Engineering major and Business minor from Sixth.</p> <p>I was born in Mumbai, India but have lived near Los Angeles since 2013.</p> <p>I love playing Cricket, most racquet sports, traveling, and photography. </p></blockquote>|
