@@ -4,11 +4,11 @@
 
 ## Team Values
 ### Communication
-- Friendly, equal and frequent communication allows us to better face the difficulties in the project
-- If any member faces difficulties, they should always seek for help beforehand so that the group's workflow would not be influenced
+- Friendly, equal and frequent communication allows us to better face the difficulties in this project.
+- If any member faces difficulties, they should always seek for help beforehand so that the group's workflow would not be influenced.
 ### Cooperation
-- we promote self-volunteering as each of us know best about what we're capable of doing. If there are conflicts, the team lead and the members will then discuss to make accomodations. For this week, everyone is working on their desired tasks. 
-- Every team member should pay others respect and asking questions in any way is encouraged
+- We promote self-volunteering as each of us knows best what we are capable of doing. If there are conflicts, the team lead and the members will then discuss to make accomodations. For this week, everyone is working on their desired tasks. 
+- Every team member should pay others respect, and asking questions in any way is encouraged.
 
 ## Team Members (Names In Alphabetical Order)
 |Member's Photo| Member's Info|
