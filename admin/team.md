@@ -1,8 +1,7 @@
 # <p align="center"> HARDCORE34 </p>
 ## Brand
 - Name: Hardcore 34
-- Logo:
-<img src="./branding/Hardcore%2034%20Logo.png">
+- Logo: <img src="./branding/Hardcore%2034%20Logo.png">
 - Concept: hardworking / hardcore!
 - Colors: red & yellow
 - Theme: fire
