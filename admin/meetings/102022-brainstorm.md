@@ -6,10 +6,10 @@
 - Sisy
 - Spencer
 - Yash
--
--
--
--
+- Xu
+- David
+- Jiaxin Ye
+- Raphael
 ### Summary 
 Decided from a list of ideas that our project would be a website budgeter. The domain of the project is ersonal finance
 and the goal is to help people be financially stable and improve their financial literacy.
