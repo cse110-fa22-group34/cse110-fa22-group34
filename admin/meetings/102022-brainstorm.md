@@ -44,8 +44,6 @@ add songs to it? -> export it to a playlist
 for travels - pictures on places you have been a way to share pictures from travels
 ucsd -> specific one
 - **budget checker - monthly budget and keep updates tracker (CURRENT CHOSEN TOPIC)**
-multiple people
-reminders
 - budget breakdown
 push - pie chart
 buzzfeed - quiz type app?
