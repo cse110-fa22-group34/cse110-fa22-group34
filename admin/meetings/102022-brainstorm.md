@@ -43,20 +43,14 @@ add songs to it? -> export it to a playlist
 for travels - pictures on places you have been a way to share pictures from travels
 ucsd -> specific one
 - **budget checker - monthly budget and keep updates tracker (CURRENT CHOSEN TOPIC)**
-- budget breakdown
-push - pie chart
-buzzfeed - quiz type app?
+- buzzfeed - quiz type app?
 - keeping track of all subscriptions so you can cancel
-pet idea? -> keep tracking of them
-pet lost finder like so side
-geocaching
+- pet finder
+- geocaching
 - quizlet but for free
 - graph visualizer
-- carpool app to go somewhere
-verifies email (ends in @ucsd.edu) for safety
-split costs - can calculate costs based on miles for the driver
-scheduler app that takes pdfs & converts it
-use webreg
+- carpool app to go somewhere --> verifies email (ends in @ucsd.edu) for safety, split costs - can calculate costs based on miles for the driver
+- scheduler app that takes pdfs & converts it; use webreg
 - selling exchanging idea
 ## Mind Map
 [PDF Page 3](../../specs/brainstorm/Miro_Brainstorm.pdf)
