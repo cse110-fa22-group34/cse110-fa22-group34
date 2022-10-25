@@ -1,9 +1,9 @@
 # Deciding on our Project
 ## What is the genre of our project ? What problems do want to solve?
 ### Time
-10/20 2:00 PM - 3:30 PM // Location: CSE Building
+10/20 2:00 PM - 3:30 PM    Location: CSE Building
 
-10/23 8:00 PM - 8:30 PM // Location: zoom
+10/23 8:00 PM - 8:30 PM    Location: zoom
 ### Attendance 
 10/20:
 - Alessia
@@ -25,7 +25,7 @@
 - Jiaxin
 - Raphael
 ### Tools
-- Miro [pdf file in specs/brainstorm](../../specs/brainstorm/Miro_Brainstorm.pdf)
+- [Miro](../../specs/brainstorm/Miro_Brainstorm.pdf) (PDF in specs/brainstorm)
 - Zoom
 ### Agenda
 1. Intro to brainstorming activity
