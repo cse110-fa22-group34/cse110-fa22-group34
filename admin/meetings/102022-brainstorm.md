@@ -67,6 +67,6 @@ ucsd -> specific one
  - users highly focus on saving money so the social part would be used to encourage sharing budget-saving techniques
  - apply direct manipulation in interface design so that users can skip the process of selecting colors or category themselves
  - the interface design should be clear and concise so that the user experience can be ensured
-### Summary 
+## Summary 
 Decided from a list of ideas that our project would be a website budgeter. The domain of the project is personal finance
 and the goal is to help people be financially stable and improve their financial literacy.
