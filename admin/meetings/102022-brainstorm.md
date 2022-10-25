@@ -25,7 +25,7 @@
 - Jiaxin
 - Raphael
 ### Tools
-- [Miro](../../specs/brainstorm/Miro_Brainstorm.pdf) (PDF in specs/brainstorm)
+- Miro [(PDF in specs/brainstorm)](../../specs/brainstorm/Miro_Brainstorm.pdf)
 - Zoom
 ### Agenda
 1. Intro to brainstorming activity
@@ -33,7 +33,7 @@
 3. Mind map
 4. Vote for topic
 5. Finalize meeting notes
-### Brainstormed topics
+### Brainstormed topics (included in [PDF](../../specs/brainstorm/Miro_Brainstorm.pdf))
 - Overachiever website - list and show people how many you did
 make it daily
 - workouts -> coming up with workouts hard
@@ -62,17 +62,17 @@ scheduler app that takes pdfs & converts it
 use webreg
 - selling exchanging idea
 ### Features(priority in descending order)
-- budget checker - monthly budget and keep updates tracker
-multiple people
-reminders
+- keeps track of monthly expenses
+- add multiple people (ex. family members)
+- set reminders to pay bills
 - budget breakdown
-push - pie chart
-- animal character to inspire user's budget control
-- social place
+- can push pie chart of financial summary
+- include an animal character to motivate user's budget control
+- social platform
 ### User centered design
  - users highly focus on saving money so the social part would be used to encourage sharing budget-saving techniques
  - apply direct manipulation in interface design so that users can skip the process of selecting colors or category themselves
  - the interface design should be clear and concise so that the user experience can be ensured
 ### Summary 
-Decided from a list of ideas that our project would be a website budgeter. The domain of the project is ersonal finance
+Decided from a list of ideas that our project would be a website budgeter. The domain of the project is personal finance
 and the goal is to help people be financially stable and improve their financial literacy.
