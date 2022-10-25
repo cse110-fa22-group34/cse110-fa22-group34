@@ -1,6 +1,10 @@
 # Deciding on our Project
 ## What is the genre of our project ? What problems do want to solve?
+### Time
+10/20 2:00 PM - 3:30 PM; Location: CSE Building
+10/23 8:00 PM - 8:30 PM; Location: zoom
 ### Attendance 
+10/20:
 - Alessia
 - Jack
 - Sisy
@@ -10,11 +14,24 @@
 - David
 - Jiaxin Ye
 - Raphael
-### Time
-Start 2:00 PM End 4:30 PM 10/20
+10/23:
+- Sisy
+- Spencer
+- Yash
+- Xu
+- David
+- Jiaxin
+- Raphael
 ### Tools
-Miro(pdf file in specs/brainstorm)
-### Topics
+Miro [pdf file in specs/brainstorm](specs/brainstorm/"Miro contents.pdf")
+Zoom
+### Agenda
+1. Intro to brainstorming activity
+2. Go around the circle to share ideas & note down on Miro
+3. Mind map
+4. Vote for topic
+5. Finalize meeting notes
+### Brainstormed topics
 - Overachiever website - list and show people how many you did
 make it daily
 - workouts -> coming up with workouts hard
@@ -24,7 +41,7 @@ add songs to it? -> export it to a playlist
 - make place to store music taste
 for travels - pictures on places you have been a way to share pictures from travels
 ucsd -> specific one
-- budget checker - monthly budget and keep updates tracker
+- **budget checker - monthly budget and keep updates tracker (CURRENT CHOSEN TOPIC)**
 multiple people
 reminders
 - budget breakdown
@@ -48,19 +65,8 @@ multiple people
 reminders
 - budget breakdown
 push - pie chart
-- anime character to inspire user's budget control
+- animal character to inspire user's budget control
 - social place
-### Division of Roles
-- Alessia - front end
-- Jack - back end
-- Sisy - designer
-- Spencer - back end
-- Yash - frontend
-- Xu - backend
-- David - testing
-- Jiaxin - backend
-- Raphael - testing
-- Derrick - backend
 ### User centered design
  - users highly focus on saving money so the social part would be used to encourage sharing budget-saving techniques
  - apply direct manipulation in interface design so that users can skip the process of selecting colors or category themselves
