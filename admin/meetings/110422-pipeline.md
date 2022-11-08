@@ -2,6 +2,7 @@
 
 ## Time
 11/4 5:00 PM - 6:00 PM; Location: zoom
+
 11/6 8:00 PM - 9:00 PM; Location: zoom
 
 ## Attendance
