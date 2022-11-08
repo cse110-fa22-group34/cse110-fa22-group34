@@ -2,6 +2,10 @@
 
 Group 34 Project - [Team Page](./admin/team.md)
 
+General Guide of Repository:
+
+[Meeting Notes](./admin/meetings)
+
 [Brainstorm](./specs/brainstorm)
 
 [Pitch](./specs/pitch)
