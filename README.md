@@ -2,8 +2,6 @@
 
 Group 34 Project - [Team Page](./admin/team.md)
 
-Brainstorm: [](./specs/brainstorm)
+[Brainstorm](./specs/brainstorm)
 
-Pitch: [](./specs/pitch)
-
-Pipeline: 
+[Pitch](./specs/pitch)
