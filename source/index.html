@@ -14,13 +14,128 @@
   <script src="assets/scripts/RecipeCard.js" type="module"></script>
 
   <!-- Main Stylesheets & Scripts -->
-  <link rel="stylesheet" href="assets/styles/main.css" />
+  <link rel="stylesheet" href="main.css" />
   <script src="assets/scripts/main.js" type="module"></script>
 </head>
 <body>
   <main>
     <!-- Expenses -->
     <div id="expenses">
+      <h3>Expenses - Random Things</h3>
+      <button type="submit">Delete Budget</button>
+      <table id="expensesTable">
+        <tr id="tableTitle">
+          <th></th>
+          <th>
+            <img src="https://cdn4.iconfinder.com/data/icons/social-productivity-line-art-4/128/checkbox-square-checked-512.png"
+            width="15"/> 
+          </th>
+          <th>Date</th>
+          <th>Cost</th>
+          <th>Item</th>
+          <th>Labels</th>
+        </tr>
+        <tr id="cell1">
+          <td>1</td>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <select id="select1">
+              <option value="$">--Please Select--</option>
+              <option value="val1">Food</option>
+              <option value="val2">Clothes</option>
+              <option value="val3">Grocery</option>
+              <option value="val3">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="cell2">
+          <td>2</td>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <select id="select1">
+              <option value="$">--Please Select--</option>
+              <option value="val1">Food</option>
+              <option value="val2">Clothes</option>
+              <option value="val3">Grocery</option>
+              <option value="val3">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="cell3">
+          <td>3</td>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <select id="select1">
+              <option value="$">--Please Select--</option>
+              <option value="val1">Food</option>
+              <option value="val2">Clothes</option>
+              <option value="val3">Grocery</option>
+              <option value="val3">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="cell4">
+          <td>4</td>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <select id="select1">
+              <option value="$">--Please Select--</option>
+              <option value="val1">Food</option>
+              <option value="val2">Clothes</option>
+              <option value="val3">Grocery</option>
+              <option value="val3">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="cell5">
+          <td>5</td>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <select id="select1">
+              <option value="$">--Please Select--</option>
+              <option value="val1">Food</option>
+              <option value="val2">Clothes</option>
+              <option value="val3">Grocery</option>
+              <option value="val3">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tfoot>
+          <tr>
+            <th>Total Costs</th>
+            <th></th>
+          </tr>
+        </tfoot>
+      </table>
+      <button type="submit">Delete Selected</button>
+      <button type="submit">Add Rows</button>
+      <button type="submit">Update Budget</button>
+      <button type="submit">Create New Budget</button>
     </div>
     
     <!-- Budget/remaining field -->
