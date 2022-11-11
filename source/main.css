@@ -3,9 +3,74 @@ table {
     position: relative;
     border-collapse: collapse; 
     background-color: #f6f6f6;
-}
+    width: 100;
+  }/* Spacing */
 
-td, th, tfoot {
+  div[id="expenses"] {
+    display: inline-block; 
+    text-align: center;
+  }
+
+  h3 {
+    text-align: left;
+  }
+
+  td, th {
     border: 1px solid #999;
     padding: 20px;
-}
+  }
+  th {
+    color: black;
+    border-radius: 0;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    font-family: Arial;
+  }
+  
+  tfoot > tr  {
+    color: white;
+  }
+  tbody > tr:hover {
+    background-color: lightgrey;
+  }
+
+  button[id="delete"] {
+    top:10%;
+    background-color:red;
+    color: #fff;
+    border:none;
+    border-radius:20px;
+    padding:12px;
+    font-size: 17px;
+  }
+
+  button[id="update"], button[id="selected"], button[id="add"] {
+    top:50%;
+    background-color:lightblue;
+    color: #fff;
+    border:none;
+    width: 20%;
+    border-radius:20px;
+    padding:12px;
+    font-size: 17.5px;
+    margin: 5px;
+  }
+
+  button:hover {
+    background-color:black;
+  }
+
+  button[id="new"] {
+    top:50%;
+    background-color:lightgreen;
+    color: #fff;
+    border: none;
+    border-radius:20px;
+    padding:12px;
+    font-size: 17.5px;
+  }
+  
+  button[id="new"]:hover {
+    background-color:black;
+  }

@@ -21,28 +21,35 @@
   <main>
     <!-- Expenses -->
     <div id="expenses">
-      <h3>Expenses - Random Things</h3>
-      <button type="submit">Delete Budget</button>
       <table id="expensesTable">
-        <tr id="tableTitle">
-          <th></th>
-          <th>
-            <img src="https://cdn4.iconfinder.com/data/icons/social-productivity-line-art-4/128/checkbox-square-checked-512.png"
-            width="15"/> 
-          </th>
-          <th>Date</th>
-          <th>Cost</th>
-          <th>Item</th>
-          <th>Labels</th>
+        <h3>Expenses - Random Things</h3>
+        <thead>
+          <tr id="tableTitle">
+            <th>No.</th>
+            <th>
+              <img src="https://cdn4.iconfinder.com/data/icons/social-productivity-line-art-4/128/checkbox-square-checked-512.png"
+              width="15"/> 
+            </th>
+            <th style="width: 30">Date</th>
+            <th style="width: 10">Cost</th>
+            <th>Item</th>
+            <th>Labels</th>
         </tr>
+        </thead>
         <tr id="cell1">
           <td>1</td>
           <td>
             <input type="checkbox">
           </td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            <input type="date"/>
+          </td>
+          <td>
+            <input type="number"/>
+          </td>
+          <td>
+            <input type="text"/>
+          </td>
           <td>
             <select id="select1">
               <option value="$">--Please Select--</option>
@@ -58,9 +65,15 @@
           <td>
             <input type="checkbox">
           </td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            <input type="date"/>
+          </td>
+          <td>
+            <input type="number"/>
+          </td>
+          <td>
+            <input type="text"/>
+          </td>
           <td>
             <select id="select1">
               <option value="$">--Please Select--</option>
@@ -76,9 +89,15 @@
           <td>
             <input type="checkbox">
           </td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            <input type="date"/>
+          </td>
+          <td>
+            <input type="number"/>
+          </td>
+          <td>
+            <input type="text"/>
+          </td>
           <td>
             <select id="select1">
               <option value="$">--Please Select--</option>
@@ -94,9 +113,15 @@
           <td>
             <input type="checkbox">
           </td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            <input type="date"/>
+          </td>
+          <td>
+            <input type="number"/>
+          </td>
+          <td>
+            <input type="text"/>
+          </td>
           <td>
             <select id="select1">
               <option value="$">--Please Select--</option>
@@ -112,9 +137,15 @@
           <td>
             <input type="checkbox">
           </td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            <input type="date"/>
+          </td>
+          <td>
+            <input type="number"/>
+          </td>
+          <td>
+            <input type="text"/>
+          </td>
           <td>
             <select id="select1">
               <option value="$">--Please Select--</option>
@@ -127,15 +158,21 @@
         </tr>
         <tfoot>
           <tr>
-            <th>Total Costs</th>
-            <th></th>
+            <th colspan="2"></th>
+            <th>Total Costs:</th>
+            <th>$</th>
+            <th colspan="2"></th>
           </tr>
         </tfoot>
       </table>
-      <button type="submit">Delete Selected</button>
-      <button type="submit">Add Rows</button>
-      <button type="submit">Update Budget</button>
-      <button type="submit">Create New Budget</button>
+      <br>
+      <button type="submit" id="selected">Delete Selected</button>
+      <button type="submit" id="add">Add Rows</button>
+      <button type="submit" id="update">Update Budget</button>
+      <br>
+      <br>
+      <button type="submit" id="new">+ Create New Budget</button>
+      <button type="submit" id="delete">Delete Budget</button>
     </div>
     
     <!-- Budget/remaining field -->
