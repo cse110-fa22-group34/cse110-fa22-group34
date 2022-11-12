@@ -1,0 +1,14 @@
+@import url(../styles/global.css);
+@import url(../styles/calendar.css);
+@import url(../styles/expenses.css);
+@import url(../styles/visualization.css);
+@import url(../styles/reminders.css);
+@import url(../styles/top-bar.css);
+
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-font-color);
+    background-color: var(--main-bg-color);
+}
