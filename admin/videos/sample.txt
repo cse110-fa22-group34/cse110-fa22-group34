@@ -1,1 +1,0 @@
-sample vid: replace with our own video
