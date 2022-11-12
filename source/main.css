@@ -4,6 +4,8 @@ table {
     border-collapse: collapse; 
     background-color: #f6f6f6;
     width: 100;
+    text-align: center;
+    border-style: round;
   }/* Spacing */
 
   div[id="expenses"] {
@@ -14,13 +16,21 @@ table {
   h3 {
     text-align: left;
   }
-
+  caption {
+    text-align: left;
+    font-family: Arial;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
   td, th {
     border: 1px solid #999;
     padding: 20px;
+    border-style: round;
+    font-family: Arial;
   }
   th {
     color: black;
+    background-color:lightsteelblue;
     border-radius: 0;
     position: sticky;
     top: 0;
@@ -73,4 +83,9 @@ table {
   
   button[id="new"]:hover {
     background-color:black;
+  }
+
+  input {
+    border: none;
+    background-color: #f6f6f6;
   }
