@@ -1,0 +1,7 @@
+@import url(../styles/global.css);
+
+#main-logo {
+    color: var(--main-logo-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
