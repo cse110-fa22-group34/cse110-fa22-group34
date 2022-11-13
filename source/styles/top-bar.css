@@ -1,5 +1,14 @@
 @import url(../styles/global.css);
 
+#top-bar {
+    background-color: aqua;
+    height: 75px;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
 #main-logo {
     color: var(--main-logo-color);
     font-size: 1.5rem;
