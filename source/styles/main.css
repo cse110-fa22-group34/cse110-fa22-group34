@@ -10,12 +10,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: #FBFAF4
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: var(--main-font-color);
-    background-color: var(--main-bg-color);
 }
 
 div.main-body {
@@ -23,5 +22,9 @@ div.main-body {
     height: 100vh; 
     grid-template-columns: 3fr 1fr 2fr;
     grid-template: max-content;
+}
+
+div {
+    color: #99AA84
 }
 
