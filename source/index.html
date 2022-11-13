@@ -24,27 +24,80 @@
     <div id="top-bar">
         <h1 id="main-logo">Don't Budge</h1>
     </div>
-    <!-- Expenses -->
-    <div id="expenses">
-    </div>
-    
-    <!-- Budget/remaining field -->
-    <div id="budget">
-    </div>
-    
-    <!-- Visualization -->
-    <div id="visualization">
-    </div>
-    
-    <!-- Reminders -->
-    <div id="reminders">
-    </div>
-    
-    <!-- Calendar -->
-    <div id="calendar">
-      <h1>Calendar</h1>
-    </div>
-    
+    <div class="main-body">
+
+      <!-- Expenses -->
+      <div class="expenses-container">
+        <div id="expenses">
+          <h1>Expenses</h1>
+          <ul>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+            <li>Fourth</li>
+            <li>Fifth</li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class="budget-vis-container">
+        <!-- Budget/remaining field -->
+        <div id="budget">
+          <h1>Budget</h1>
+          <div id="budget-remaining">
+            <h2>Remaining</h2>
+            <h2 id="budget-remaining-amount">$0</h2>
+          </div>
+        </div>
+
+        <!-- Visualization -->
+        <div id="visualization">
+          <h1>Visualization</h1>
+        </div>
+      </div>
+      
+
+      <div class="reminders-calendar-container">
+        <!-- Reminders -->
+        <div id="reminders">
+          <h1>Reminders</h1>
+        </div>
+
+        <!-- Calendar -->
+        <div id="calendar">
+          <div class="calendar-header">
+            <span class="month-picker" id="month-picker">April</span>
+            <div class="year-picker">
+                <span class="year-change" id="prev-year">
+                    <pre><</pre>
+                </span>
+                <span id="year">2022</span>
+                <span class="year-change" id="next-year">
+                    <pre>></pre>
+                </span>
+            </div>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-week-day">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+          </div>
+
+          <div class="month-list"></div>
+        </div>
+      </div>
+      
   </main>
 </body>
 </html>
+
+
+

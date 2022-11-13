@@ -1,2 +1,6 @@
 @import url(../styles/global.css);
 
+#reminders {
+    height: 45%;
+    background-color: blueviolet;
+}

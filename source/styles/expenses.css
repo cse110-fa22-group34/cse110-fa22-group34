@@ -1,2 +1,6 @@
 @import url(../styles/global.css);
 
+#expenses {
+    background-color: bisque;
+    height: 90%;
+}
