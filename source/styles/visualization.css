@@ -1,11 +1,2 @@
 @import url(../styles/global.css);
 
-#budget {
-    height: 25%;
-    background-color: purple;
-}
-
-#visualization {
-    height: 65%;
-    background-color: green;
-}
