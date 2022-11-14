@@ -25,7 +25,12 @@
   <link rel="stylesheet" href="/source/styles/visualization.css" />
   <script src="/source/scripts/visualization.js" type="module"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- Reminder Stylesheets & Scripts -->
+  <script src="assets/scripts/reminder.js" type="module"></script>
+  <link rel="stylesheet" href="/source/styles/reminder.css" />
 </head>
+
 
 <body>
   <main>
@@ -71,6 +76,12 @@
       <!-- Reminders -->
       <div id="reminders">
         <h1>Reminders</h1>
+        <ul id="reminderList">
+          <li>&emsp;Credit Card Bill<span class="remove">&minus;</span></li>
+          <li>&emsp;Groceries<span class="remove">&minus;</span></li>
+          <li>&emsp;More Food<span class="remove">&minus;</span></li>
+        </ul>
+        <button id='add' onclick="addReminder();">&plus;</button>
       </div>
 
       <!-- Calendar -->
