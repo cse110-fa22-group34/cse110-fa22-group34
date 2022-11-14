@@ -3,9 +3,75 @@
 #budget {
     height: 25%;
     background-color: #FBFAF4;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
 }
 
 #visualization {
     height: 65%;
     background-color: #E9E0D7;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+.budget-vis-container {
+    background-color: #edf3f8;
+    color: #495164;
+    margin: 36px;
+}
+
+
+div[class="budget-vis-container"] span[class="title"] {
+    font-size: 1.0rem;
+    width: auto;
+    margin-top: 12px;
+}
+
+
+div[class="budget-vis-container"] span[class="textview"] {
+    background-color:#fff;
+    color: #495164;
+    width: 12vw;
+    border-radius: 0.7rem;
+    padding:12px;
+    font-size: 0.8rem;
+    margin: 5px;
+    outline: 1px solid #495164;
+    text-align: right;
+}
+
+
+button[id="view_chart"] {
+    background-color: #495164;
+    color: #fff;
+    border:none;
+    border-radius: 1.5rem;
+    padding:12px;
+    font-size: 0.8rem;
+    margin: 5px;
+}
+
+button[id="view_chart"]:hover {
+    background-color: #252934;;
+}
+
+select[id="visualization_type"] {
+    background-color:#fff;
+    color: #495164;
+    width: 12vw;
+    border-radius: 0.7rem;
+    padding:12px;
+    font-size: 0.8rem;
+    margin: 5px;
+}
+
+div[id="visualization_figure"] {
+    width: 25vw;
+    height: auto;
+    display: none;
+    margin: 8px;
 }
