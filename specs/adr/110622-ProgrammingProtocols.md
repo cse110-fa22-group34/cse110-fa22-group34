@@ -1,4 +1,4 @@
-#Programming Style Decision
+# Programming Style Decision
 
 ## Context and Problem Statement
 
@@ -26,12 +26,13 @@ Clear and concise comments
 - Use the right amount of comments to help the group members and the coder to understand the code after weeks. 
 - Always include comments before functions(example listed below)
 - Divide functions up to different sections and include comments for every section
-/**
- * Returns x raised to the n-th power.
- *
- * @param {number} x the description of the parameter
- * @return {number} x description of the value the function returns
- */
+
+> /**
+>  * Returns x raised to the n-th power.
+>  *
+>  * @param {number} x the description of the parameter
+>  * @return {number} x description of the value the function returns
+>  */
  
 Indentations
 - Use ideal coding formatting and indentation include correct spacing for html, css and javascript for readability
