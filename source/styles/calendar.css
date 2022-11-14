@@ -3,3 +3,21 @@
 #calendar {
     height: 45%;
 }
+
+body {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    background: white;
+    color: black;
+}
+
+th, td { 
+    font-weight: bold;
+}
+
+h2 {
+    color: #3C4458;
+}
