@@ -28,11 +28,16 @@ Clear and concise comments
 - Divide functions up to different sections and include comments for every section
 
 > /**
->  * Returns x raised to the n-th power.
->  *
->  * @param {number} x the description of the parameter
->  * @return {number} x description of the value the function returns
->  */
+> 
+>   \* Returns x raised to the n-th power.
+>  
+>   \*
+>  
+>   \* @param {number} x the description of the parameter
+>  
+>   \* @return {number} x description of the value the function returns
+>  
+>   \*/
  
 Indentations
 - Use ideal coding formatting and indentation include correct spacing for html, css and javascript for readability
