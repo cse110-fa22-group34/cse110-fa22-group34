@@ -37,6 +37,7 @@ This week's sprint was all about designing the front end of our budget website a
 - (Derrick) The rows in the expense table could be selectively deleted by selecting the checkbox & clicking the ‘delete selected rows’ button.
 - (Jiaxin) The expense table can be removed from page by clicking the ‘Delete Budget’ button
 - Click picture icon to be linked to video 
+- [Video](/specs/sprint-review-Expense%20Table%20Video%20Demo%20by%20Jaxin&Derrick.mp4)
 - <img src="https://github.com/cse110-fa22-group34/cse110-fa22-group34/blob/main/specs/sprint-review/Expense%20Table%20Video%20Demo%20by%20Jaxin%26Derrick.mp4">
 
 ### Jack (- on behalf of him and David): 
