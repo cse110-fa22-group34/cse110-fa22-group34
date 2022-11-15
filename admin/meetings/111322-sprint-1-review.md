@@ -42,6 +42,6 @@ This week's sprint was all about designing the front end of our budget website a
 - (Jack/David) The addition is created from a button html element connected to the bottom of the list and powered with javascript to make new list elements
 - (Jack/David) The deletion is next to each reminder and removes that specific element from the list
 - (Jack) Work with Spencer and Xu on retrospective meeting notes
-- <img src="./specs/sprint-review/reminderd.PNG">
+- <img src="https://github.com/cse110-fa22-group34/cse110-fa22-group34/blob/main/specs/sprint-review/reminderd.PNG">
 
 
