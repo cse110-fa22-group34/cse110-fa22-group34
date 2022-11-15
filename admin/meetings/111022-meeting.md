@@ -25,7 +25,4 @@
 2. Expense Table - Derrick, Jiaxin
 3. Visualization - Xu, Raphael 
 4. Reminders - David, Jack
-5. Calendar - Yash, Sisy 
-
-## Suggestions from TA
-TBD
+5. Calendar - Yash, Sisy
