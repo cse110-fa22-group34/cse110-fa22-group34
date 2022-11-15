@@ -14,9 +14,27 @@
   <script src="assets/scripts/RecipeCard.js" type="module"></script>
 
   <!-- Main Stylesheets & Scripts -->
-  <link rel="stylesheet" href="/source/styles/main.css" />
+  <link rel="stylesheet" href="/source/styles/main.css"/>
   <script src="assets/scripts/main.js" type="module"></script>
+
+  <!-- Expense Stylesheets & Scripts -->
+  <link href="./expense.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/source/scripts/expense.js"></script> 
+
+  <!-- Visualization Stylesheets & Scripts -->
+  <link rel="stylesheet" href="/source/styles/visualization.css" />
+  <script src="/source/scripts/visualization.js" type="module"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- Reminder Stylesheets & Scripts -->
+  <script src="assets/scripts/reminder.js" type="module"></script>
+  <link rel="stylesheet" href="/source/styles/reminder.css" />
+
+  <!-- Calendar Stylesheets & Scripts -->
+  <link href="/source/styles/calendar.css" rel="stylesheet">
+  <script type="text/javascript" src="/source/scripts/calendar.js"></script> 
 </head>
+
 
 <body>
   <main>
@@ -27,74 +45,142 @@
     <div class="main-body">
 
       <!-- Expenses -->
-      <div class="expenses-container">
-        <div id="expenses">
-          <h1>Expenses</h1>
-          <ul>
-            <li>First</li>
-            <li>Second</li>
-            <li>Third</li>
-            <li>Fourth</li>
-            <li>Fifth</li>
-          </ul>
-        </div>
-      </div>
+    <div id="expenses">
+      <button class="btn create_btn" onclick="createBudget()">+ Create New Budget</button>
+    </div>
       
 
-      <div class="budget-vis-container">
-        <!-- Budget/remaining field -->
-        <div id="budget">
-          <label for="budget">Budget: </label><br>
-          <input type="text" id="budget" name="budget"><br>
-          <label for="budget-remaining">Remaining Budget: </label><br>
-          <input type="text" id="budget-remaining" name="budget-remaining">
-        </div>
+    <div class="budget-vis-container">
+      <!-- Budget/remaining field -->
+      
+      <div id="budget">
+        <span class="title">Budget</span>
+        <span  class="textview" id="total-budget">$ 900.0</span>
+        <span class="title">Remaining Amount</span>
+        <span  class="textview" id="budget-remaining-amount">$ 28.0</span>
+      </div>
         
 
-        <!-- Visualization -->
-        <div id="visualization">
-          <h1>Visualization</h1>
+      <!-- Visualization -->
+      <div id="visualization">
+          <span class="title">Visualization</span>
+          <select id="visualization_type">
+            <option value="pie_chart">Pie Chart</option>
+            <option value="line_graph">Line Graph</option>
+            <option value="character">Character</option>
+          </select>
+          <button type="submit" id="view_chart">VIEW CHART</button>
         </div>
+        <div id="visualization_figure"></div>
       </div>
       
 
-      <div class="reminders-calendar-container">
-        <!-- Reminders -->
-        <div id="reminders">
-          <h1>Reminders</h1>
-        </div>
-
-        <!-- Calendar -->
-        <div id="calendar">
-          <div class="calendar-header">
-            <span class="month-picker" id="month-picker">April</span>
-            <div class="year-picker">
-                <span class="year-change" id="prev-year">
-                    <pre><</pre>
-                </span>
-                <span id="year">2022</span>
-                <span class="year-change" id="next-year">
-                    <pre>></pre>
-                </span>
-            </div>
-          </div>
-          <div class="calendar-body">
-            <div class="calendar-week-day">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="calendar-days"></div>
-          </div>
-
-          <div class="month-list"></div>
-        </div>
+    <div class="reminders-calendar-container">
+      <!-- Reminders -->
+      <div id="reminders">
+        <h1>Reminders</h1>
+        <ul id="reminderList">
+          <li>&emsp;Credit Card Bill<span class="remove">&minus;</span></li>
+          <li>&emsp;Groceries<span class="remove">&minus;</span></li>
+          <li>&emsp;More Food<span class="remove">&minus;</span></li>
+        </ul>
+        <button id='add' onclick="addReminder();">&plus;</button>
       </div>
+
+      <!-- Calendar -->
+      <div id="calendar">
+        <h2>
+          January 2021
+      </h2>
+      <br />
+      <table bgcolor="lightgrey" align="center" 
+          cellspacing="21" cellpadding="21">
+          <caption align="top">
+          </caption>
       
+          <thead>
+              <tr>
+                  <th style="color: white; background: rgb(45, 0, 128);">
+                      Sun</th>
+                  <th style="color: white; background: rgb(45, 0, 128);">
+                      Mon</th>
+                  <th style="color: white; background: rgb(45, 0, 128);">
+                      Tue</th>
+                  <th style="color: white; background: rgb(45, 0, 128);">
+                      Wed</th>
+                  <th style="color: white; background: rgb(45, 0, 128);">
+                      Thu</th>
+                  <th style="color: white; background: rgb(45, 0, 128);">
+                      Fri</th>
+                  <th style="color: white; background: rgb(45, 0, 128);">
+                      Sat</th>
+              </tr>
+          </thead>
+      
+          <tbody>
+              <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>1</td>
+                  <td>2</td>
+              </tr>
+              <tr></tr>
+              <tr>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                  <td>8</td>
+                  <td>9</td>
+              </tr>
+              <tr>
+                  <td>10</td>
+                  <td>11</td>
+                  <td>12</td>
+                  <td>13</td>
+                  <td>14</td>
+                  <td>15</td>
+                  <td>16</td>
+              </tr>
+              <tr>
+                  <td>17</td>
+                  <td>18</td>
+                  <td>19</td>
+                  <td>20</td>
+                  <td>21</td>
+                  <td>22</td>
+                  <td>23</td>
+              </tr>
+              <tr>
+                  <td>24</td>
+                  <td>25</td>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                  <td>29</td>
+                  <td>30</td>
+              </tr>
+              <tr>
+                  <td>31</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+              </tr>
+          </tbody>
+      </table>
+        </div>
+
+        <div class="month-list"></div>
+      </div>
+    </div>
+   </div>
   </main>
 </body>
 </html>
