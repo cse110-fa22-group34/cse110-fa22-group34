@@ -27,5 +27,5 @@
 1. Go over everyone's notes for their task; discuss & finalize them
 2. Send TA pipeline doc including questions for her
 
-## Pipeline Doc
+## Pipeline Files
 (To Be Inserted)
