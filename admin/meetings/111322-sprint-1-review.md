@@ -12,6 +12,7 @@
 - Xu
 - Raphael
 - Jiaxin Ye
+- Derrick
 
 ## Stand-Ups
 This week's sprint was all about designing the front end of our budget website as well as having various tasks given the upcoming checkpoints that were due. We did Stand-Ups as pairs and each person as the work was divided among pairs gave personal updates. Each pair presented their code and we took appropriate documentation so we could review
@@ -41,6 +42,6 @@ This week's sprint was all about designing the front end of our budget website a
 - (Jack/David) The addition is created from a button html element connected to the bottom of the list and powered with javascript to make new list elements
 - (Jack/David) The deletion is next to each reminder and removes that specific element from the list
 - (Jack) Work with Spencer and Xu on retrospective meeting notes
-- <img src="./main/specs/sprint-review/reminderd.PNG">
+- <img src="./specs/sprint-review/reminderd.PNG">
 
 
