@@ -33,8 +33,10 @@ Did Stand-Ups as pairs as the work was divided among pairs
 - The rows in the expense table could be selectively deleted by selecting the checkbox & clicking the ‘delete selected rows’ button.
 - The expense table can be removed from page by clicking the ‘Delete Budget’ button
 
-### Jack (- on behalf of him and David): 
+### Jack & David: 
 - Created Reminder’s section which is a that is a list designed to be added to and deleted from
 - The addition is created from a button html element connected to the bottom of the list and powered with javascript to make new list elements
 - The deletion is next to each reminder and removes that specific element from the list
 
+### Work Folder
+Screenshots & demo videos of our work so far: [Folder](/specs/sprint-review)
