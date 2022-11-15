@@ -38,5 +38,5 @@ Did Stand-Ups as pairs as the work was divided among pairs
 - The addition is created from a button html element connected to the bottom of the list and powered with javascript to make new list elements
 - The deletion is next to each reminder and removes that specific element from the list
 
-### Work Folder
+## Work Folder
 Screenshots & demo videos of our work so far: [Folder](/specs/sprint-review)
