@@ -36,7 +36,7 @@ This week's sprint was all about designing the front end of our budget website a
 - (Derrick) The expense table has no rows initially but rows could be added by clicking the ‘add new button’.
 - (Derrick) The rows in the expense table could be selectively deleted by selecting the checkbox & clicking the ‘delete selected rows’ button.
 - (Jiaxin) The expense table can be removed from page by clicking the ‘Delete Budget’ button
-- <video src="https://github.com/cse110-fa22-group34/cse110-fa22-group34/blob/main/specs/sprint-review/Expense%20Table%20Video%20Demo%20by%20Jaxin%26Derrick.mp4">
+- <img src="https://github.com/cse110-fa22-group34/cse110-fa22-group34/blob/main/specs/sprint-review/Expense%20Table%20Video%20Demo%20by%20Jaxin%26Derrick.mp4">
 
 ### Jack (- on behalf of him and David): 
 - (Jack) Created Reminder’s section which is a that is a list designed to be added to and deleted from
