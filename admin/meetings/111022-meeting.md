@@ -20,7 +20,7 @@
 3. Get started on HTML file template
 4. Create CSS files for each feature
 
-## Tasks
+## Tasks (due 11/13)
 1. Background/Floating Words - Alessia, Spencer
 2. Expense Table - Derrick, Jiaxin
 3. Visualization - Xu, Raphael 
