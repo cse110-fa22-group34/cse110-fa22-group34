@@ -1,6 +1,6 @@
 
 # Sprint Review for Week 11/7-11/13
-[Folder](/specs/sprint-review)
+[Sprint Review Folder](/specs/sprint-review)
 
 ## Time
 11/13 8:00 PM - 8:30 PM; Location: Zoom
