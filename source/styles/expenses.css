@@ -19,6 +19,12 @@
     display:block;
 }
 
+.update_budget_btn {
+    background-color: rgb(145, 235, 145);
+    align-self: right;
+    display:none;
+}
+
 #expensetable {
    display:none; 
 }
