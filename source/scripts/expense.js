@@ -3,6 +3,7 @@ function createBudget() {
     document.getElementById("expensetable").style.display = "block";
     document.querySelector(".del_select_btn").style.display = "inline";
     document.querySelector(".del_budget_btn").style.display = "inline";
+    document.querySelector(".update_budget_btn").style.display = "inline";
     document.querySelector(".create_btn").style.display = "none";
 }
 
@@ -50,5 +51,6 @@ function deleteBudget() {
     document.getElementById("expensetable").style.display = "none";
     document.querySelector(".del_select_btn").style.display = "none";
     document.querySelector(".del_budget_btn").style.display = "none";
+    document.querySelector(".update_budget_btn").style.display = "none";
     document.querySelector(".create_btn").style.display = "block";
 }
