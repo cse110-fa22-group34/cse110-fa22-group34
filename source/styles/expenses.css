@@ -16,6 +16,11 @@
 
 .create_btn {
     background-color: rgb(145, 235, 145);
+    display:block;
+}
+
+#expensetable {
+   display:none; 
 }
 
 .add_btn {
@@ -28,10 +33,12 @@
 
 .del_select_btn {
     background-color: rgb(174, 216, 229);
+    display:none;
 }
 
 .del_budget_btn {
     background-color: red;
+    display:none;
 }
 
 table {

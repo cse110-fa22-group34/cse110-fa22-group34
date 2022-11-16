@@ -1,11 +1,14 @@
 
 function createBudget() {
-    window.location.href = './table.html';
+    document.getElementById("expensetable").style.display = "block";
+    document.querySelector(".del_select_btn").style.display = "inline";
+    document.querySelector(".del_budget_btn").style.display = "inline";
+    document.querySelector(".create_btn").style.display = "none";
 }
 
 function addRow()  
 {  
-    var tb = document.getElementById("budgettable");
+    var tb = document.getElementById("expensetable");
     var nextRowNum = tb.getElementsByTagName("tr").length - 2;
     row = tb.insertRow(nextRowNum);
     noCol= row.insertCell();
@@ -28,7 +31,7 @@ function addRow()
 } 
 
 function deleteSelectedRows() {
-    var tb = document.getElementById("budgettable");
+    var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
     var removelist = [];
@@ -44,5 +47,8 @@ function deleteSelectedRows() {
 }
 
 function deleteBudget() {
-    window.history.back(); 
+    document.getElementById("expensetable").style.display = "none";
+    document.querySelector(".del_select_btn").style.display = "none";
+    document.querySelector(".del_budget_btn").style.display = "none";
+    document.querySelector(".create_btn").style.display = "block";
 }

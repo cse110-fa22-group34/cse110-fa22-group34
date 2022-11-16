@@ -47,6 +47,33 @@
       <!-- Expenses -->
     <div id="expenses">
       <button class="btn create_btn" onclick="createBudget()">+ Create New Budget</button>
+      <table id="expensetable" border="0" cellspacing="1">
+        <tr>
+            <th>No.</th>
+            <th>
+                <input type="checkbox" checked disabled>
+            </th>
+            <th>Date</th>
+            <th>Cost</th>
+            <th>Item</th>
+            <th>Labels</th>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <button class="btn add_btn" onclick="addRow()">+ Add Row</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td>Total Costs:</td>
+            <td>$</td>
+            <td colspan="2"></td>
+        </tr>
+      </table>
+      <br/>
+    
+      <button class="btn del_select_btn" onclick="deleteSelectedRows()">Delete Selected</button>
+      <button class="btn del_budget_btn" onclick="deleteBudget()">Delete Budget</button>
     </div>
       
 
