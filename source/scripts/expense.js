@@ -46,17 +46,36 @@ function deleteSelectedRows() {
     var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
-    var removelist = [];
     for (var i = 1; i < rowCount - 2; i++) {
         var cbox = rows[i].cells[1].getElementsByTagName("input")[0];
         if (cbox.checked) {
-            removelist.push(rows[i])
+            rows[i].remove();
+            for (var j = i+1; j < rowCount -1; j++) {
+                const checkStr = 'check' + `${j}`;
+                const checkStrNew = 'check' + `${j-1}`;
+                console.log(checkStr);
+                console.log(checkStrNew);
+                console.log(document.getElementById(checkStr).checked);
+                document.getElementById(checkStr).id = checkStrNew;
+    
+                const dateStr = 'date' + `${j}`;
+                const dateStrNew = 'date' + `${j-1}`;
+                document.getElementById(dateStr).id = dateStrNew;
+    
+                const costStr = 'cost' + `${j}`;
+                const costStrNew = 'cost' + `${j-1}`;
+                document.getElementById(costStr).id = costStrNew;
+    
+                const itemStr = 'item' + `${j}`;
+                const itemStrNew = 'item' + `${j-1}`;
+                document.getElementById(itemStr).id = itemStrNew;
+    
+                const labelStr = 'label' + `${j}`;
+                const labelStrNew = 'label' + `${j-1}`;
+                document.getElementById(labelStr).id = labelStrNew ;
+            }
         }
     }
-    for(let elem of removelist) {
-        elem.remove();
-    }
-    // delete selected localStorage
 }
 
 function deleteBudget() {
