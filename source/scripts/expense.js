@@ -18,6 +18,7 @@ function createBudget() {
 }
 
 function addRow() {
+    getBudget();
     var tb = document.getElementById("expensetable");
     var nextRowNum = tb.getElementsByTagName("tr").length - 2;
     row = tb.insertRow(nextRowNum);
@@ -26,18 +27,19 @@ function addRow() {
     dateCol = row.insertCell();
     costCol = row.insertCell();
     itemCol = row.insertCell();
-    labelsCol = row.insertCell();
+    labelCol = row.insertCell();
     noCol.innerHTML = "<text id=\"no\">" + nextRowNum + "</text>";
     checkCol.innerHTML="<input id=\"check\" type=\"checkbox\"/>";
-    dateCol.innerHTML="<input id=\"date\" type=\"date\"/>";  
-    costCol.innerHTML="<input id=\"cost\" type=\"number\"/>"; 
-    itemCol.innerHTML="<input id=\"item\" />";
-    labelsCol.innerHTML="<select>\
+    dateCol.innerHTML="<input id=\"date\" required type=\"date\"/>";  
+    costCol.innerHTML="<input id=\"cost\" required type=\"number\"/>"; 
+    itemCol.innerHTML="<input id=\"item\" required type=\"text\"/>";
+    labelCol.innerHTML="<select id=\"label\">\
                             <option value=\"default\">--Please Select--</option>\
                             <option value=\"opt1\">Label 1</option>\
                             <option value=\"opt2\">Label 2</option>\
                             <option value=\"opt3\">Label 3</option>\
                         </select>";
+    saveBudgetToLocal();
 }
 
 function deleteSelectedRows() {
@@ -66,21 +68,21 @@ function deleteBudget() {
 }
 
 function getBudget() {
-    var budget = localStorage.getItem("budgetData");
+    var budget = localStorage.getItem("expenseData");
     if (budget != null) {
         budget = JSON.parse(budget);
     }
+    return budget;
 }
 
 function saveBudgetToLocal() {
     getBudget();
     arr.push({
-        name:document.getElementById("").value,
-        check:document.getElementById("").value,
-        date:document.getElementById("").value,
-        cost:document.getElementById("").value,
-        item:document.getElementById("").value,
-        labels:document.getElementById("").value,
+        check:document.getElementById("check").checked,
+        date:document.getElementById("date").value,
+        cost:document.getElementById("cost").value,
+        item:document.getElementById("item").value,
+        labels:document.getElementById("label").options[document.getElementById("label").selectedIndex].text,
     });
-    localStorage.setItem("budgetData", JSON.stringify(arr));
+    localStorage.setItem("expenseData", JSON.stringify(arr));
 }
