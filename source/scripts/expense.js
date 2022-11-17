@@ -90,7 +90,7 @@ function saveBudgetToLocal() {
         const dateStr = 'date' + `${i}`;
         const costStr = 'cost' + `${i}`;
         const itemStr = 'item' + `${i}`;
-        const labelsStr = 'labels' + `${i}`;
+        const labelsStr = 'label' + `${i}`;
         arr.push({
             check:document.getElementById(checkStr).checked,
             date:document.getElementById(dateStr).value,
