@@ -29,11 +29,11 @@ function addRow() {
     itemCol = row.insertCell();
     labelCol = row.insertCell();
     noCol.innerHTML = "<text id=\"no\">" + nextRowNum + "</text>";
-    checkCol.innerHTML = "<input id=\"check\" type=\"checkbox\"/>";
-    dateCol.innerHTML = "<input id=\"date\" required type=\"date\"/>";  
-    costCol.innerHTML = "<input id=\"cost\" required type=\"number\"/>"; 
-    itemCol.innerHTML = "<input id=\"item\" required type=\"text\"/>";
-    labelCol.innerHTML = "<select id=\"label\">\
+    checkCol.innerHTML="<input id=\"check\" type=\"checkbox\"/>";
+    dateCol.innerHTML="<input id=\"date\" required type=\"date\"/>";  
+    costCol.innerHTML="<input id=\"cost\" required type=\"number\"/>"; 
+    itemCol.innerHTML="<input id=\"item\" required type=\"text\"/>";
+    labelCol.innerHTML="<select id=\"label\">\
                             <option value=\"default\">--Please Select--</option>\
                             <option value=\"opt1\">Label 1</option>\
                             <option value=\"opt2\">Label 2</option>\
@@ -56,7 +56,7 @@ function deleteSelectedRows() {
     for(let elem of removelist) {
         elem.remove();
     }
-    // delete selected localStorage
+    // delete
 }
 
 function deleteBudget() {
@@ -77,13 +77,20 @@ function getBudget() {
 }
 
 function saveBudgetToLocal() {
-    budget = getBudget();
-    arr.push({
-        check:document.getElementById("check").checked,
-        date:document.getElementById("date").value,
-        cost:document.getElementById("cost").value,
-        item:document.getElementById("item").value,
-        labels:document.getElementById("label").options[document.getElementById("label").selectedIndex].text,
-    });
-    localStorage.setItem("expenseData", JSON.stringify(arr));
+    // budget = getBudget();
+    // arr.push({
+    //     check:document.getElementById("check").checked,
+    //     date:document.getElementById("date").value,
+    //     cost:document.getElementById("cost").value,
+    //     item:document.getElementById("item").value,
+    //     labels:document.getElementById("label").options[document.getElementById("label").selectedIndex].text,
+    // });
+    // localStorage.setItem("expenseData", JSON.stringify(arr));
+    var table = document.getElementById("expensetable");
+    for (let row of table.rows) {
+        for (let cell of row.cells) {
+            let val = cell.innerText;
+            console.log(val);
+        }
+    }
 }
