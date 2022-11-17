@@ -1,3 +1,11 @@
+window.addEventListener('DOMContentLoaded', init);
+
+function init() {
+    let recipes = getRecipesFromStorage();
+    addRecipesToDocument(recipes);
+    initFormHandler();
+    console.log(localStorage.getItem("tr"));
+  }
 
 function createBudget() {
     document.getElementById("expensetable").style.display = "block";
@@ -7,21 +15,20 @@ function createBudget() {
     document.querySelector(".create_btn").style.display = "none";
 }
 
-function addRow()  
-{  
+function addRow() {
     var tb = document.getElementById("expensetable");
     var nextRowNum = tb.getElementsByTagName("tr").length - 2;
     row = tb.insertRow(nextRowNum);
-    noCol= row.insertCell();
-    checkCol=row.insertCell();
-    dateCol =row.insertCell();
-    costCol =row.insertCell();
-    itemCol =row.insertCell();
-    labelsCol =row.insertCell();
+    noCol = row.insertCell();
+    checkCol = row.insertCell();
+    dateCol = row.insertCell();
+    costCol = row.insertCell();
+    itemCol = row.insertCell();
+    labelsCol = row.insertCell();
     noCol.innerHTML = "<text>" + nextRowNum + "</text>";
     checkCol.innerHTML="<input type=\"checkbox\">";
-    dateCol.innerHTML="<input/>";  
-    costCol.innerHTML="<input/>"; 
+    dateCol.innerHTML="<input type=\"date\">";  
+    costCol.innerHTML="<input type=\"number\">"; 
     itemCol.innerHTML="<input/>";
     labelsCol.innerHTML="<select>\
                             <option value=\"default\">--Please Select--</option>\
@@ -53,4 +60,9 @@ function deleteBudget() {
     document.querySelector(".del_budget_btn").style.display = "none";
     document.querySelector(".update_budget_btn").style.display = "none";
     document.querySelector(".create_btn").style.display = "block";
+    localStorage.clear();
+}
+
+function getBudget() {
+
 }
