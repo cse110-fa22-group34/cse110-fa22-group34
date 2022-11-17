@@ -18,7 +18,7 @@ function createBudget() {
 }
 
 function addRow() {
-    getBudget();
+    budget = getBudget();
     var tb = document.getElementById("expensetable");
     var nextRowNum = tb.getElementsByTagName("tr").length - 2;
     row = tb.insertRow(nextRowNum);
@@ -29,11 +29,11 @@ function addRow() {
     itemCol = row.insertCell();
     labelCol = row.insertCell();
     noCol.innerHTML = "<text id=\"no\">" + nextRowNum + "</text>";
-    checkCol.innerHTML="<input id=\"check\" type=\"checkbox\"/>";
-    dateCol.innerHTML="<input id=\"date\" required type=\"date\"/>";  
-    costCol.innerHTML="<input id=\"cost\" required type=\"number\"/>"; 
-    itemCol.innerHTML="<input id=\"item\" required type=\"text\"/>";
-    labelCol.innerHTML="<select id=\"label\">\
+    checkCol.innerHTML = "<input id=\"check\" type=\"checkbox\"/>";
+    dateCol.innerHTML = "<input id=\"date\" required type=\"date\"/>";  
+    costCol.innerHTML = "<input id=\"cost\" required type=\"number\"/>"; 
+    itemCol.innerHTML = "<input id=\"item\" required type=\"text\"/>";
+    labelCol.innerHTML = "<select id=\"label\">\
                             <option value=\"default\">--Please Select--</option>\
                             <option value=\"opt1\">Label 1</option>\
                             <option value=\"opt2\">Label 2</option>\
@@ -56,6 +56,7 @@ function deleteSelectedRows() {
     for(let elem of removelist) {
         elem.remove();
     }
+    // delete selected localStorage
 }
 
 function deleteBudget() {
@@ -76,7 +77,7 @@ function getBudget() {
 }
 
 function saveBudgetToLocal() {
-    getBudget();
+    budget = getBudget();
     arr.push({
         check:document.getElementById("check").checked,
         date:document.getElementById("date").value,
