@@ -17,12 +17,22 @@
 .create_btn {
     background-color: rgb(145, 235, 145);
     display:block;
+    font-size: medium;
+}
+
+.create_btn:hover {
+    background-color: black;
 }
 
 .update_budget_btn {
     background-color: rgb(145, 235, 145);
     align-self: right;
     display:none;
+    font-size: medium;
+}
+
+.update_budget_btn:hover {
+    background-color: black;
 }
 
 #expensetable {
@@ -35,22 +45,35 @@
     height: 50px;
     background-color: rgb(246,246,246);
     color:black;
+    font-size: medium;
 }
 
 .del_select_btn {
     background-color: rgb(174, 216, 229);
     display:none;
+    font-size: medium;
+}
+
+.del_select_btn:hover {
+    background-color: black;
 }
 
 .del_budget_btn {
     background-color: red;
     display:none;
+    font-size: medium;
+}
+
+.del_budget_btn:hover {
+    background-color: black;
 }
 
 table {
     background-color: rgb(155,155,155);
     text-align: center;
     width: 600px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 table th {
