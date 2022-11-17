@@ -7,7 +7,9 @@ function init() {
     // console.log(localStorage.getItem("tr"));
   }
 
-var arr = new Array();
+//Create a function here so that if there is local storage then show the create Budget button, 
+//else show the expense table according to the local stoage
+
 
 function createBudget() {
     document.getElementById("expensetable").style.display = "block";
@@ -18,10 +20,8 @@ function createBudget() {
 }
 
 function addRow() {
-    //budget = getBudget();
     var tb = document.getElementById("expensetable");
     var nextRowNum = tb.getElementsByTagName("tr").length - 2;
-    console.log(nextRowNum);
     row = tb.insertRow(nextRowNum);
     noCol = row.insertCell();
     checkCol = row.insertCell();
@@ -30,7 +30,7 @@ function addRow() {
     itemCol = row.insertCell();
     labelCol = row.insertCell();
     noCol.innerHTML = "<text id=\"no\">" + nextRowNum + "</text>";
-    checkCol.innerHTML = "<input id=\"check\" type=\"checkbox\"/>";
+    checkCol.innerHTML = `<input id=\"check${nextRowNum}\" type=\"checkbox\"/>`;
     dateCol.innerHTML = `<input id=\"date${nextRowNum}\" required type=\"date\"/>`;  
     costCol.innerHTML = `<input id=\"cost${nextRowNum}\" required type=\"number\"/>`; 
     itemCol.innerHTML = `<input id=\"item${nextRowNum}\" required type=\"text\"/>`;
@@ -40,7 +40,6 @@ function addRow() {
                             <option value=\"opt2\">Label 2</option>\
                             <option value=\"opt3\">Label 3</option>\
                         </select>`;
-    //saveBudgetToLocal();
 }
 
 function deleteSelectedRows() {
@@ -82,18 +81,22 @@ function getBudget() {
 }
 
 function saveBudgetToLocal() {
-    //budget = getBudget();
+    var arr = new Array();
     var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
     for (var i = 1; i < rowCount - 2; i++) {
-        var currRow = rows[i];
+        const checkStr = 'check' + `${i}`;
+        const dateStr = 'date' + `${i}`;
+        const costStr = 'cost' + `${i}`;
+        const itemStr = 'item' + `${i}`;
+        const labelsStr = 'label' + `${i}`;
         arr.push({
-            check:document.getElementById(`check${i}`).checked,
-            date:document.getElementById(`date${i}`).value,
-            cost:document.getElementById(`cost${i}`).value,
-            item:document.getElementById(`item${i}`).value,
-            labels:document.getElementById(`label${i}`).options[document.getElementById(`label${i}`).selectedIndex].text,
+            check:document.getElementById(checkStr).checked,
+            date:document.getElementById(dateStr).value,
+            cost:document.getElementById(costStr).value,
+            item:document.getElementById(itemStr).value,
+            labels:document.getElementById(labelsStr).options[document.getElementById(labelsStr).selectedIndex].text,
         });
     }
     localStorage.setItem("expenseData", JSON.stringify(arr));
