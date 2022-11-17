@@ -1,11 +1,13 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    let recipes = getRecipesFromStorage();
-    addRecipesToDocument(recipes);
-    initFormHandler();
-    console.log(localStorage.getItem("tr"));
+    // let recipes = getRecipesFromStorage();
+    // addRecipesToDocument(recipes);
+    // initFormHandler();
+    // console.log(localStorage.getItem("tr"));
   }
+
+var arr = new Array();
 
 function createBudget() {
     document.getElementById("expensetable").style.display = "block";
@@ -64,5 +66,15 @@ function deleteBudget() {
 }
 
 function getBudget() {
+    var budget = localStorage.getItem("budgetData");
+    if (budget != null) {
+        budget = JSON.parse(budget);
+    }
+}
 
+function saveBudgetToLocal() {
+    getBudget();
+    arr.push({
+        name:document.getElementById("").value,
+    });
 }
