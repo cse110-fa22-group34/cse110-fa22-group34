@@ -90,13 +90,13 @@ function saveBudgetToLocal() {
         const dateStr = 'date' + `${i}`;
         const costStr = 'cost' + `${i}`;
         const itemStr = 'item' + `${i}`;
-        const labelsStr = 'label' + `${i}`;
+        const labelStr = 'label' + `${i}`;
         arr.push({
             check:document.getElementById(checkStr).checked,
             date:document.getElementById(dateStr).value,
             cost:document.getElementById(costStr).value,
             item:document.getElementById(itemStr).value,
-            labels:document.getElementById(labelsStr).options[document.getElementById(labelsStr).selectedIndex].text,
+            label:document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text,
         });
     }
     localStorage.setItem("expenseData", JSON.stringify(arr));
