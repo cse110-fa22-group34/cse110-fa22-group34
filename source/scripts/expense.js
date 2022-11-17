@@ -27,18 +27,18 @@ function addRow() {
     costCol = row.insertCell();
     itemCol = row.insertCell();
     labelsCol = row.insertCell();
-    noCol.innerHTML = "<text>" + nextRowNum + "</text>";
-    checkCol.innerHTML="<input type=\"checkbox\">";
-    dateCol.innerHTML="<input type=\"date\">";  
-    costCol.innerHTML="<input type=\"number\">"; 
-    itemCol.innerHTML="<input/>";
+    noCol.innerHTML = "<text id=\"no\">" + nextRowNum + "</text>";
+    checkCol.innerHTML="<input id=\"check\" type=\"checkbox\"/>";
+    dateCol.innerHTML="<input id=\"date\" type=\"date\"/>";  
+    costCol.innerHTML="<input id=\"cost\" type=\"number\"/>"; 
+    itemCol.innerHTML="<input id=\"item\" />";
     labelsCol.innerHTML="<select>\
                             <option value=\"default\">--Please Select--</option>\
-                            <option value=\"opt1\">Label1</option>\
-                            <option value=\"opt2\">Label2</option>\
-                            <option value=\"opt3\">Label3</option>\
+                            <option value=\"opt1\">Label 1</option>\
+                            <option value=\"opt2\">Label 2</option>\
+                            <option value=\"opt3\">Label 3</option>\
                         </select>";
-} 
+}
 
 function deleteSelectedRows() {
     var tb = document.getElementById("expensetable");
@@ -76,5 +76,11 @@ function saveBudgetToLocal() {
     getBudget();
     arr.push({
         name:document.getElementById("").value,
+        check:document.getElementById("").value,
+        date:document.getElementById("").value,
+        cost:document.getElementById("").value,
+        item:document.getElementById("").value,
+        labels:document.getElementById("").value,
     });
+    localStorage.setItem("budgetData", JSON.stringify(arr));
 }
