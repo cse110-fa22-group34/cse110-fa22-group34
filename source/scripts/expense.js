@@ -87,20 +87,14 @@ function saveBudgetToLocal() {
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
     for (var i = 1; i < rowCount - 2; i++) {
-        console.log(rows[i]);
         var currRow = rows[i];
-        for (let cell of currRow.cells) {
-            // console.log(cell.innerHTML);
-            console.log(document.getElementById(`date${i}`).value);
-        }
-        // arr.push({
-        //     check:currRow.getElementById("check").checked,
-        //     date:currRow.getElementById("date").value,
-        //     cost:currRow.getElementById("cost").value,
-        //     item:currRow.getElementById("item").value,
-        //     labels:currRow.getElementById("label").options[document.getElementById("label").selectedIndex].text,
-        // });
-
+        arr.push({
+            check:document.getElementById(`check${i}`).checked,
+            date:document.getElementById(`date${i}`).value,
+            cost:document.getElementById(`cost${i}`).value,
+            item:document.getElementById(`item${i}`).value,
+            labels:document.getElementById(`label${i}`).options[document.getElementById(`label${i}`).selectedIndex].text,
+        });
     }
     localStorage.setItem("expenseData", JSON.stringify(arr));
 }
