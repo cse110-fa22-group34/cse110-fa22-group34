@@ -1,5 +1,13 @@
-@import url(../styles/global.css);
+/* @import url(../styles/global.css); */
 
-#calendar {
+/* #calendar {
     height: 45%;
+} */
+
+.bg-info {
+    background-color: #E9E0D7;
 }
+
+/* .form-inline {
+    display: hidden;
+} */
