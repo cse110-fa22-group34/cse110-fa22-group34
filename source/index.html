@@ -104,15 +104,17 @@
 
     <div class="reminders-calendar-container">
       <!-- Reminders -->
+      <h1>Reminders</h1>
       <div id="reminders">
-        <h1>Reminders</h1>
         <ul id="reminderList">
-          <li>&emsp;Credit Card Bill<span class="remove">&minus;</span></li>
-          <li>&emsp;Groceries<span class="remove">&minus;</span></li>
-          <li>&emsp;More Food<span class="remove">&minus;</span></li>
         </ul>
+      </div>
+      <div id="reminderInput">
+        <label for="reminder">Reminder:</label>
+        <input type="text" id="reminder" name="reminder">
         <button id='add' onclick="addReminder();">&plus;</button>
       </div>
+
 
       <!-- Calendar -->
       <div id="calendar">

@@ -1,12 +1,18 @@
-var removeButtons = document.getElementsByClassName("remove");
+function addReminder() {
+    var reminderListHTML= document.getElementById("reminderList");
+    var reminderLen = reminderListHTML.childNodes.length;
+    var newReminder = document.getElementById("reminder").value;
+    if (newReminder == ""){
+      alert("reminder name cannot be empty")
+    } else {
 
-for (var i = 0; i < removeButtons.length; i++) {
-  removeButtons[i].addEventListener("click", function() {
-    this.parentElement.style.display = 'none';
-  });
+      reminderListHTML.innerHTML += `<li id=\"${reminderLen+1}\">&emsp;${newReminder}<button class="remove" onclick="removeReminder(${reminderLen+1});">&minus;</button></li>`;
+      document.getElementById("reminder").value = "";
+      console.log(reminderLen);
+    }
 }
 
-function addReminder() {
-    var reminderList= document.getElementById("reminderList");
-    reminderList.innerHTML += "<li>&emsp;New Reminder<span class='remove'>&minus;</span></li>";
+function removeReminder(elem) {
+  var a = document.getElementById(elem.toString(10))
+  a.remove();
 }
