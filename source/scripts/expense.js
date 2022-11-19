@@ -36,9 +36,10 @@ function addRow() {
     itemCol.innerHTML = `<input id=\"item${nextRowNum}\" required type=\"text\"/>`;
     labelCol.innerHTML = `<select id=\"label${nextRowNum}\">\
                             <option value=\"default\">--Please Select--</option>\
-                            <option value=\"opt1\">Label 1</option>\
-                            <option value=\"opt2\">Label 2</option>\
-                            <option value=\"opt3\">Label 3</option>\
+                            <option value=\"opt1\">Grocery</option>\
+                            <option value=\"opt2\">Clothes</option>\
+                            <option value=\"opt3\">Transportation</option>\
+                            <option value=\"opt4\">Other</option>\
                         </select>`;
 }
 
