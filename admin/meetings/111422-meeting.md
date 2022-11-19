@@ -4,7 +4,16 @@
 6:00 PM - 7:00 PM; Location: zoom 
 
 ## Attendance
-
+- Sisy
+- Yash
+- Alessia
+- Spencer
+- David
+- Jiaxin
+- Xu
+- Derrick
+- Jack
+- Raphael
 
 ## Agenda
 1. Go over the assignments due today (make sure everything is submitted)
