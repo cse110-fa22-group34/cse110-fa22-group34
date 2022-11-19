@@ -46,17 +46,45 @@ function deleteSelectedRows() {
     var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
+    console.log(rowCount);
     var removelist = [];
     for (var i = 1; i < rowCount - 2; i++) {
         var cbox = rows[i].cells[1].getElementsByTagName("input")[0];
         if (cbox.checked) {
-            removelist.push(rows[i])
+            removelist.push(rows[i]);
         }
     }
     for(let elem of removelist) {
         elem.remove();
     }
-    // delete selected localStorage
+
+    rows = tb.getElementsByTagName("tr");
+    for (var i = 1; i < rows.length - 2; i++) {
+        var no = rows[i].cells[0].getElementsByTagName("text")[0];
+        no.innerHTML = i;
+    }
+    
+    for (var i = 1; i < rows.length - 2; i++) {
+        //console.log(rows[i].cells[1].getElementsByTagName("input")[0]);
+        var checkIDNew = 'check' + `${i}`;
+        rows[i].cells[1].getElementsByTagName("input")[0].id = checkIDNew;
+
+        //console.log(rows[i].cells[2].getElementsByTagName("input")[0]);
+        var dateIDNew = 'date' + `${i}`;
+        rows[i].cells[2].getElementsByTagName("input")[0].id = dateIDNew;
+
+        //console.log(rows[i].cells[3].getElementsByTagName("input")[0]);
+        var costIDNew = 'cost' + `${i}`;
+        rows[i].cells[3].getElementsByTagName("input")[0].id = costIDNew;
+
+        //console.log(rows[i].cells[4].getElementsByTagName("input")[0]);
+        var itemIDNew = 'item' + `${i}`;
+        rows[i].cells[4].getElementsByTagName("input")[0].id = itemIDNew;
+
+        //console.log(rows[i].cells[5].getElementsByTagName("select")[0]);
+        var labelIDNew = 'label' + `${i}`;
+        rows[i].cells[5].getElementsByTagName("select")[0].id = labelIDNew;
+    }
 }
 
 function deleteBudget() {
@@ -90,13 +118,13 @@ function saveBudgetToLocal() {
         const dateStr = 'date' + `${i}`;
         const costStr = 'cost' + `${i}`;
         const itemStr = 'item' + `${i}`;
-        const labelsStr = 'label' + `${i}`;
+        const labelStr = 'label' + `${i}`;
         arr.push({
             check:document.getElementById(checkStr).checked,
             date:document.getElementById(dateStr).value,
             cost:document.getElementById(costStr).value,
             item:document.getElementById(itemStr).value,
-            labels:document.getElementById(labelsStr).options[document.getElementById(labelsStr).selectedIndex].text,
+            label:document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text,
         });
     }
     localStorage.setItem("expenseData", JSON.stringify(arr));
