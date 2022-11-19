@@ -46,35 +46,44 @@ function deleteSelectedRows() {
     var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
+    console.log(rowCount);
+    var removelist = [];
     for (var i = 1; i < rowCount - 2; i++) {
         var cbox = rows[i].cells[1].getElementsByTagName("input")[0];
         if (cbox.checked) {
-        rows[i].remove();
-            for (var j = i+1; j < rowCount -1; j++) {
-                const checkStr = 'check' + `${j}`;
-                const checkStrNew = 'check' + `${j-1}`;
-                console.log(checkStr);
-                console.log(checkStrNew);
-                console.log(document.getElementById(checkStr).checked);
-                document.getElementById(checkStr).id = checkStrNew;
-
-                const dateStr = 'date' + `${j}`;
-                const dateStrNew = 'date' + `${j-1}`;
-                document.getElementById(dateStr).id = dateStrNew;
-
-                const costStr = 'cost' + `${j}`;
-                const costStrNew = 'cost' + `${j-1}`;
-                document.getElementById(costStr).id = costStrNew;
-
-                const itemStr = 'item' + `${j}`;
-                const itemStrNew = 'item' + `${j-1}`;
-                document.getElementById(itemStr).id = itemStrNew;
-
-                const labelStr = 'label' + `${j}`;
-                const labelStrNew = 'label' + `${j-1}`;
-                document.getElementById(labelStr).id = labelStrNew ;
-            }
+            removelist.push(rows[i]);
         }
+    }
+    for(let elem of removelist) {
+        elem.remove();
+    }
+
+    rows = tb.getElementsByTagName("tr");
+    for (var i = 1; i < rows.length - 2; i++) {
+        var no = rows[i].cells[0].getElementsByTagName("text")[0];
+        no.innerHTML = i;
+    }
+    
+    for (var i = 1; i < rows.length - 2; i++) {
+        //console.log(rows[i].cells[1].getElementsByTagName("input")[0]);
+        var checkIDNew = 'check' + `${i}`;
+        rows[i].cells[1].getElementsByTagName("input")[0].id = checkIDNew;
+
+        //console.log(rows[i].cells[2].getElementsByTagName("input")[0]);
+        var dateIDNew = 'date' + `${i}`;
+        rows[i].cells[2].getElementsByTagName("input")[0].id = dateIDNew;
+
+        //console.log(rows[i].cells[3].getElementsByTagName("input")[0]);
+        var costIDNew = 'cost' + `${i}`;
+        rows[i].cells[3].getElementsByTagName("input")[0].id = costIDNew;
+
+        //console.log(rows[i].cells[4].getElementsByTagName("input")[0]);
+        var itemIDNew = 'item' + `${i}`;
+        rows[i].cells[4].getElementsByTagName("input")[0].id = itemIDNew;
+
+        //console.log(rows[i].cells[5].getElementsByTagName("select")[0]);
+        var labelIDNew = 'label' + `${i}`;
+        rows[i].cells[5].getElementsByTagName("select")[0].id = labelIDNew;
     }
 }
 
