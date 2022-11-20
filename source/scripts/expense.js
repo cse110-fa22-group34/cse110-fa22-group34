@@ -21,7 +21,8 @@ function createBudget() {
 
 function addRow() {
     var tb = document.getElementById("expensetable");
-    var nextRowNum = tb.getElementsByTagName("tr").length - 2;
+    var rowCount = tb.getElementsByTagName("tr").length;
+    var nextRowNum = rowCount - 2;
     row = tb.insertRow(nextRowNum);
     noCol = row.insertCell();
     checkCol = row.insertCell();
@@ -50,7 +51,6 @@ function deleteSelectedRows() {
     var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
-    console.log(rowCount);
     var removelist = [];
     for (var i = 1; i < rowCount - 2; i++) {
         var cbox = rows[i].cells[1].getElementsByTagName("input")[0];
@@ -58,34 +58,30 @@ function deleteSelectedRows() {
             removelist.push(rows[i]);
         }
     }
+
     for(let elem of removelist) {
         elem.remove();
     }
 
     rows = tb.getElementsByTagName("tr");
     for (var i = 1; i < rows.length - 2; i++) {
-        var no = rows[i].cells[0].getElementsByTagName("text")[0];
-        no.innerHTML = i;
+        var num = rows[i].cells[0].getElementsByTagName("text")[0];
+        num.innerHTML = i;
     }
     
     for (var i = 1; i < rows.length - 2; i++) {
-        //console.log(rows[i].cells[1].getElementsByTagName("input")[0]);
         var checkIDNew = 'check' + `${i}`;
         rows[i].cells[1].getElementsByTagName("input")[0].id = checkIDNew;
 
-        //console.log(rows[i].cells[2].getElementsByTagName("input")[0]);
         var dateIDNew = 'date' + `${i}`;
         rows[i].cells[2].getElementsByTagName("input")[0].id = dateIDNew;
 
-        //console.log(rows[i].cells[3].getElementsByTagName("input")[0]);
         var costIDNew = 'cost' + `${i}`;
         rows[i].cells[3].getElementsByTagName("input")[0].id = costIDNew;
 
-        //console.log(rows[i].cells[4].getElementsByTagName("input")[0]);
         var itemIDNew = 'item' + `${i}`;
         rows[i].cells[4].getElementsByTagName("input")[0].id = itemIDNew;
 
-        //console.log(rows[i].cells[5].getElementsByTagName("select")[0]);
         var labelIDNew = 'label' + `${i}`;
         rows[i].cells[5].getElementsByTagName("select")[0].id = labelIDNew;
     }
@@ -97,14 +93,73 @@ function deleteBudget() {
     document.querySelector(".del_budget_btn").style.display = "none";
     document.querySelector(".update_budget_btn").style.display = "none";
     document.querySelector(".create_btn").style.display = "block";
+    //     var tb = document.getElementById("expensetable");
+//     var rows = tb.getElementsByTagName("tr");
+//     var rowCount = rows.length;
     localStorage.clear();
 }
 
-function updateBudget() {
-    saveBudgetToLocal();
+function updateTotalCost() {
     var storage = JSON.parse(localStorage.getItem('expenseData'));
     var totalCost = storage[storage.length - 1]["totalCost"];
-    document.getElementById('total cost').innerHTML = `<td id="total cost">$ ${totalCost}</td>`;
+    if (totalCost == null) {
+        document.getElementById('total cost').innerHTML = `<td id="total cost">$ 0</td>`;
+    }
+    else {
+        document.getElementById('total cost').innerHTML = `<td id="total cost">$ ${totalCost}</td>`;
+    }
+}
+
+function deleteInvalid() {
+    // delete row
+    var tb = document.getElementById("expensetable");
+    var rows = tb.getElementsByTagName("tr");
+    var rowCount = rows.length;
+    var removelist = [];
+    var removeIndices = [];
+    for (var i = 1; i < rowCount - 2; i++) {
+        var checkDate = document.getElementById(`date${i}`).value == '';
+        var checkCost = document.getElementById(`cost${i}`).value == '';
+        var checkItem = document.getElementById(`item${i}`).value == '';
+        var checkLabel = document.getElementById(`label${i}`).value == 'default';
+        if (checkDate || checkCost || checkItem || checkLabel) {
+            removelist.push(rows[i]);
+            removeIndices.push(i);
+        }
+    }
+
+    for(let elem of removelist) {
+        elem.remove();
+    }
+
+    rows = tb.getElementsByTagName("tr");
+    for (var i = 1; i < rows.length - 2; i++) {
+        var num = rows[i].cells[0].getElementsByTagName("text")[0];
+        num.innerHTML = i;
+    }
+    
+    for (var i = 1; i < rows.length - 2; i++) {
+        var checkIDNew = 'check' + `${i}`;
+        rows[i].cells[1].getElementsByTagName("input")[0].id = checkIDNew;
+
+        var dateIDNew = 'date' + `${i}`;
+        rows[i].cells[2].getElementsByTagName("input")[0].id = dateIDNew;
+
+        var costIDNew = 'cost' + `${i}`;
+        rows[i].cells[3].getElementsByTagName("input")[0].id = costIDNew;
+
+        var itemIDNew = 'item' + `${i}`;
+        rows[i].cells[4].getElementsByTagName("input")[0].id = itemIDNew;
+
+        var labelIDNew = 'label' + `${i}`;
+        rows[i].cells[5].getElementsByTagName("select")[0].id = labelIDNew;
+    }
+}
+
+function updateBudget() {
+    deleteInvalid();
+    saveBudgetToLocal();
+    updateTotalCost();
 }
 
 function getBudget() {
