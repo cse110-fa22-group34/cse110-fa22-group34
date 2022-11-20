@@ -31,9 +31,9 @@ function addRow() {
     labelCol = row.insertCell();
     noCol.innerHTML = "<text id=\"no\">" + nextRowNum + "</text>";
     checkCol.innerHTML = `<input id=\"check${nextRowNum}\" type=\"checkbox\"/>`;
-    dateCol.innerHTML = `<input id=\"date${nextRowNum}\" type=\"date\" required/>`;  
-    costCol.innerHTML = `<input id=\"cost${nextRowNum}\" type=\"number\" required/>`; 
-    itemCol.innerHTML = `<input id=\"item${nextRowNum}\" type=\"text\" required/>`;
+    dateCol.innerHTML = `<input id=\"date${nextRowNum}\" type=\"date\"/>`;  
+    costCol.innerHTML = `<input id=\"cost${nextRowNum}\" type=\"number\"/>`; 
+    itemCol.innerHTML = `<input id=\"item${nextRowNum}\" type=\"text\"/>`;
     labelCol.innerHTML = `<select id=\"label${nextRowNum}\">\
                             <option value=\"default\">--Please Select--</option>\
                             <option value=\"opt1\">Grocery</option>\
