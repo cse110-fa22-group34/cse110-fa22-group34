@@ -184,6 +184,7 @@ function deleteInvalid() {
 
 function updateBudget() {
     //deleteInvalid();
+    alert("Make sure to have all input fields filled");
     saveBudgetToLocal();
     updateTotalCost();
     saveExpenseTable();
