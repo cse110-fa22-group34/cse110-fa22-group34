@@ -52,14 +52,27 @@ function deleteSelectedRows() {
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
     var removelist = [];
+    var removeIndices = [];
+
     for (var i = 1; i < rowCount - 2; i++) {
         var cbox = rows[i].cells[1].getElementsByTagName("input")[0];
         if (cbox.checked) {
             removelist.push(rows[i]);
+            removeIndices.push(i);
         }
     }
 
-    for(let elem of removelist) {
+    // delete corresponding localStorage
+    var storage = JSON.parse(localStorage.getItem('expenseData'));
+    if (storage != null) {
+        for (var i = 0; i < removeIndices.length; i++) {
+            storage.splice(removeIndices[i] - 1, 1);
+        }
+        localStorage.setItem("expenseData", JSON.stringify(storage));
+        updateTotalCost();
+    }
+    
+    for (let elem of removelist) {
         elem.remove();
     }
 
@@ -101,12 +114,17 @@ function deleteBudget() {
 
 function updateTotalCost() {
     var storage = JSON.parse(localStorage.getItem('expenseData'));
-    var totalCost = storage[storage.length - 1]["totalCost"];
-    if (totalCost == null) {
+    if (storage == null) {
         document.getElementById('total cost').innerHTML = `<td id="total cost">$ 0</td>`;
     }
     else {
-        document.getElementById('total cost').innerHTML = `<td id="total cost">$ ${totalCost}</td>`;
+        var totalCostVal = 0;
+        for (var i = 0; i < storage.length; i++) {
+            totalCostVal = totalCostVal + parseInt(storage[i].cost);
+        }
+        storage.push({totalCost: totalCostVal});
+        localStorage.setItem("expenseData", JSON.stringify(storage));
+        document.getElementById('total cost').innerHTML = `<td id="total cost">$ ${totalCostVal}</td>`;
     }
 }
 
@@ -176,22 +194,19 @@ function saveBudgetToLocal() {
     var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
-    var totalCostVal = 0;
     for (var i = 1; i < rowCount - 2; i++) {
         const checkStr = 'check' + `${i}`;
         const dateStr = 'date' + `${i}`;
         const costStr = 'cost' + `${i}`;
         const itemStr = 'item' + `${i}`;
         const labelStr = 'label' + `${i}`;
-        totalCostVal = totalCostVal + parseInt(document.getElementById(costStr).value);
         arr.push({
-            check:document.getElementById(checkStr).checked,
-            date:document.getElementById(dateStr).value,
-            cost:parseInt(document.getElementById(costStr).value),
-            item:document.getElementById(itemStr).value,
-            label:document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text,
+            check: document.getElementById(checkStr).checked,
+            date: document.getElementById(dateStr).value,
+            cost: parseInt(document.getElementById(costStr).value),
+            item: document.getElementById(itemStr).value,
+            label: document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text,
         });
     }
-    arr.push({totalCost: totalCostVal});
     localStorage.setItem("expenseData", JSON.stringify(arr));
 }
