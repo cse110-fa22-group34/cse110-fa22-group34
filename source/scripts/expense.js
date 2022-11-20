@@ -182,7 +182,7 @@ function deleteInvalid() {
 }
 */
 
-function updateBudget() {
+function saveBudget() {
     //deleteInvalid();
     alert("Make sure to have all input fields filled");
     saveBudgetToLocal();
