@@ -184,7 +184,7 @@ function deleteInvalid() {
 
 function saveBudget() {
     //deleteInvalid();
-    alert("Make sure to have all input fields filled");
+    alert("Your budget has been saved! Please Make sure to have all input fields filled if you did not do so.");
     saveBudgetToLocal();
     updateTotalCost();
     saveExpenseTable();
