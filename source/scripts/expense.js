@@ -1,18 +1,27 @@
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', checkLocalStorage);
+//window.location.reload();
 
-function init() {
-    // let recipes = getRecipesFromStorage();
-    // addRecipesToDocument(recipes);
-    // initFormHandler();
-    // console.log(localStorage.getItem("tr"));
-  }
-
-//Create a function here so that if there is local storage then show the create Budget button, 
-//else show the expense table according to the local stoage
-
+function checkLocalStorage() {
+    if (JSON.parse(localStorage.getItem('expenseData')) != null) {
+        document.querySelector(".create_btn").style.display = "none";
+    }
+    else {
+        document.querySelector(".view_btn").style.display = "none";
+    }
+}
 
 function createBudget() {
     document.getElementById("expensetable").style.display = "block";
+    document.querySelector(".view_btn").style.display = "none";
+    document.querySelector(".del_select_btn").style.display = "inline";
+    document.querySelector(".del_budget_btn").style.display = "inline";
+    document.querySelector(".update_budget_btn").style.display = "inline";
+    document.querySelector(".create_btn").style.display = "none";
+}
+
+function viewBudget() {
+    document.getElementById("expensetable").style.display = "block";
+    document.querySelector(".view_btn").style.display = "none";
     document.querySelector(".del_select_btn").style.display = "inline";
     document.querySelector(".del_budget_btn").style.display = "inline";
     document.querySelector(".update_budget_btn").style.display = "inline";
@@ -35,7 +44,7 @@ function addRow() {
     dateCol.innerHTML = `<input id=\"date${nextRowNum}\" type=\"date\"/>`;  
     costCol.innerHTML = `<input id=\"cost${nextRowNum}\" type=\"number\"/>`; 
     itemCol.innerHTML = `<input id=\"item${nextRowNum}\" type=\"text\"/>`;
-    labelCol.innerHTML = `<select id=\"label${nextRowNum}\">\
+    labelCol.innerHTML = `<select style=\"border:none\" id=\"label${nextRowNum}\">\
                             <option value=\"default\">--Please Select--</option>\
                             <option value=\"opt1\">Grocery</option>\
                             <option value=\"opt2\">Clothes</option>\
