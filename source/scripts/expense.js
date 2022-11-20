@@ -31,15 +31,18 @@ function addRow() {
     labelCol = row.insertCell();
     noCol.innerHTML = "<text id=\"no\">" + nextRowNum + "</text>";
     checkCol.innerHTML = `<input id=\"check${nextRowNum}\" type=\"checkbox\"/>`;
-    dateCol.innerHTML = `<input id=\"date${nextRowNum}\" required type=\"date\"/>`;  
-    costCol.innerHTML = `<input id=\"cost${nextRowNum}\" required type=\"number\"/>`; 
-    itemCol.innerHTML = `<input id=\"item${nextRowNum}\" required type=\"text\"/>`;
+    dateCol.innerHTML = `<input id=\"date${nextRowNum}\" type=\"date\" required/>`;  
+    costCol.innerHTML = `<input id=\"cost${nextRowNum}\" type=\"number\" required/>`; 
+    itemCol.innerHTML = `<input id=\"item${nextRowNum}\" type=\"text\" required/>`;
     labelCol.innerHTML = `<select id=\"label${nextRowNum}\">\
                             <option value=\"default\">--Please Select--</option>\
                             <option value=\"opt1\">Grocery</option>\
                             <option value=\"opt2\">Clothes</option>\
                             <option value=\"opt3\">Transportation</option>\
-                            <option value=\"opt4\">Other</option>\
+                            <option value=\"opt4\">Housing</option>\
+                            <option value=\"opt5\">Monthly Membership</option>\
+                            <option value=\"opt6\">Entertainment</option>\
+                            <option value=\"opt7\">Other</option>\
                         </select>`;
 }
 
@@ -99,6 +102,9 @@ function deleteBudget() {
 
 function updateBudget() {
     saveBudgetToLocal();
+    var storage = JSON.parse(localStorage.getItem('expenseData'));
+    var totalCost = storage[storage.length - 1]["totalCost"];
+    document.getElementById('total cost').innerHTML = `<td id="total cost">$ ${totalCost}</td>`;
 }
 
 function getBudget() {
@@ -107,6 +113,7 @@ function getBudget() {
         budget = JSON.parse(budget);
     }
     return budget;
+    // ??? need this function?
 }
 
 function saveBudgetToLocal() {
@@ -114,19 +121,22 @@ function saveBudgetToLocal() {
     var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
     var rowCount = rows.length;
+    var totalCostVal = 0;
     for (var i = 1; i < rowCount - 2; i++) {
         const checkStr = 'check' + `${i}`;
         const dateStr = 'date' + `${i}`;
         const costStr = 'cost' + `${i}`;
         const itemStr = 'item' + `${i}`;
         const labelStr = 'label' + `${i}`;
+        totalCostVal = totalCostVal + parseInt(document.getElementById(costStr).value);
         arr.push({
             check:document.getElementById(checkStr).checked,
             date:document.getElementById(dateStr).value,
-            cost:document.getElementById(costStr).value,
+            cost:parseInt(document.getElementById(costStr).value),
             item:document.getElementById(itemStr).value,
             label:document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text,
         });
     }
+    arr.push({totalCost: totalCostVal});
     localStorage.setItem("expenseData", JSON.stringify(arr));
 }
