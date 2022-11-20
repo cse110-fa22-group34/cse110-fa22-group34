@@ -122,6 +122,7 @@ function deleteBudget() {
         tb.deleteRow(1);
     }
     localStorage.clear();
+    updateTotalCost();
 }
 
 function updateTotalCost() {
