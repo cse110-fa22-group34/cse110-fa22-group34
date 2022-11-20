@@ -3,9 +3,8 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
   drawLineGraph();
-  // Get reference to the 'View Chart' button and add a listener to it.
-  let viewChartButton = document.getElementById('view_chart');
-  viewChartButton.addEventListener('click', showSelectedVisualization);
+  let select_change = document.getElementById('visualization_type');
+  select_change.addEventListener('change', showSelectedVisualization);
 }
 
 /**
