@@ -106,9 +106,12 @@ function deleteBudget() {
     document.querySelector(".del_budget_btn").style.display = "none";
     document.querySelector(".update_budget_btn").style.display = "none";
     document.querySelector(".create_btn").style.display = "block";
-    //     var tb = document.getElementById("expensetable");
-//     var rows = tb.getElementsByTagName("tr");
-//     var rowCount = rows.length;
+    var tb = document.getElementById("expensetable");
+    var rows = tb.getElementsByTagName("tr");
+    var rowCount = rows.length;
+    for (var i = 1; i < rowCount - 2; i++) {
+        tb.deleteRow(1);
+    }
     localStorage.clear();
 }
 
