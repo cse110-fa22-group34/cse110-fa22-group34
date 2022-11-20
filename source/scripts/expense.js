@@ -123,7 +123,9 @@ function updateTotalCost() {
     else {
         var totalCostVal = 0;
         for (var i = 0; i < storage.length; i++) {
-            totalCostVal = totalCostVal + parseInt(storage[i].cost);
+            if (storage[i].cost != null) {
+                totalCostVal = totalCostVal + parseInt(storage[i].cost);
+            }
         }
         localStorage.setItem('totalCost',totalCostVal);
         //storage.push({totalCost: totalCostVal});
@@ -222,7 +224,6 @@ function saveBudgetToLocal() {
 function saveExpenseTable(){
     var tb = document.getElementById("expensetable");
     tbHTML = tb.innerHTML;
-    //console.log(tbHTML);
     localStorage.setItem("expenseTable",tbHTML);
 }
 
