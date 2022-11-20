@@ -3,30 +3,19 @@ window.addEventListener('DOMContentLoaded', checkLocalStorage);
 
 function checkLocalStorage() {
     if (JSON.parse(localStorage.getItem('expenseData')) != null) {
-        document.querySelector(".create_btn").style.display = "none";
-    }
-    else {
-        document.querySelector(".view_btn").style.display = "none";
+        createBudget();
+        loadExpenseTable();
     }
 }
 
 function createBudget() {
     document.getElementById("expensetable").style.display = "block";
-    document.querySelector(".view_btn").style.display = "none";
     document.querySelector(".del_select_btn").style.display = "inline";
     document.querySelector(".del_budget_btn").style.display = "inline";
     document.querySelector(".update_budget_btn").style.display = "inline";
     document.querySelector(".create_btn").style.display = "none";
 }
 
-function viewBudget() {
-    document.getElementById("expensetable").style.display = "block";
-    document.querySelector(".view_btn").style.display = "none";
-    document.querySelector(".del_select_btn").style.display = "inline";
-    document.querySelector(".del_budget_btn").style.display = "inline";
-    document.querySelector(".update_budget_btn").style.display = "inline";
-    document.querySelector(".create_btn").style.display = "none";
-}
 
 function addRow() {
     var tb = document.getElementById("expensetable");
@@ -71,7 +60,7 @@ function deleteSelectedRows() {
         }
     }
 
-    // delete corresponding localStorage
+    /* delete corresponding localStorage
     var storage = JSON.parse(localStorage.getItem('expenseData'));
     if (storage != null) {
         for (var i = 0; i < removeIndices.length; i++) {
@@ -80,6 +69,7 @@ function deleteSelectedRows() {
         localStorage.setItem("expenseData", JSON.stringify(storage));
         updateTotalCost();
     }
+    */
     
     for (let elem of removelist) {
         elem.remove();
@@ -135,12 +125,14 @@ function updateTotalCost() {
         for (var i = 0; i < storage.length; i++) {
             totalCostVal = totalCostVal + parseInt(storage[i].cost);
         }
-        storage.push({totalCost: totalCostVal});
-        localStorage.setItem("expenseData", JSON.stringify(storage));
+        localStorage.setItem('totalCost',totalCostVal);
+        //storage.push({totalCost: totalCostVal});
+        //localStorage.setItem("expenseData", JSON.stringify(storage));
         document.getElementById('total cost').innerHTML = `<td id="total cost">$ ${totalCostVal}</td>`;
     }
 }
 
+/*
 function deleteInvalid() {
     // delete row
     var tb = document.getElementById("expensetable");
@@ -186,21 +178,24 @@ function deleteInvalid() {
         rows[i].cells[5].getElementsByTagName("select")[0].id = labelIDNew;
     }
 }
+*/
 
 function updateBudget() {
-    deleteInvalid();
+    //deleteInvalid();
     saveBudgetToLocal();
     updateTotalCost();
+    saveExpenseTable();
 }
 
+/*
 function getBudget() {
     var budget = localStorage.getItem("expenseData");
     if (budget != null) {
         budget = JSON.parse(budget);
     }
     return budget;
-    // ??? need this function?
 }
+*/
 
 function saveBudgetToLocal() {
     var arr = new Array();
@@ -223,3 +218,34 @@ function saveBudgetToLocal() {
     }
     localStorage.setItem("expenseData", JSON.stringify(arr));
 }
+
+function saveExpenseTable(){
+    var tb = document.getElementById("expensetable");
+    tbHTML = tb.innerHTML;
+    //console.log(tbHTML);
+    localStorage.setItem("expenseTable",tbHTML);
+}
+
+function loadExpenseTable(){
+    var tb = document.getElementById("expensetable");
+    tb.innerHTML = localStorage.getItem("expenseTable");
+
+    var arr = JSON.parse(localStorage.getItem("expenseData"));
+
+    var rows = tb.getElementsByTagName("tr");
+    var rowCount = rows.length;
+    for (var i = 1; i < rowCount - 2; i++) {
+        var checkStr = 'check' + `${i}`;
+        var dateStr = 'date' + `${i}`;
+        var costStr = 'cost' + `${i}`;
+        var itemStr = 'item' + `${i}`;
+        var labelStr = 'label' + `${i}`;
+        document.getElementById(checkStr).checked = arr[i-1].check;
+        document.getElementById(dateStr).value = arr[i-1].date;
+        document.getElementById(costStr).value = parseInt(arr[i-1].cost);
+        document.getElementById(itemStr).value = arr[i-1].item;
+        document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text = arr[i-1].label;
+    }
+}
+
+//To Jiaxin: Please check line 2, 63-72, 129-130, 135-181, 184, 190-198 because I did not find them necessary.

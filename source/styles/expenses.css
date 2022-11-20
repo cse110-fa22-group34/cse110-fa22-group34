@@ -26,12 +26,6 @@ input, select {
     font-size: medium;
 }
 
-.view_btn {
-    background-color: rgb(145, 235, 145);
-    display:block;
-    font-size: medium;
-}
-
 .create_btn:hover {
     background-color: black;
 }
