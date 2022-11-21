@@ -2,9 +2,19 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  drawLineGraph();
+  // drawLineGraph();
   let select_change = document.getElementById('visualization_type');
   select_change.addEventListener('change', showSelectedVisualization);
+  let total_budget_update_button = document.getElementById('total-budget');
+  let remaining_amount = document.getElementById('budget-remaining-amount');
+
+  if(localStorage.getItem('Total Budget')){
+    total_budget_update_button.value=  localStorage.getItem('Total Budget');
+  }
+  if(localStorage.getItem('Remaining')){
+    remaining_amount.textContent= '$'+localStorage.getItem('Remaining');
+  }
+  total_budget_update_button.addEventListener('input',update_remaining_budget)
 }
 
 /**
@@ -25,6 +35,9 @@ function showSelectedVisualization() {
     drawLineGraph();
   }
   else if (visualizationTypeSelect.value == 'character') {
+    drawChracter();
+  }
+  else if (visualizationTypeSelect.value == '') {
     drawChracter();
   }
 }
@@ -114,3 +127,18 @@ function drawLineGraph() {
     let visualizationFigure = document.getElementById('visualization_figure');
     visualizationFigure.style.display = 'none';
   }
+
+/**
+ * Function update the remaining value
+ * 
+ */
+function update_remaining_budget(){
+  const total_budget = document.getElementById('total-budget').value;
+  const totalcost = parseInt(localStorage.getItem('totalCost'));
+  const remaining_value = total_budget-totalcost;
+  const remaining_value_display = document.getElementById('budget-remaining-amount');
+  remaining_value_display.textContent = '$'+remaining_value;
+  localStorage.setItem('Total Budget',total_budget);
+  localStorage.setItem('Remaining',remaining_value);
+
+}
