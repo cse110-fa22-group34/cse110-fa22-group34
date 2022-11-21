@@ -4,6 +4,12 @@
     height: 90%;
 }
 
+input, select {
+    outline-style: none ;
+    border: none;
+    background-color: rgb(246,246,246);
+}
+
 .btn {
     border-width: 0;
     border-radius: 50px;
@@ -24,11 +30,16 @@
     background-color: black;
 }
 
+.view_btn:hover {
+    background-color: black;
+}
+
 .update_budget_btn {
     background-color: rgb(145, 235, 145);
     align-self: right;
     display:none;
     font-size: medium;
+    margin-top: 6px;
 }
 
 .update_budget_btn:hover {
@@ -74,6 +85,7 @@ table {
     width: 600px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius:6px;
 }
 
 table th {
@@ -83,4 +95,3 @@ table th {
 table td {
     background-color: rgb(246,246,246);
 }
-
