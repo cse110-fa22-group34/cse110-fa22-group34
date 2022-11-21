@@ -66,6 +66,13 @@ function showCalendar(month, year) {
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                 } // color today's date
+                else {
+                    let color = colorCell(budget, date, month, year);
+                    if (color) {
+                        cell.classList.add(`bg-info-${color}`);
+                    }   
+                }
+                
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 date++;
@@ -81,4 +88,11 @@ function showCalendar(month, year) {
 
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
+}
+
+function colorCell(budget, date, month, year) {
+    let colors = ["light-green", "dark-green", "neutral", "dark-red", "light-red"];
+    let rand = Math.floor(Math.random() * 5);
+    let color = colors[rand];
+    return color;
 }
