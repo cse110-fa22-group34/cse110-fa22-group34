@@ -1,5 +1,6 @@
 /* @import url(../styles/global.css); */
 
+<<<<<<< HEAD
 /* #calendar {
     height: 45%;
 } */
@@ -15,6 +16,13 @@
 .calendar-container {
     text-align: center;
 } */
+=======
+.container-calendar {
+    height: 45%;
+    padding: 20px 10px;
+}
+
+>>>>>>> main
 
 .bg-info {
     background-color: #E9E0D7;
@@ -32,6 +40,7 @@ body {
 table {
     border-collapse: collapse;
     background: white;
+<<<<<<< HEAD
     color: black;
 }
 
@@ -43,11 +52,40 @@ h2 {
     color: #3C4458;
 }
 
+=======
+    color: black; /*Font Color */
+}
+
+th { 
+    font-weight: bold;
+    padding: 0px; /*Cell Padding */
+    /* border: 1px solid #E9E0D7; Cell Border */
+}
+
+td {
+    padding: 5px; /*Cell Padding */
+}
+
+#days {
+    height: 40px; /*Row for Days Height */
+    color: black; /* Days Font Color */
+}
+
+h3 {
+    color: #0c3fc0; /* Header Font Color */
+}
+
+/* Buttons for Previous and Next */
+>>>>>>> main
 #previous, #next {
     font-size: 16px;
     font-weight: bold;
     color: #3C4458;
     border: #3C4458 solid 1px;
     border-radius: 5px;
+<<<<<<< HEAD
     
+=======
+    margin-top: 10px;
+>>>>>>> main
 }

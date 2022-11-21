@@ -10,13 +10,28 @@
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦃</text></svg>">
 
-  <!-- Recipe Card Custom Element -->
-  <script src="assets/scripts/RecipeCard.js" type="module"></script>
-
   <!-- Main Stylesheets & Scripts -->
-  <link rel="stylesheet" href="/source/styles/main.css" />
+  <link rel="stylesheet" href="/source/styles/main.css"/>
   <script src="assets/scripts/main.js" type="module"></script>
+
+  <!-- Expense Stylesheets & Scripts -->
+  <link href="./expense.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/source/scripts/expense.js"></script>
+
+  <!-- Visualization Stylesheets & Scripts -->
+  <link rel="stylesheet" href="/source/styles/visualization.css" />
+  <script src="/source/scripts/visualization.js" type="module"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- Reminder Stylesheets & Scripts -->
+  <script src="assets/scripts/reminder.js" type="module"></script>
+  <link rel="stylesheet" href="/source/styles/reminder.css" />
+
+  <!-- Calendar Stylesheets & Scripts -->
+  <link href="/source/styles/calendar.css" rel="stylesheet">
+  <script type="text/javascript" src="/source/scripts/calendar.js"></script> 
 </head>
+
 
 <body>
   <main>
@@ -26,35 +41,62 @@
     </div>
     <div class="main-body">
 
-      <!-- Expenses -->
-      <div class="expenses-container">
-        <div id="expenses">
-          <h1>Expenses</h1>
-          <ul>
-            <li>First</li>
-            <li>Second</li>
-            <li>Third</li>
-            <li>Fourth</li>
-            <li>Fifth</li>
-          </ul>
-        </div>
-      </div>
+    <!-- Expenses -->
+    <div id="expenses">
+      <button class="btn create_btn" style="margin:5px;" onclick="createBudget()">+ Create New Budget</button>
+      <button class="btn del_select_btn" style="margin:5px;" onclick="deleteSelectedRows()">Delete Selected</button>
+      <button class="btn del_budget_btn" style="margin:5px;" onclick="deleteBudget()">Delete Budget</button>
+      <table id="expensetable" border="1" cellspacing="1">
+        <tr>
+            <th>No.</th>
+            <th>
+                <input type="checkbox" checked disabled>
+            </th>
+            <th>Date</th>
+            <th>Cost</th>
+            <th>Item</th>
+            <th>Labels</th>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <button class="btn add_btn" onclick="addRow()">+ Add Row</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td>Total Cost:</td>
+            <td id="total cost">$</td>
+            <td colspan="2"></td>
+        </tr>
+      </table>
+      <button class="btn update_budget_btn" onclick="saveBudget()">Save Budget</button>
+      <br/>
+    </div>
       
 
-      <div class="budget-vis-container">
-        <!-- Budget/remaining field -->
-        <div id="budget">
-          <label for="budget">Budget: </label><br>
-          <input type="text" id="budget" name="budget"><br>
-          <label for="budget-remaining">Remaining Budget: </label><br>
-          <input type="text" id="budget-remaining" name="budget-remaining">
-        </div>
+    <div class="budget-vis-container">
+      <!-- Budget/remaining field -->
+      
+      <div id="budget">
+        <span class="title">Budget</span>
+        <span  class="textview" id="total-budget">$ 900.0</span>
+        <span class="title">Remaining Amount</span>
+        <span  class="textview" id="budget-remaining-amount">$ 28.0</span>
+      </div>
         
 
-        <!-- Visualization -->
-        <div id="visualization">
-          <h1>Visualization</h1>
+      <!-- Visualization -->
+      <div id="visualization">
+          <span class="title">Visualization</span>
+          <select id="visualization_type">
+            <option value="">-----Select Chart-----</option>
+            <option value="pie_chart">Pie Chart</option>
+            <option value="line_graph">Line Graph</option>
+            <option value="character">Character</option>
+          </select>
+          <!-- <button type="submit" id="view_chart">VIEW CHART</button> -->
         </div>
+        <div id="visualization_figure"></div>
       </div>
       
 
@@ -62,15 +104,30 @@
         <!-- Reminders -->
         <div id="reminders">
           <h1>Reminders</h1>
+          <ul id="reminderList">
+            <li>&emsp;Credit Card Bill<span class="remove">&minus;</span></li>
+            <li>&emsp;Groceries<span class="remove">&minus;</span></li>
+            <li>&emsp;More Food<span class="remove">&minus;</span></li>
+          </ul>
+          <button id='add' onclick="addReminder();">&plus;</button>
         </div>
 
         <!-- Calendar -->
+<<<<<<< HEAD
         <div class="calendar-container">
           <div class="calendar-card">
               <h3 class="calendar-header" id="monthAndYear"></h3>
               <table class="table table-bordered table-responsive-sm" id="calendar">
                   <thead>
                   <tr>
+=======
+        <div class="container-calendar">
+          <div class="card-calendar">
+              <h3 class="calendar-header" id="monthAndYear"></h3>
+              <table class="table table-bordered table-responsive-sm" id="calendar">
+                  <thead>
+                  <tr id="days">
+>>>>>>> main
                       <th>Sun</th>
                       <th>Mon</th>
                       <th>Tue</th>
@@ -88,13 +145,23 @@
       
               <div class="form-inline1">
       
+<<<<<<< HEAD
                   <button id="previous" onclick="previous()">Previous</button>
                   <button id="next" onclick="next()">Next</button>
+=======
+                  <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+      
+                  <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+>>>>>>> main
               </div>
               <br/>
               <form class="form-inline2">
                   <label class="lead mr-2 ml-2" for="month">Jump To: </label>
+<<<<<<< HEAD
                   <select class="form-control" name="month" id="month" onchange="jump()">
+=======
+                  <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+>>>>>>> main
                       <option value=0>Jan</option>
                       <option value=1>Feb</option>
                       <option value=2>Mar</option>
@@ -155,12 +222,14 @@
               </select></form>
           </div>
           <script src="/source/scripts/calendar.js"></script>
+<<<<<<< HEAD
+      </div>
+=======
+>>>>>>> main
       </div>
       </div>
-      
+    </div>
+   </div>
   </main>
 </body>
 </html>
-
-
-

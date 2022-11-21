@@ -3,6 +3,95 @@
 #expenses {
     height: 90%;
 }
-#expensesText {
 
+input, select {
+    outline-style: none ;
+    border: none;
+    background-color: rgb(246,246,246);
+}
+
+.btn {
+    border-width: 0;
+    border-radius: 50px;
+    width: 200px;
+    height: 50px;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+}
+
+.create_btn {
+    background-color: rgb(145, 235, 145);
+    display:block;
+    font-size: medium;
+}
+
+.create_btn:hover {
+    background-color: black;
+}
+
+.view_btn:hover {
+    background-color: black;
+}
+
+.update_budget_btn {
+    background-color: rgb(145, 235, 145);
+    align-self: right;
+    display:none;
+    font-size: medium;
+    margin-top: 6px;
+}
+
+.update_budget_btn:hover {
+    background-color: black;
+}
+
+#expensetable {
+   display:none; 
+}
+
+.add_btn {
+    border-radius: 0px;
+    width: 600px;
+    height: 50px;
+    background-color: rgb(246,246,246);
+    color:black;
+    font-size: medium;
+}
+
+.del_select_btn {
+    background-color: rgb(174, 216, 229);
+    display:none;
+    font-size: medium;
+}
+
+.del_select_btn:hover {
+    background-color: black;
+}
+
+.del_budget_btn {
+    background-color: red;
+    display:none;
+    font-size: medium;
+}
+
+.del_budget_btn:hover {
+    background-color: black;
+}
+
+table {
+    background-color: rgb(155,155,155);
+    text-align: center;
+    width: 600px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius:6px;
+}
+
+table th {
+    background-color: rgb(246,246,246);
+}
+
+table td {
+    background-color: rgb(246,246,246);
 }
