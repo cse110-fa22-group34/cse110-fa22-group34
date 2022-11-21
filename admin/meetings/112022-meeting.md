@@ -1,7 +1,7 @@
 # 11/20/2022 Meeting 
 
 ## Time
-8:00 PM - 8:45 PM; Location: zoom 
+8:00 PM - 9:00 PM; Location: zoom 
 
 ## Attendance
 - Sisy
@@ -24,7 +24,7 @@
 - From Yash: add team page to our website (Alessia will convert our team.md into an html page)
 
 ## Grading Rubric (Required Components)
-(as suggested by our TA)
+As suggested by our TA.
 
 - every file name needs to be meaningful; has to convey the idea behind the file
 - every file should contain a comment on top / header (3-4 lines) about what the file does (functionality, why we have this file)
@@ -37,9 +37,23 @@
   - when defining a function, make sure there are comments above the function specifying what the parameters mean, exepcted output & type of output)
     - see examples on GeeksForGeeks
   - whenever making a decision or using logic (ex. finding out minimum element within an array) it should also be documented in comments
+  - good coding style
 - unit tests should cover all possible scenarios
-Example Format:
+  - Example Format:
+    - Test Case 1:
+      Results:
+      Expected Results:
+      // screenshots
+  - write down our thought processes
+  - 1 file (multiple test cases) for each component
+  - test every functionality instead of every single function
 
-Test Case 1:
-Results:
-Expected Results:
+## Other Expectations
+As suggested by our TA.
+
+- make sure to read the assignments on Canvas very cautiously & incorporate everything in our project. every line & expectations discussed by the prof is sth they will consider when grading
+- be proactive in discussing deadlines & things due soon with the TA in meetings; they want to see our proactiveness
+- can @ TA in groupchat after submitting an assignment for her to check before the deadline
+- try to get feedback from our TA early on so we have time to make changes before deadlines
+- unless sbd is slacking off / not contributing... etc. every member should be getting the same grades for the project
+  - our TA will be checking our commit histories (if paired programming then it's fine) & asking team leads abt how we're distributing tasks
