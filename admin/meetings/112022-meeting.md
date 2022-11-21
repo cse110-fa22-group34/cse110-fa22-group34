@@ -1,7 +1,7 @@
 # 11/20/2022 Meeting 
 
 ## Time
-8:00 PM - 9:00 PM; Location: zoom 
+8:00 PM - 9:20 PM; Location: zoom 
 
 ## Attendance
 - Sisy
@@ -15,13 +15,15 @@
 - Yash
 
 ## Agenda
-1. Looked over everyone's progress
-2. Suggestions time
-3. TA joins at 8:30 -> discuss grading rubric, expectations for project
+1. Look over everyone's progress
+2. Give suggestions to each other & share new ideas
+3. TA joins at 8:30
+  - discuss grading rubric, expectations for the project
+  - show TA our current website progress
 
 ## New Ideas
-- From Yash: we could have a archive budget page so we can make new budgets but don't have to delete old budgets
 - From Yash: add team page to our website (Alessia will convert our team.md into an html page)
+- From Yash: we could have a archive budget page so we can make new budgets but don't have to delete old budgets
 
 ## Grading Rubric (Required Components)
 As suggested by our TA.
@@ -41,9 +43,13 @@ As suggested by our TA.
 - unit tests should cover all possible scenarios
   - Example Format:
     - Test Case 1:
+    
       Results:
+     
       Expected Results:
+      
       // screenshots
+      
   - write down our thought processes
   - 1 file (multiple test cases) for each component
   - test every functionality instead of every single function
@@ -56,4 +62,4 @@ As suggested by our TA.
 - can @ TA in groupchat after submitting an assignment for her to check before the deadline
 - try to get feedback from our TA early on so we have time to make changes before deadlines
 - unless sbd is slacking off / not contributing... etc. every member should be getting the same grades for the project
-  - our TA will be checking our commit histories (if paired programming then it's fine) & asking team leads abt how we're distributing tasks
+  - our TA will be checking our commit histories (if paired programming then it's ok if some ppl don't have commits) & asking team leads abt how we're distributing tasks, how everyone is doing... etc.
