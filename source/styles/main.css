@@ -20,7 +20,8 @@ div.main-body {
 }
 /* make all text within divs green */
 div {
-    color: #99AA84
+    color: #99AA84;
+    background-color: #FBFAF4;
 }
 /* make all buttons the same color*/
 .btn {
@@ -32,15 +33,54 @@ div {
 /*
 styling budget component
 */
-table {
+#expensetable {
     color: #99AA84 !important;
 }
 
-table th {
+#expensetable th {
     background-color: #E3E7D7 !important;
+}
+
+#expensetable td {
+    background-color: #E3E7D7 !important;
+}
+
+#expensetable input {
+    background-color: #E3E7D7 !important;
+    color: #99AA84;
+}
+
+/* END OF EXPENSES COMPONENT STYLING*/
+
+/*START OF VISUALIZATION STYLING*/
+
+.budget-vis-container {
+    background-color: #EBE4DD !important;
+}
+
+/* END OF VISUALIZATION STYLING */
+
+/* START OF REMINDERS VISUALIZATION */
+
+#reminders {
+    background-color:#FBFAF4 !important;
+}
+
+#reminders li {
+    color : #99AA84;
+}
+/* END */ 
+
+table th {
+   background-color: #FBFAF4 !important;
+   color: #99AA84
 }
 
 table td {
-    background-color: #E3E7D7 !important;
+    background-color: #FBFAF4 !important;
+    color: #99AA84;
 }
 
+.calendar-header {
+    color : #99AA84;
+}
