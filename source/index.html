@@ -65,9 +65,9 @@
         </div>
 
         <!-- Calendar -->
-        <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
-          <div class="card">
-              <h3 class="card-header" id="monthAndYear"></h3>
+        <div class="calendar-container">
+          <div class="calendar-card">
+              <h3 class="calendar-header" id="monthAndYear"></h3>
               <table class="table table-bordered table-responsive-sm" id="calendar">
                   <thead>
                   <tr>
@@ -88,14 +88,13 @@
       
               <div class="form-inline1">
       
-                  <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
-      
-                  <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+                  <button id="previous" onclick="previous()">Previous</button>
+                  <button id="next" onclick="next()">Next</button>
               </div>
               <br/>
               <form class="form-inline2">
                   <label class="lead mr-2 ml-2" for="month">Jump To: </label>
-                  <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                  <select class="form-control" name="month" id="month" onchange="jump()">
                       <option value=0>Jan</option>
                       <option value=1>Feb</option>
                       <option value=2>Mar</option>
