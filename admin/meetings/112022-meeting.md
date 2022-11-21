@@ -1,7 +1,7 @@
 # 11/20/2022 Meeting 
 
 ## Time
-8:00 PM - 9:20 PM; Location: zoom 
+8:00 PM - 9:30 PM; Location: zoom 
 
 ## Attendance
 - Sisy
