@@ -1,7 +1,16 @@
-@import url(../styles/global.css);
+/* @import url(../styles/global.css); */
 
-#calendar {
+/* #calendar {
     height: 45%;
+} */
+
+.bg-info {
+    background-color: #E9E0D7;
+}
+
+
+.form-inline2 {
+    display: none;
 }
 
 body {
@@ -20,4 +29,13 @@ th, td {
 
 h2 {
     color: #3C4458;
+}
+
+#previous, #next {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3C4458;
+    border: #3C4458 solid 1px;
+    border-radius: 5px;
+    
 }
