@@ -5,11 +5,29 @@
     padding: 20px 10px;
 }
 
-
 .bg-info {
     background-color: #E9E0D7;
 }
 
+.bg-info-dark-green {
+    background-color: #83b692;
+}
+
+.bg-info-light-green {
+    background-color: rgb(131, 182, 146, 0.5);
+}
+
+.bg-info-neutral {
+    background-color: white;
+}
+
+.bg-info-light-red {
+    background-color: rgb(194, 69, 45, 0.5);
+}
+
+.bg-info-dark-red {
+    background-color: #c2452d;
+}
 
 .form-inline2 {
     display: none;
@@ -41,7 +59,7 @@ td {
 }
 
 h3 {
-    color: #0c3fc0; /* Header Font Color */
+    color: #D1B9A4; /* Header Font Color */
 }
 
 /* Buttons for Previous and Next */
