@@ -37,7 +37,7 @@ As suggested by our TA.
   - i in for-loops are fine but if we're using the variable to store data the name should be sth easy to understand
 - follow the Camel Case Convention
 - clean, readable code (having function headers, comments)
-  - when defining a function, make sure there are comments above the function specifying what the parameters mean, exepcted output & type of output)
+  - when defining a function, make sure there are comments above the function specifying what the parameters mean, exepcted output & type of output
     - see examples on GeeksForGeeks
   - whenever making a decision or using logic (ex. finding out minimum element within an array) it should also be documented in comments
   - good coding style
@@ -58,7 +58,7 @@ As suggested by our TA.
 ## Other Expectations
 As suggested by our TA.
 
-- make sure to read the assignments on Canvas very cautiously & incorporate everything in our project. every line & expectations discussed by the prof is sth they will consider when grading
+- make sure to read the assignments on Canvas very cautiously & incorporate everything in our project. every line & expectations discussed by the prof are things they will consider when grading
 - be proactive in discussing deadlines & things due soon with the TA in meetings; they want to see our proactiveness
 - can @ TA in groupchat after submitting an assignment for her to check before the deadline
 - try to get feedback from our TA early on so we have time to make changes before deadlines
