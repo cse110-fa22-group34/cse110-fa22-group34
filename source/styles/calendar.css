@@ -1,28 +1,10 @@
 /* @import url(../styles/global.css); */
 
-<<<<<<< HEAD
-/* #calendar {
-    height: 45%;
-} */
-
-/* .bg-info {
-    background-color: #E9E0D7;
-}
-
-.form-inline2 {
-    display: none;
-}
-
-.calendar-container {
-    text-align: center;
-} */
-=======
 .container-calendar {
     height: 45%;
     padding: 20px 10px;
 }
 
->>>>>>> main
 
 .bg-info {
     background-color: #E9E0D7;
@@ -40,19 +22,6 @@ body {
 table {
     border-collapse: collapse;
     background: white;
-<<<<<<< HEAD
-    color: black;
-}
-
-th, td { 
-    font-weight: bold;
-}
-
-h2 {
-    color: #3C4458;
-}
-
-=======
     color: black; /*Font Color */
 }
 
@@ -76,16 +45,11 @@ h3 {
 }
 
 /* Buttons for Previous and Next */
->>>>>>> main
 #previous, #next {
     font-size: 16px;
     font-weight: bold;
     color: #3C4458;
     border: #3C4458 solid 1px;
     border-radius: 5px;
-<<<<<<< HEAD
-    
-=======
     margin-top: 10px;
->>>>>>> main
 }
