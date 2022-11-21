@@ -27,6 +27,9 @@ function showSelectedVisualization() {
   else if (visualizationTypeSelect.value == 'character') {
     drawChracter();
   }
+  else if (visualizationTypeSelect.value == '') {
+    drawChracter();
+  }
 }
 
 /**
