@@ -24,7 +24,7 @@
 - From Yash: add team page to our website (Alessia will convert our team.md into an html page)
 
 ## Grading Rubric (Required Components)
-- as suggested by our TA -
+(as suggested by our TA)
 
 - every file name needs to be meaningful; has to convey the idea behind the file
 - every file should contain a comment on top / header (3-4 lines) about what the file does (functionality, why we have this file)
@@ -37,3 +37,9 @@
   - when defining a function, make sure there are comments above the function specifying what the parameters mean, exepcted output & type of output)
     - see examples on GeeksForGeeks
   - whenever making a decision or using logic (ex. finding out minimum element within an array) it should also be documented in comments
+- unit tests should cover all possible scenarios
+Example Format:
+
+Test Case 1:
+Results:
+Expected Results:
