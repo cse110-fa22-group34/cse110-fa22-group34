@@ -23,7 +23,9 @@
 - From Yash: we could have a archive budget page so we can make new budgets but don't have to delete old budgets
 - From Yash: add team page to our website (Alessia will convert our team.md into an html page)
 
-## Grading Rubric (Components)
+## Grading Rubric (Required Components)
+- as suggested by our TA -
+
 - every file name needs to be meaningful; has to convey the idea behind the file
 - every file should contain a comment on top / header (3-4 lines) about what the file does (functionality, why we have this file)
 - every function name needs to be meaningful
