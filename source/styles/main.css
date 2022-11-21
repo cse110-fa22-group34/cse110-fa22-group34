@@ -6,12 +6,7 @@
 @import url(../styles/top-bar.css);
 
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: #FBFAF4
-}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -23,8 +18,29 @@ div.main-body {
     grid-template-columns: 3fr 1fr 2fr;
     grid-template: max-content;
 }
-
+/* make all text within divs green */
 div {
     color: #99AA84
+}
+/* make all buttons the same color*/
+.btn {
+    background-color: #99AA84 !important ;
+    color: #FBFAF4 !important ;
+}
+
+
+/*
+styling budget component
+*/
+table {
+    color: #99AA84 !important;
+}
+
+table th {
+    background-color: #E3E7D7 !important;
+}
+
+table td {
+    background-color: #E3E7D7 !important;
 }
 
