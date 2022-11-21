@@ -18,8 +18,8 @@
 1. Look over everyone's progress
 2. Give suggestions to each other & share new ideas
 3. TA joins at 8:30
-  - discuss grading rubric, expectations for the project
-  - show TA our current website progress
+  1. discuss grading rubric, expectations for the project
+  2. show TA our current website progress
 
 ## New Ideas
 - From Yash: add team page to our website (Alessia will convert our team.md into an html page)
