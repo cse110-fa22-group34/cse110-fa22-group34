@@ -63,3 +63,7 @@ As suggested by our TA.
 - try to get feedback from our TA early on so we have time to make changes before deadlines
 - unless sbd is slacking off / not contributing... etc. every member should be getting the same grades for the project
   - our TA will be checking our commit histories (if paired programming then it's ok if some ppl don't have commits) & asking team leads abt how we're distributing tasks, how everyone is doing... etc.
+
+## Project Suggestions from TA
+- Reminders: be able to drag items to rearrange, or sort based on importance
+- Visualization: show % instead of amount on pie chart
