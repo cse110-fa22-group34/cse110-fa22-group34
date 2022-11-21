@@ -78,25 +78,26 @@
       <!-- Budget/remaining field -->
       
       <div id="budget">
-        <span class="title">Budget</span>
-        <span  class="textview" id="total-budget">$ 900.0</span>
-        <span class="title">Remaining Amount</span>
-        <span  class="textview" id="budget-remaining-amount">$ 28.0</span>
+        <span class="title">Budget Remaining</span>
+        <span  class="textview" id="budget-remaining-amount">$ 0.0</span>
+
+        <span class="title">Budget Goal</span>
+        <input class="total_amount_of_budget_input" type="number" id="total-budget" name="total-budget"
+       min="0" max="10000000">
       </div>
         
 
-      <!-- Visualization -->
+      <!-- Chart -->
       <div id="visualization">
           <span class="title">Visualization</span>
           <select id="visualization_type">
             <option value="">-----Select Chart-----</option>
-            <option value="pie_chart">Pie Chart</option>
             <option value="line_graph">Line Graph</option>
-            <option value="character">Character</option>
+            <option value="pie_chart">Pie Chart</option>
           </select>
-        </div>
         <div id="visualization_figure"></div>
       </div>
+    </div>
       
 
     <div class="reminders-calendar-container">
