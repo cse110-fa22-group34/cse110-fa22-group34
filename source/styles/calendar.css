@@ -4,7 +4,7 @@
     height: 45%;
 } */
 
-.bg-info {
+/* .bg-info {
     background-color: #E9E0D7;
 }
 
@@ -14,4 +14,40 @@
 
 .calendar-container {
     text-align: center;
+} */
+
+.bg-info {
+    background-color: #E9E0D7;
+}
+
+
+.form-inline2 {
+    display: none;
+}
+
+body {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    background: white;
+    color: black;
+}
+
+th, td { 
+    font-weight: bold;
+}
+
+h2 {
+    color: #3C4458;
+}
+
+#previous, #next {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3C4458;
+    border: #3C4458 solid 1px;
+    border-radius: 5px;
+    
 }
