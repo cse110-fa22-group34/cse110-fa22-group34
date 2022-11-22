@@ -1,0 +1,76 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+    background-color: #FBFAF4;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .page-title{
+    text-align: center;
+    font-size: 200%;
+    text-size-adjust: auto;
+    color: #D1B9A4;
+  }
+  .column {
+    float: left;
+    width: 20%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+      
+    }
+  }
+  
+  .card {
+    background-color: #E3E7D7;
+    box-shadow: 0 4px 8px 0 #99AA84;
+  }
+  
+  .container {
+    background-color: #E3E7D7;
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    background-color: #E3E7D7;
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .name{
+    background-color: #E3E7D7;
+    color: #80916d;
+  }
+
+  .title {
+    background-color: #E3E7D7;
+    color: #D1B9A4;
+  }
+   
+  .description{
+    background-color: #E3E7D7;
+    color: #80916d;
+  }
+
+  .email{
+    background-color: #E3E7D7;
+    color: #80916d;
+  }
+
+  .github{
+    background-color: #E3E7D7;
+    color: #80916d;
+  }
+
+
+  
