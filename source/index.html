@@ -24,7 +24,7 @@
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <!-- Reminder Stylesheets & Scripts -->
-  <script src="assets/scripts/reminder.js" type="module"></script>
+  <script type="text/javascript" src="/source/scripts/reminder.js"></script> 
   <link rel="stylesheet" href="/source/styles/reminder.css" />
 
   <!-- Calendar Stylesheets & Scripts -->
@@ -100,17 +100,18 @@
     </div>
       
 
-      <div class="reminders-calendar-container">
-        <!-- Reminders -->
-        <div id="reminders">
-          <h1>Reminders</h1>
-          <ul id="reminderList">
-            <li>&emsp;Credit Card Bill<span class="remove">&minus;</span></li>
-            <li>&emsp;Groceries<span class="remove">&minus;</span></li>
-            <li>&emsp;More Food<span class="remove">&minus;</span></li>
-          </ul>
-          <button id='add' onclick="addReminder();">&plus;</button>
-        </div>
+    <div class="reminders-calendar-container">
+      <!-- Reminders -->
+      <h1>Reminders</h1>
+      <div id="reminders">
+        <ul id="reminderList">
+        </ul>
+      </div>
+      <div id="reminderInput">
+        <label for="reminder">Reminder:</label>
+        <input type="text" id="reminder" name="reminder">
+        <button id='add' onclick="addReminder();">&plus;</button>
+      </div>
 
         <!-- Calendar -->
         <div class="container-calendar">
