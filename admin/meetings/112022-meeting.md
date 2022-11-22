@@ -22,7 +22,7 @@
     - show TA our current website progress
 
 ## New Ideas
-- From Yash: add team page to our website (Alessia will convert our team.md into an html page)
+- From Yash: add team page to our website (Alessia & Spencer will convert our team.md into an html page)
 - From Yash: we could have a archive budget page so we can make new budgets but don't have to delete old budgets
 - From Alessia: incorporate function for when users receive instead of spend money
 
