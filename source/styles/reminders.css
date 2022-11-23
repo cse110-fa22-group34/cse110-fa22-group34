@@ -1,8 +1,14 @@
 @import url(../styles/global.css);
 
 #reminders {
-    height: 45%;
-    background-color: blueviolet;
+    width: 100%;
+    max-height: 350px;
+    overflow: scroll;
+    display: inline-block;
+}
+
+#reminderInput {
+  margin-bottom: 20px;
 }
 
 * {

@@ -44,6 +44,29 @@ div[class="budget-vis-container"] span[class="textview"] {
     text-align: right;
 }
 
+div[class="budget-vis-container"] input[class='total_amount_of_budget_input']{
+    background-color:#fff;
+    color: #495164;
+    width: 12vw;
+    border-radius: 0.7rem;
+    padding:12px;
+    font-size: 0.8rem;
+    margin: 5px;
+    outline: 1px solid #495164;
+    text-align: right;
+}
+
+div[class="budget-vis-container"] button[class="budget_update"]{
+    background-color:#fff;
+    color: #495164;
+    width: 12vw;
+    border-radius: 0.7rem;
+    padding:12px;
+    font-size: 0.8rem;
+    margin: 5px;
+    outline: 1px solid #495164;
+    text-align: center;
+}
 
 button[id="view_chart"] {
     background-color: #495164;
