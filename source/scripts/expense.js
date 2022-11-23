@@ -245,7 +245,7 @@ function saveBudget() {
  */
 function saveBudgetToLocal() {
     // create an empty array to store the row data
-    var arr = new Array();
+    var expenseData = new Array();
     // select the table element
     var tb = document.getElementById("expensetable");
     // select the tr element, which means the rows of the table
@@ -262,7 +262,7 @@ function saveBudgetToLocal() {
         const itemStr = 'item' + `${i}`;
         const labelStr = 'label' + `${i}`;
         // push the data in the ith row into the array created before
-        arr.push({
+        expenseData.push({
             check: document.getElementById(checkStr).checked,
             date: document.getElementById(dateStr).value,
             cost: parseInt(document.getElementById(costStr).value),
@@ -271,7 +271,7 @@ function saveBudgetToLocal() {
         });
     }
     // store arr into the item called expenseData in localStorage
-    localStorage.setItem("expenseData", JSON.stringify(arr));
+    localStorage.setItem("expenseData", JSON.stringify(expenseData));
 }
 
 /**	
@@ -295,11 +295,11 @@ function saveExpenseTable(){
 function loadExpenseTable(){
     // select the table element
     var tb = document.getElementById("expensetable");
-    // extract the innerHTML of the table from the local storage
+    // set the innerHTML of the table to be the one stored in the local storage
     tb.innerHTML = localStorage.getItem("expenseTable");
 
     // extract the expense data from the local storage
-    var arr = JSON.parse(localStorage.getItem("expenseData"));
+    var expenseData = JSON.parse(localStorage.getItem("expenseData"));
 
     // select the tr element, which means the rows of the table
     var rows = tb.getElementsByTagName("tr");
@@ -315,10 +315,10 @@ function loadExpenseTable(){
         var itemStr = 'item' + `${i}`;
         var labelStr = 'label' + `${i}`;
         // copy all the row data in the expense table to the innerHTML of the expense table
-        document.getElementById(checkStr).checked = arr[i - 1].check;
-        document.getElementById(dateStr).value = arr[i - 1].date;
-        document.getElementById(costStr).value = parseInt(arr[i - 1].cost);
-        document.getElementById(itemStr).value = arr[i - 1].item;
-        document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text = arr[i - 1].label;
+        document.getElementById(checkStr).checked = expenseData[i - 1].check;
+        document.getElementById(dateStr).value = expenseData[i - 1].date;
+        document.getElementById(costStr).value = parseInt(expenseData[i - 1].cost);
+        document.getElementById(itemStr).value = expenseData[i - 1].item;
+        document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text = expenseData[i - 1].label;
     }
 }
