@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', checkLocalStorage);
-//window.location.reload();
 
 function checkLocalStorage() {
     if (JSON.parse(localStorage.getItem('expenseData')) != null) {
@@ -8,11 +7,20 @@ function checkLocalStorage() {
     }
 }
 
+/**	
+ * Thifs function accomplishes the following five implementations:
+ * 1. display the expense table
+ * 2. display the "delete selected" button
+ * 3. display the "delete budget" button
+ * 4. display the "save budget" button
+ *  
+ * @param none
+ */
 function createBudget() {
     document.getElementById("expensetable").style.display = "block";
     document.querySelector(".del_select_btn").style.display = "inline";
     document.querySelector(".del_budget_btn").style.display = "inline";
-    document.querySelector(".update_budget_btn").style.display = "inline";
+    document.querySelector(".save_budget_btn").style.display = "inline";
     document.querySelector(".create_btn").style.display = "none";
 }
 
@@ -103,7 +111,7 @@ function deleteBudget() {
     document.getElementById("expensetable").style.display = "none";
     document.querySelector(".del_select_btn").style.display = "none";
     document.querySelector(".del_budget_btn").style.display = "none";
-    document.querySelector(".update_budget_btn").style.display = "none";
+    document.querySelector(".save_budget_btn").style.display = "none";
     document.querySelector(".create_btn").style.display = "block";
     var tb = document.getElementById("expensetable");
     var rows = tb.getElementsByTagName("tr");
@@ -184,7 +192,7 @@ function deleteInvalid() {
 
 function saveBudget() {
     //deleteInvalid();
-    alert("Make sure to have all input fields filled");
+    alert("Your budget has been saved! Please Make sure to have all input fields filled if you did not do so.");
     saveBudgetToLocal();
     updateTotalCost();
     saveExpenseTable();
