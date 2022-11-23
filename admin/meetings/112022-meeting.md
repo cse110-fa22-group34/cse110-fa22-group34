@@ -62,8 +62,7 @@ As suggested by our TA.
 - be proactive in discussing deadlines & things due soon with the TA in meetings; they want to see our proactiveness
 - can @ TA in groupchat after submitting an assignment for her to check before the deadline
 - try to get feedback from our TA early on so we have time to make changes before deadlines
-- unless sbd is slacking off / not contributing... etc. every member should be getting the same grades for the project
-  - our TA will be checking our commit histories (if paired programming then it's ok if some ppl don't have commits), task distributions, individual participations, and standups to grade everyone (we might not all get the same grades)
+- our TA will be checking our commit histories (if paired programming then it's ok if some ppl don't have commits), task distributions, individual participations, and standups to grade everyone, so we might not all get the same grades
 
 ## Project Suggestions from TA
 - Reminders: be able to drag items to rearrange, or sort based on importance
