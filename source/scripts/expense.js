@@ -1,16 +1,34 @@
-// file header
+/**
+ * This file is the javascript for the expense table section of the website.
+ * It includes the implementation of creating a new table, adding entries to
+ * the table, updating entries in the table, deleting entries in the table,
+ * and storing table data into the local storage.
+ * 
+ * References: MDN Web Docs
+ */
+
 
 /**
- * 
+ * ???
  */
 window.addEventListener('DOMContentLoaded', checkLocalStorage);
 
+/**	
+ * This function checks the local storage of the website and performs different
+ * actions based on the status of local storage.
+ *  
+ * @param none
+ */
 function checkLocalStorage() {
+    // if the expense data storage is not null
     if (JSON.parse(localStorage.getItem('expenseData')) != null) {
+        // call the creatBudget() function and load the existing expense table
         createBudget();
         loadExpenseTable();
     }
+    // if the expense data storage is null
     else {
+        // hide the "save budget" button
         document.querySelector(".save_budget_btn").style.display = "none";
     }
 }
@@ -84,56 +102,60 @@ function addRow() {
                         </select>`;
 }
 
+/**	
+ * This function deletes rows that are selected by the users. 
+ *  
+ * @param none
+ */
 function deleteSelectedRows() {
+    // select the table element
     var tb = document.getElementById("expensetable");
+    // select the tr element, which means the rows of the table
     var rows = tb.getElementsByTagName("tr");
+    // store the count of rows in rowCount
     var rowCount = rows.length;
-    var removelist = [];
-    var removeIndices = [];
+    // create an empty list to store the rows to be removed
+    var removeList = [];
 
+    // iterate through all the inner rows except for the header and footer row,
+    // which is why loop through rowCount - 2 times
     for (var i = 1; i < rowCount - 2; i++) {
+        // select the first user input, the checkbox cell of the row
         var cbox = rows[i].cells[1].getElementsByTagName("input")[0];
+        // if checkbox is checked
         if (cbox.checked) {
-            removelist.push(rows[i]);
-            removeIndices.push(i);
+            // push this row in to the remove list
+            removeList.push(rows[i]);
         }
     }
-
-    /* delete corresponding localStorage
-    var storage = JSON.parse(localStorage.getItem('expenseData'));
-    if (storage != null) {
-        for (var i = 0; i < removeIndices.length; i++) {
-            storage.splice(removeIndices[i] - 1, 1);
-        }
-        localStorage.setItem("expenseData", JSON.stringify(storage));
-        updateTotalCost();
-    }
-    */
     
-    for (let elem of removelist) {
+    // remove each row in the remove list
+    for (let elem of removeList) {
         elem.remove();
     }
 
+    // select the tr element, which means the rows of the table after deletion
     rows = tb.getElementsByTagName("tr");
+    // iterate through all the inner rows except for the header and footer row,
+    // which is why loop through rowCount - 2 times
     for (var i = 1; i < rows.length - 2; i++) {
+        // get the first column, No. column
         var num = rows[i].cells[0].getElementsByTagName("text")[0];
+        // reset the number index after deleting some rows to the correct index
         num.innerHTML = i;
-    }
-    
-    for (var i = 1; i < rows.length - 2; i++) {
+
+        // format the IDs of each cell in the current row with the row number
         var checkIDNew = 'check' + `${i}`;
-        rows[i].cells[1].getElementsByTagName("input")[0].id = checkIDNew;
-
         var dateIDNew = 'date' + `${i}`;
-        rows[i].cells[2].getElementsByTagName("input")[0].id = dateIDNew;
-
         var costIDNew = 'cost' + `${i}`;
-        rows[i].cells[3].getElementsByTagName("input")[0].id = costIDNew;
-
         var itemIDNew = 'item' + `${i}`;
-        rows[i].cells[4].getElementsByTagName("input")[0].id = itemIDNew;
-
         var labelIDNew = 'label' + `${i}`;
+
+        // reset the IDs to the new IDs after deleting some rows
+        rows[i].cells[1].getElementsByTagName("input")[0].id = checkIDNew;
+        rows[i].cells[2].getElementsByTagName("input")[0].id = dateIDNew;
+        rows[i].cells[3].getElementsByTagName("input")[0].id = costIDNew
+        rows[i].cells[4].getElementsByTagName("input")[0].id = itemIDNew;
         rows[i].cells[5].getElementsByTagName("select")[0].id = labelIDNew;
     }
 }
@@ -200,62 +222,12 @@ function updateTotalCost() {
     }
 }
 
-/*
-function deleteInvalid() {
-    // delete row
-    var tb = document.getElementById("expensetable");
-    var rows = tb.getElementsByTagName("tr");
-    var rowCount = rows.length;
-    var removelist = [];
-    var removeIndices = [];
-    for (var i = 1; i < rowCount - 2; i++) {
-        var checkDate = document.getElementById(`date${i}`).value == '';
-        var checkCost = document.getElementById(`cost${i}`).value == '';
-        var checkItem = document.getElementById(`item${i}`).value == '';
-        var checkLabel = document.getElementById(`label${i}`).value == 'default';
-        if (checkDate || checkCost || checkItem || checkLabel) {
-            removelist.push(rows[i]);
-            removeIndices.push(i);
-        }
-    }
-
-    for(let elem of removelist) {
-        elem.remove();
-    }
-
-    rows = tb.getElementsByTagName("tr");
-    for (var i = 1; i < rows.length - 2; i++) {
-        var num = rows[i].cells[0].getElementsByTagName("text")[0];
-        num.innerHTML = i;
-    }
-    
-    for (var i = 1; i < rows.length - 2; i++) {
-        var checkIDNew = 'check' + `${i}`;
-        rows[i].cells[1].getElementsByTagName("input")[0].id = checkIDNew;
-
-        var dateIDNew = 'date' + `${i}`;
-        rows[i].cells[2].getElementsByTagName("input")[0].id = dateIDNew;
-
-        var costIDNew = 'cost' + `${i}`;
-        rows[i].cells[3].getElementsByTagName("input")[0].id = costIDNew;
-
-        var itemIDNew = 'item' + `${i}`;
-        rows[i].cells[4].getElementsByTagName("input")[0].id = itemIDNew;
-
-        var labelIDNew = 'label' + `${i}`;
-        rows[i].cells[5].getElementsByTagName("select")[0].id = labelIDNew;
-    }
-}
-*/
-
 /**	
  * This function saves the entire expense table. 
  *  
  * @param none
  */
 function saveBudget() {
-    //deleteInvalid();
-
     // alert the following message to the user when they save their budget
     alert("Your budget has been saved! Please Make sure to have all input fields filled if you did not do so.");
     // store the expense table data into local storage
@@ -266,16 +238,6 @@ function saveBudget() {
     saveExpenseTable();
 }
 
-/*
-function getBudget() {
-    var budget = localStorage.getItem("expenseData");
-    if (budget != null) {
-        budget = JSON.parse(budget);
-    }
-    return budget;
-}
-*/
-
 /**	
  * This function saves all the row date in the expense table to the local storage. 
  *  
@@ -283,7 +245,7 @@ function getBudget() {
  */
 function saveBudgetToLocal() {
     // create an empty array to store the row data
-    var arr = new Array();
+    var expenseData = new Array();
     // select the table element
     var tb = document.getElementById("expensetable");
     // select the tr element, which means the rows of the table
@@ -293,14 +255,14 @@ function saveBudgetToLocal() {
     // iterate through all the inner rows except for the header and footer row,
     // which is why loop through rowCount - 2 times
     for (var i = 1; i < rowCount - 2; i++) {
-        // format the IDs of each cell in the ith column
+        // format the IDs of each cell in the ith row with the row number
         const checkStr = 'check' + `${i}`;
         const dateStr = 'date' + `${i}`;
         const costStr = 'cost' + `${i}`;
         const itemStr = 'item' + `${i}`;
         const labelStr = 'label' + `${i}`;
         // push the data in the ith row into the array created before
-        arr.push({
+        expenseData.push({
             check: document.getElementById(checkStr).checked,
             date: document.getElementById(dateStr).value,
             cost: parseInt(document.getElementById(costStr).value),
@@ -309,35 +271,54 @@ function saveBudgetToLocal() {
         });
     }
     // store arr into the item called expenseData in localStorage
-    localStorage.setItem("expenseData", JSON.stringify(arr));
+    localStorage.setItem("expenseData", JSON.stringify(expenseData));
 }
 
+/**	
+ * This function saves all the row date in the expense table to the local storage. 
+ *  
+ * @param none
+ */
 function saveExpenseTable(){
+    // select the table element
     var tb = document.getElementById("expensetable");
+    // store the innerHTML of the expense table into local storage
     tbHTML = tb.innerHTML;
     localStorage.setItem("expenseTable",tbHTML);
 }
 
+/**	
+ * This function loads the saved expense table. 
+ *  
+ * @param none
+ */
 function loadExpenseTable(){
+    // select the table element
     var tb = document.getElementById("expensetable");
+    // set the innerHTML of the table to be the one stored in the local storage
     tb.innerHTML = localStorage.getItem("expenseTable");
 
-    var arr = JSON.parse(localStorage.getItem("expenseData"));
+    // extract the expense data from the local storage
+    var expenseData = JSON.parse(localStorage.getItem("expenseData"));
 
+    // select the tr element, which means the rows of the table
     var rows = tb.getElementsByTagName("tr");
+    // store the count of rows in rowCount
     var rowCount = rows.length;
+    // iterate through all the inner rows except for the header and footer row,
+    // which is why loop through rowCount - 2 times
     for (var i = 1; i < rowCount - 2; i++) {
+        // format the IDs of each cell in the ith row with the row number
         var checkStr = 'check' + `${i}`;
         var dateStr = 'date' + `${i}`;
         var costStr = 'cost' + `${i}`;
         var itemStr = 'item' + `${i}`;
         var labelStr = 'label' + `${i}`;
-        document.getElementById(checkStr).checked = arr[i-1].check;
-        document.getElementById(dateStr).value = arr[i-1].date;
-        document.getElementById(costStr).value = parseInt(arr[i-1].cost);
-        document.getElementById(itemStr).value = arr[i-1].item;
-        document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text = arr[i-1].label;
+        // copy all the row data in the expense table to the innerHTML of the expense table
+        document.getElementById(checkStr).checked = expenseData[i - 1].check;
+        document.getElementById(dateStr).value = expenseData[i - 1].date;
+        document.getElementById(costStr).value = parseInt(expenseData[i - 1].cost);
+        document.getElementById(itemStr).value = expenseData[i - 1].item;
+        document.getElementById(labelStr).options[document.getElementById(labelStr).selectedIndex].text = expenseData[i - 1].label;
     }
 }
-
-//To Jiaxin: Please check line 2, 63-72, 129-130, 135-181, 184, 190-198 because I did not find them necessary.
