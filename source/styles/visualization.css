@@ -2,7 +2,7 @@
 
 #budget {
     height: 25%;
-    background-color: #FBFAF4;
+    /*background-color: #FBFAF4;*/
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -11,7 +11,7 @@
 
 #visualization {
     height: 65%;
-    background-color: #E9E0D7;
+    /*background-color: #E9E0D7;*/
     display: flex;
     flex-direction: column;
     width: fit-content;
