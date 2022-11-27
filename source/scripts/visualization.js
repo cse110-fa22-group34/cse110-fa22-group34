@@ -7,7 +7,7 @@ function init() {
   select_change.addEventListener('change', showSelectedVisualization);
   let total_budget_update_button = document.getElementById('total-budget');
   let remaining_amount = document.getElementById('budget-remaining-amount');
-  let save_budget_button = document.getElementById('save-budget-button');
+  let save_budget_button = document.querySelector('.save-budget-button');
   if(localStorage.getItem('Total Budget')){
     total_budget_update_button.value=  localStorage.getItem('Total Budget');
   }
