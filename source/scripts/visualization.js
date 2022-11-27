@@ -1,61 +1,34 @@
-/**
- * A Javascript file which deals with drawing selected visualizations.
- * It includes implementations for drawing pie chart, line graph visualizations
- * for the given budget data. It used Google Charts Library to draw the said visualizations.
- * 
- * References: 
- *          Google Charts Library Docs
- *          MDN Web Docs
- */
-
 // Run the init() function when the page has loaded
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  // Get reference to the visualization type selector.
+  // drawLineGraph();
   let select_change = document.getElementById('visualization_type');
-  // Add listener to the visualization type selector to draws the selected visualzation.
   select_change.addEventListener('change', showSelectedVisualization);
-
-  // Get reference to the total budget input field.
   let total_budget_update_button = document.getElementById('total-budget');
-  // If previous total budget value already exists in the localStorage then, fetch and populate it.
+  let remaining_amount = document.getElementById('budget-remaining-amount');
+  let save_budget_button = document.getElementById("btn_save_budget");
   if(localStorage.getItem('Total Budget')){
     total_budget_update_button.value=  localStorage.getItem('Total Budget');
   }
-  // Add listeners to the total budget input field so that when it's value is changed, 
-  // remaining budget value will update accordingly.
-  total_budget_update_button.addEventListener('input',update_remaining_budget);
-  total_budget_update_button.addEventListener('click',update_remaining_budget);
-
-  // Get reference to the remaining budget view.
-  let remaining_amount = document.getElementById('budget-remaining-amount');
-  // If previous remaining budget value already exists in the localStorage
-  // then, fetch and populate it.
   if(localStorage.getItem('Remaining')){
     remaining_amount.textContent= '$'+localStorage.getItem('Remaining');
   }
-
-  // Get reference to the save budget button.
-  let save_budget_button = document.getElementById("btn_save_budget");
-  // Add listener to the save budget button so that when current budget changes, 
-  // we update the value of remaining budget accordingly.
+  total_budget_update_button.addEventListener('input',update_remaining_budget);
+  total_budget_update_button.addEventListener('click',update_remaining_budget);
   save_budget_button.addEventListener('click',update_remaining_budget);
 }
 
 /**
  * Function that draws the selected visualization when called.
- * 
- * @param none
  */
 function showSelectedVisualization() {
 
-  // Show 'visualization_figure' <div> in which the visualization will be drawn.
-  // (It was initially hidden.)
+  // Show 'visualization_figure' <div> in which the visualization will be drawn. (It was hidden initially.)
   let visualizationFigure = document.getElementById('visualization_figure');
   visualizationFigure.style.display = 'block';
 
-  // Get selected visualization type and draw it.
+  // Get selected visualization type and draw the graph.
   let visualizationTypeSelect = document.getElementById('visualization_type');
   if (visualizationTypeSelect.value == 'pie_chart') {
     drawPieChart();
@@ -67,7 +40,7 @@ function showSelectedVisualization() {
     drawChracter();
   }
   else if (visualizationTypeSelect.value == '') {
-    visualizationFigure.style.display = 'none';
+    drawChracter();
   }
 }
 
