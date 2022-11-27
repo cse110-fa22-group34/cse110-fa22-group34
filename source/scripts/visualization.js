@@ -24,9 +24,11 @@ function init() {
     total_budget_update_button.value=  localStorage.getItem('Total Budget');
   }
   // Add listeners to the total budget input field so that when it's value is changed, 
-  // remaining budget value will update accordingly.
+  // remaining budget value and visualizations will update accordingly.
   total_budget_update_button.addEventListener('input',update_remaining_budget);
   total_budget_update_button.addEventListener('click',update_remaining_budget);
+  total_budget_update_button.addEventListener('input',showSelectedVisualization);
+  total_budget_update_button.addEventListener('click',showSelectedVisualization);
 
   // Get reference to the remaining budget view.
   let remaining_amount = document.getElementById('budget-remaining-amount');
@@ -39,8 +41,9 @@ function init() {
   // Get reference to the save budget button.
   let save_budget_button = document.getElementById("btn_save_budget");
   // Add listener to the save budget button so that when current budget changes, 
-  // we update the value of remaining budget accordingly.
+  // we update the value of remaining budget accordingly and also show updated visualization.
   save_budget_button.addEventListener('click',update_remaining_budget);
+  save_budget_button.addEventListener('click',showSelectedVisualization);
 }
 
 /**
@@ -72,25 +75,49 @@ function showSelectedVisualization() {
 }
 
 /**
- * Function that draws the pie chart for the given data.
- * TODO: Modify the function to draw chart using dynamic data once backend APIs are implemented.
+ * Function that draws the pie chart for the expenses data.
+ * 
+ * @param none
  */
 function drawPieChart() {
 
   google.charts.load('current', { packages: ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
 
-  function drawChart() {
+  async function drawChart() {
 
-    // Static example data.
-    let data = google.visualization.arrayToDataTable([
-      ['Category', 'Expense'],
-      ['Grocery', 310],
-      ['Commute', 200],
-      ['Insurance', 50],
-      ['Rent', 312],
-      ['Remaining', 28]
-    ]);
+    let expensesData = await JSON.parse(localStorage.getItem("expenseData"));
+    let totalCost = 0;
+    
+    let expenses = {};
+
+    expensesData.forEach(expense => {
+      let label = expense['label'], cost = expense['cost'];
+      totalCost += expense['cost'];
+      if(label in expenses){
+        expenses[label] += cost;
+      }
+      else {
+        expenses[label] = cost;
+      }
+    });
+
+    let graphData = [
+      ['Category', 'Expense']
+    ];
+
+    for (let [label, cost] of Object.entries(expenses)) {
+      graphData.push([label, cost]);
+    }
+
+    let total_budget_update_button = document.getElementById('total-budget');
+    let totalBudget = parseInt(total_budget_update_button.value) || 0;
+
+    if (totalCost < totalBudget){
+      graphData.push(['Remaining', totalBudget - totalCost]);
+    }
+    
+    let data = google.visualization.arrayToDataTable(graphData);
 
     // Custom options for the pie chart.
     let options = {
