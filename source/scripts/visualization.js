@@ -7,14 +7,16 @@ function init() {
   select_change.addEventListener('change', showSelectedVisualization);
   let total_budget_update_button = document.getElementById('total-budget');
   let remaining_amount = document.getElementById('budget-remaining-amount');
-
+  let save_budget_button = document.querySelector('.save-budget-button');
   if(localStorage.getItem('Total Budget')){
     total_budget_update_button.value=  localStorage.getItem('Total Budget');
   }
   if(localStorage.getItem('Remaining')){
     remaining_amount.textContent= '$'+localStorage.getItem('Remaining');
   }
-  total_budget_update_button.addEventListener('input',update_remaining_budget)
+  total_budget_update_button.addEventListener('input',update_remaining_budget);
+  total_budget_update_button.addEventListener('click',update_remaining_budget);
+  save_budget_button.addEventListener('click',update_remaining_budget);
 }
 
 /**
@@ -134,11 +136,13 @@ function drawLineGraph() {
  */
 function update_remaining_budget(){
   const total_budget = document.getElementById('total-budget').value;
-  const totalcost = parseInt(localStorage.getItem('totalCost'));
+  if(!localStorage.getItem('totalCost')){
+    localStorage.setItem('totalCost',0);
+  }
+  const totalcost = localStorage.getItem('totalCost');
   const remaining_value = total_budget-totalcost;
   const remaining_value_display = document.getElementById('budget-remaining-amount');
   remaining_value_display.textContent = '$'+remaining_value;
   localStorage.setItem('Total Budget',total_budget);
   localStorage.setItem('Remaining',remaining_value);
-
 }
