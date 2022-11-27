@@ -231,26 +231,61 @@ function drawLineGraph() {
 
 /**
  * Function that draws the appropriate charcter emotion w.r.t. current budget status.
- * TODO: Find character vectors and implement.
+ * 
+ * @param none
  */
  function drawChracter() {
+    // Get reference to visualization div and clear it.
     let visualizationFigure = document.getElementById('visualization_figure');
-    visualizationFigure.style.display = 'none';
+    visualizationFigure.innerHTML = '';
+
+    // Create a new image element.
+    let image = document.createElement('img');
+    // Set id to the image element to apply css styles.
+    image.setAttribute('id', 'visualization_character')
+
+    // Get the total budget.
+    const total_budget = document.getElementById('total-budget').value || 0;
+    // Get total cost.
+    const totalcost = localStorage.getItem('totalCost');
+
+    // If we are under 70% of our total buget, show happy frog :)
+    if(totalcost < 0.7*total_budget){
+      image.setAttribute('src', '/source/assets/frog-happy.svg')
+    }
+    // Else if we under our available budget, show neutral frog -_-
+    else if(totalcost < total_budget){
+      image.setAttribute('src', '/source/assets/frog-neutral.svg')
+    }
+    // If we are over our budget, show sad frog :(
+    else {
+      image.setAttribute('src', '/source/assets/frog-sad.svg')
+    }
+    // Add the image element to the visualization div.
+    visualizationFigure.appendChild(image)
   }
 
 /**
- * Function update the remaining value
+ * Function that calculates and updates the remaining budget value.
  * 
+ * @param none
  */
 function update_remaining_budget(){
-  const total_budget = document.getElementById('total-budget').value;
+  // Get total budget (if set, else 0).
+  const total_budget = document.getElementById('total-budget').value || 0;
+  // If totalCost is not yet set in the localStorage, set it to zero.
   if(!localStorage.getItem('totalCost')){
     localStorage.setItem('totalCost',0);
   }
+  // Get totalCost from localStorage.
   const totalcost = localStorage.getItem('totalCost');
+  // Calculate remaining budget.
   const remaining_value = total_budget-totalcost;
+  // Get reference to view that shows remaining budget.
   const remaining_value_display = document.getElementById('budget-remaining-amount');
+  // Set it to the calculated remaining budget.
   remaining_value_display.textContent = '$'+remaining_value;
+  // Update values in the localStorage.
   localStorage.setItem('Total Budget',total_budget);
   localStorage.setItem('Remaining',remaining_value);
 }
