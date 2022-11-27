@@ -24,9 +24,11 @@ function init() {
     total_budget_update_button.value=  localStorage.getItem('Total Budget');
   }
   // Add listeners to the total budget input field so that when it's value is changed, 
-  // remaining budget value will update accordingly.
+  // remaining budget value and visualizations will update accordingly.
   total_budget_update_button.addEventListener('input',update_remaining_budget);
   total_budget_update_button.addEventListener('click',update_remaining_budget);
+  total_budget_update_button.addEventListener('input',showSelectedVisualization);
+  total_budget_update_button.addEventListener('click',showSelectedVisualization);
 
   // Get reference to the remaining budget view.
   let remaining_amount = document.getElementById('budget-remaining-amount');
@@ -39,8 +41,9 @@ function init() {
   // Get reference to the save budget button.
   let save_budget_button = document.getElementById("btn_save_budget");
   // Add listener to the save budget button so that when current budget changes, 
-  // we update the value of remaining budget accordingly.
+  // we update the value of remaining budget accordingly and also show updated visualization.
   save_budget_button.addEventListener('click',update_remaining_budget);
+  save_budget_button.addEventListener('click',showSelectedVisualization);
 }
 
 /**
@@ -72,7 +75,7 @@ function showSelectedVisualization() {
 }
 
 /**
- * Function that draws the pie chart for the given data.
+ * Function that draws the pie chart for the expenses data.
  * 
  * @param none
  */
@@ -107,6 +110,13 @@ function drawPieChart() {
       graphData.push([label, cost]);
     }
 
+    let total_budget_update_button = document.getElementById('total-budget');
+    let totalBudget = parseInt(total_budget_update_button.value) || 0;
+
+    if (totalCost < totalBudget){
+      graphData.push(['Remaining', totalBudget - totalCost]);
+    }
+    
     let data = google.visualization.arrayToDataTable(graphData);
 
     // Custom options for the pie chart.
