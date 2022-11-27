@@ -239,18 +239,26 @@ function drawLineGraph() {
   }
 
 /**
- * Function update the remaining value
+ * Function that calculates and updates the remaining budget value.
  * 
+ * @param none
  */
 function update_remaining_budget(){
-  const total_budget = document.getElementById('total-budget').value;
+  // Get total budget (if set, else 0).
+  const total_budget = document.getElementById('total-budget').value || 0;
+  // If totalCost is not yet set in the localStorage, set it to zero.
   if(!localStorage.getItem('totalCost')){
     localStorage.setItem('totalCost',0);
   }
+  // Get totalCost from localStorage.
   const totalcost = localStorage.getItem('totalCost');
+  // Calculate remaining budget.
   const remaining_value = total_budget-totalcost;
+  // Get reference to view that shows remaining budget.
   const remaining_value_display = document.getElementById('budget-remaining-amount');
+  // Set it to the calculated remaining budget.
   remaining_value_display.textContent = '$'+remaining_value;
+  // Update values in the localStorage.
   localStorage.setItem('Total Budget',total_budget);
   localStorage.setItem('Remaining',remaining_value);
 }
