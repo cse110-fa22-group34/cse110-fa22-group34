@@ -81,19 +81,27 @@ function showSelectedVisualization() {
  */
 function drawPieChart() {
 
+  // Load the Visualization API and the corechart package from Google Charts Library.
   google.charts.load('current', { packages: ['corechart'] });
+  // Set callback function to be called after loading the library.
+  // The callback function fetches expenses data and draws the pie chart.
   google.charts.setOnLoadCallback(drawChart);
 
   async function drawChart() {
-
+    // Get the expenses data from the localstorage.
     let expensesData = await JSON.parse(localStorage.getItem("expenseData"));
+    // Variable to store total expenditure.
     let totalCost = 0;
     
+    // expenses Object to store cost associated with each label. (like a cost hashmap)
     let expenses = {};
 
+    // Loop through the expenses data.
     expensesData.forEach(expense => {
       let label = expense['label'], cost = expense['cost'];
+      // Update total expenditure so far.
       totalCost += expense['cost'];
+      // Update cost associated with current label in the expenses Object.
       if(label in expenses){
         expenses[label] += cost;
       }
@@ -102,76 +110,122 @@ function drawPieChart() {
       }
     });
 
+    // Restructure the {label:cost} data to match that of Google Charts library.
     let graphData = [
+      // Headers for the pie chart data table.
       ['Category', 'Expense']
     ];
 
+    // Add the {label:cost} entries to the chart data table.
     for (let [label, cost] of Object.entries(expenses)) {
       graphData.push([label, cost]);
     }
 
+    // Get total budget (if one is set).
     let total_budget_update_button = document.getElementById('total-budget');
     let totalBudget = parseInt(total_budget_update_button.value) || 0;
 
+    // If we are below our total budget, add a new row to the charts data table with lable 'Remaining'.
     if (totalCost < totalBudget){
       graphData.push(['Remaining', totalBudget - totalCost]);
     }
     
-    let data = google.visualization.arrayToDataTable(graphData);
-
     // Custom options for the pie chart.
     let options = {
+      // Set title of the pie chart.
       title: 'My Expenses',
-      
-      // Show values in USD instead of percentages in pie slices.
+      // Show cost values in USD instead of percentages in pie slices.
       pieSliceText: 'value',
+      // Set background color of the pie chart.
       backgroundColor: '#edf3f8',
+      // Draw a 3D pie chart. (aesthetics :D)
       is3D: true,
     };
-
+    // Convert data array to dataTable.
+    graphData = google.visualization.arrayToDataTable(graphData);
+    // Initialize a new pie chart with given data and custom options.
     let chart = new google.visualization.PieChart(document.getElementById('visualization_figure'));
-    chart.draw(data, options);
+    // Draw the pie chart.
+    chart.draw(graphData, options);
   }
 }
 
 /**
  * Function that draws the line graph for the given data.
- * TODO: Modify the function to draw chart using dynamic data once backend APIs are implemented.
+ * 
+ * @param none
  */
 function drawLineGraph() {
 
+  // Load the Visualization API and the corechart, line packages from Google Charts Library.
   google.charts.load('current', { packages: ['corechart', 'line'] });
+  // Set callback function to be called after loading the library.
+  // The callback function fetches expenses data and draws the line graph.
   google.charts.setOnLoadCallback(drawChart);
 
-  function drawChart() {
-    let data = new google.visualization.DataTable();
-    data.addColumn('string', 'Month');
-    data.addColumn('number', '$');
+  async function drawChart() {
 
-    // Add static example data.
-    data.addRows([
-      ['June', 670], ['July', 500], ['Aug', 880], ['Sept', 560], ['Oct', 780], ['Nov', 872]
-    ]);
+    // Get the expenses data from the localstorage.
+    let expensesData = await JSON.parse(localStorage.getItem("expenseData"));
 
+    // Sort the budget entries w.r.t. their dates.
+    // This is done to ensure that the entries in expenses Object are increasing w.r.t. their dates.
+    expensesData.sort(function(a,b){
+      return new Date(a['date']) - new Date(b['date']);
+    });
+    
+    // expenses Object to store cost associated with each date. (like a date:cost hashmap)
+    let expenses = {};
+
+    // Loop through the expenses data.
+    expensesData.forEach(expense => {
+      let date = expense['date'], cost = expense['cost'];
+      // Update cost associated with current date in the expenses Object.
+      if(date in expenses){
+        expenses[date] += cost;
+      }
+      else {
+        expenses[date] = cost;
+      }
+    });
+
+    // Restructure the {date:cost} data to match that of Google Charts library.
+    let graphData = [
+      // Headers for the line graph data table.
+      ['Date', 'Expense']
+    ];
+
+    // Add the {date:cost} entries to the chart data table.
+    for (let [date, cost] of Object.entries(expenses)) {
+      graphData.push([date, cost]);
+    }
+    
     // Custom options for the line graph.
     let options = {
+      // X-axis label.
       hAxis: {
-        title: 'Month'
+        title: 'Date'
       },
       vAxis: {
+        // Y-axis label.
         title: 'Expenses (in USD)',
         // Start Y-axis values from 0.
         viewWindow: {
           min: 0
         }
       },
+      // Set background color of the line graph.
       backgroundColor: '#edf3f8',
       // Hide line legend.
       legend: { position: 'none' }
     };
 
+    // Convert data array to dataTable.
+    graphData = google.visualization.arrayToDataTable(graphData);
+    // Initialize a new line graph with given data and custom options.
     let chart = new google.visualization.LineChart(document.getElementById('visualization_figure'));
-    chart.draw(data, options);
+    // Draw the line graph.
+    chart.draw(graphData, options);
   }
 }
 
