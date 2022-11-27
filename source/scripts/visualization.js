@@ -152,23 +152,46 @@ function drawPieChart() {
 
 /**
  * Function that draws the line graph for the given data.
- * TODO: Modify the function to draw chart using dynamic data once backend APIs are implemented.
+ * 
+ * @param none
  */
 function drawLineGraph() {
 
+  // Load the Visualization API and the corechart, line packages from Google Charts Library.
   google.charts.load('current', { packages: ['corechart', 'line'] });
+  // Set callback function to be called after loading the library.
+  // The callback function fetches expenses data and draws the line graph.
   google.charts.setOnLoadCallback(drawChart);
 
-  function drawChart() {
-    let data = new google.visualization.DataTable();
-    data.addColumn('string', 'Month');
-    data.addColumn('number', '$');
+  async function drawChart() {
 
-    // Add static example data.
-    data.addRows([
-      ['June', 670], ['July', 500], ['Aug', 880], ['Sept', 560], ['Oct', 780], ['Nov', 872]
-    ]);
+    // Get the expenses data from the localstorage.
+    let expensesData = await JSON.parse(localStorage.getItem("expenseData"));
 
+    expensesData.sort(function(a,b){
+      return new Date(a['date']) - new Date(b['date']);
+    });
+    
+    let expenses = {};
+
+    expensesData.forEach(expense => {
+      let date = expense['date'], cost = expense['cost'];
+      if(date in expenses){
+        expenses[date] += cost;
+      }
+      else {
+        expenses[date] = cost;
+      }
+    });
+
+    let graphData = [
+      ['Date', 'Expense']
+    ];
+
+    for (let [date, cost] of Object.entries(expenses)) {
+      graphData.push([date, cost]);
+    }
+    
     // Custom options for the line graph.
     let options = {
       hAxis: {
@@ -186,8 +209,9 @@ function drawLineGraph() {
       legend: { position: 'none' }
     };
 
+    graphData = google.visualization.arrayToDataTable(graphData);
     let chart = new google.visualization.LineChart(document.getElementById('visualization_figure'));
-    chart.draw(data, options);
+    chart.draw(graphData, options);
   }
 }
 
