@@ -81,19 +81,27 @@ function showSelectedVisualization() {
  */
 function drawPieChart() {
 
+  // Load the Visualization API and the corechart package from Google Charts Library.
   google.charts.load('current', { packages: ['corechart'] });
+  // Set callback function to be called after loading the library.
+  // The callback function fetches expenses data and draws the pie chart.
   google.charts.setOnLoadCallback(drawChart);
 
   async function drawChart() {
-
+    // Get the expenses data from the localstorage.
     let expensesData = await JSON.parse(localStorage.getItem("expenseData"));
+    // Variable to store total expenditure.
     let totalCost = 0;
     
+    // expenses Object to store cost associated with each label. (like a cost hashmap)
     let expenses = {};
 
+    // Loop through the expenses data.
     expensesData.forEach(expense => {
       let label = expense['label'], cost = expense['cost'];
+      // Update total expenditure so far.
       totalCost += expense['cost'];
+      // Update cost associated with current label in the cost Object.
       if(label in expenses){
         expenses[label] += cost;
       }
@@ -102,35 +110,43 @@ function drawPieChart() {
       }
     });
 
+    // Restructure the {label:cost} data to match that of Google Charts library.
     let graphData = [
+      // Headers for the pie chart data table.
       ['Category', 'Expense']
     ];
 
+    // Add the {label:cost} entries to the chart data table.
     for (let [label, cost] of Object.entries(expenses)) {
       graphData.push([label, cost]);
     }
 
+    // Get total budget (if one is set).
     let total_budget_update_button = document.getElementById('total-budget');
     let totalBudget = parseInt(total_budget_update_button.value) || 0;
 
+    // If we are below our total budget, add a new row to the charts data table with lable 'Remaining'.
     if (totalCost < totalBudget){
       graphData.push(['Remaining', totalBudget - totalCost]);
     }
     
-    let data = google.visualization.arrayToDataTable(graphData);
-
     // Custom options for the pie chart.
     let options = {
+      // Set title of the pie chart.
       title: 'My Expenses',
-      
-      // Show values in USD instead of percentages in pie slices.
+      // Show cost values in USD instead of percentages in pie slices.
       pieSliceText: 'value',
+      // Set background color of the pie chart.
       backgroundColor: '#edf3f8',
+      // Draw a 3D pie chart. (aesthetics :D)
       is3D: true,
     };
-
+    // Convert data array to dataTable.
+    graphData = google.visualization.arrayToDataTable(graphData);
+    // Initialize a new pie chart with given data and custom options.
     let chart = new google.visualization.PieChart(document.getElementById('visualization_figure'));
-    chart.draw(data, options);
+    // Draw the pie chart.
+    chart.draw(graphData, options);
   }
 }
 
