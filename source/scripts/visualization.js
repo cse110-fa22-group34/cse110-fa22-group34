@@ -101,7 +101,7 @@ function drawPieChart() {
       let label = expense['label'], cost = expense['cost'];
       // Update total expenditure so far.
       totalCost += expense['cost'];
-      // Update cost associated with current label in the cost Object.
+      // Update cost associated with current label in the expenses Object.
       if(label in expenses){
         expenses[label] += cost;
       }
@@ -168,14 +168,19 @@ function drawLineGraph() {
     // Get the expenses data from the localstorage.
     let expensesData = await JSON.parse(localStorage.getItem("expenseData"));
 
+    // Sort the budget entries w.r.t. their dates.
+    // This is done to ensure that the entries in expenses Object are increasing w.r.t. their dates.
     expensesData.sort(function(a,b){
       return new Date(a['date']) - new Date(b['date']);
     });
     
+    // expenses Object to store cost associated with each date. (like a date:cost hashmap)
     let expenses = {};
 
+    // Loop through the expenses data.
     expensesData.forEach(expense => {
       let date = expense['date'], cost = expense['cost'];
+      // Update cost associated with current date in the expenses Object.
       if(date in expenses){
         expenses[date] += cost;
       }
@@ -184,33 +189,42 @@ function drawLineGraph() {
       }
     });
 
+    // Restructure the {date:cost} data to match that of Google Charts library.
     let graphData = [
+      // Headers for the line graph data table.
       ['Date', 'Expense']
     ];
 
+    // Add the {date:cost} entries to the chart data table.
     for (let [date, cost] of Object.entries(expenses)) {
       graphData.push([date, cost]);
     }
     
     // Custom options for the line graph.
     let options = {
+      // X-axis label.
       hAxis: {
-        title: 'Month'
+        title: 'Date'
       },
       vAxis: {
+        // Y-axis label.
         title: 'Expenses (in USD)',
         // Start Y-axis values from 0.
         viewWindow: {
           min: 0
         }
       },
+      // Set background color of the line graph.
       backgroundColor: '#edf3f8',
       // Hide line legend.
       legend: { position: 'none' }
     };
 
+    // Convert data array to dataTable.
     graphData = google.visualization.arrayToDataTable(graphData);
+    // Initialize a new line graph with given data and custom options.
     let chart = new google.visualization.LineChart(document.getElementById('visualization_figure'));
+    // Draw the line graph.
     chart.draw(graphData, options);
   }
 }
