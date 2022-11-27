@@ -231,11 +231,38 @@ function drawLineGraph() {
 
 /**
  * Function that draws the appropriate charcter emotion w.r.t. current budget status.
- * TODO: Find character vectors and implement.
+ * 
+ * @param none
  */
  function drawChracter() {
+    // Get reference to visualization div and clear it.
     let visualizationFigure = document.getElementById('visualization_figure');
-    visualizationFigure.style.display = 'none';
+    visualizationFigure.innerHTML = '';
+
+    // Create a new image element.
+    let image = document.createElement('img');
+    // Set id to the image element to apply css styles.
+    image.setAttribute('id', 'visualization_character')
+
+    // Get the total budget.
+    const total_budget = document.getElementById('total-budget').value || 0;
+    // Get total cost.
+    const totalcost = localStorage.getItem('totalCost');
+
+    // If we are under 70% of our total buget, show happy frog :)
+    if(totalcost < 0.7*total_budget){
+      image.setAttribute('src', '/source/assets/frog-happy.svg')
+    }
+    // Else if we under our available budget, show neutral frog -_-
+    else if(totalcost < total_budget){
+      image.setAttribute('src', '/source/assets/frog-neutral.svg')
+    }
+    // If we are over our budget, show sad frog :(
+    else {
+      image.setAttribute('src', '/source/assets/frog-sad.svg')
+    }
+    // Add the image element to the visualization div.
+    visualizationFigure.appendChild(image)
   }
 
 /**
