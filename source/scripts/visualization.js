@@ -135,10 +135,12 @@ function drawLineGraph() {
 function update_remaining_budget(){
   const total_budget = document.getElementById('total-budget').value;
   const totalcost = parseInt(localStorage.getItem('totalCost'));
+  if(localStorage.getItem('totalCost')==null){
+    totalcost = 0;
+  }
   const remaining_value = total_budget-totalcost;
   const remaining_value_display = document.getElementById('budget-remaining-amount');
   remaining_value_display.textContent = '$'+remaining_value;
   localStorage.setItem('Total Budget',total_budget);
   localStorage.setItem('Remaining',remaining_value);
-
 }
