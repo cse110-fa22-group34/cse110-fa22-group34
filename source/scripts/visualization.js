@@ -73,24 +73,41 @@ function showSelectedVisualization() {
 
 /**
  * Function that draws the pie chart for the given data.
- * TODO: Modify the function to draw chart using dynamic data once backend APIs are implemented.
+ * 
+ * @param none
  */
 function drawPieChart() {
 
   google.charts.load('current', { packages: ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
 
-  function drawChart() {
+  async function drawChart() {
 
-    // Static example data.
-    let data = google.visualization.arrayToDataTable([
-      ['Category', 'Expense'],
-      ['Grocery', 310],
-      ['Commute', 200],
-      ['Insurance', 50],
-      ['Rent', 312],
-      ['Remaining', 28]
-    ]);
+    let expensesData = await JSON.parse(localStorage.getItem("expenseData"));
+    let totalCost = 0;
+    
+    let expenses = {};
+
+    expensesData.forEach(expense => {
+      let label = expense['label'], cost = expense['cost'];
+      totalCost += expense['cost'];
+      if(label in expenses){
+        expenses[label] += cost;
+      }
+      else {
+        expenses[label] = cost;
+      }
+    });
+
+    let graphData = [
+      ['Category', 'Expense']
+    ];
+
+    for (let [label, cost] of Object.entries(expenses)) {
+      graphData.push([label, cost]);
+    }
+
+    let data = google.visualization.arrayToDataTable(graphData);
 
     // Custom options for the pie chart.
     let options = {
