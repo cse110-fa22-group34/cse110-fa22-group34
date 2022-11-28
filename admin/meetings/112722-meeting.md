@@ -16,6 +16,7 @@
 1. Looked over everyone's progress
 2. Set up retrospective 2 on Retrium
 3. Discuss to-dos for upcoming assignments (due 11/29)
+4. TA joined at 8:30 and looked over our progress, gave suggestions
 
 ## Checkpoint 2 To-Do List
 1. Sisy & Jiaxin: create video for ci/cd pipeline
