@@ -34,7 +34,7 @@ This week's sprint was all about coding the back end of our budget website. We d
 - Specified the type of each input entry: date for the date column, number for the cost column, text for the item column, a dropdown selection menu for the label column
 - Implemented the deleted selected row feature
 - Fixed the bug in the delete selected row feature so that when we delete a certain row, the row numbers will get updated
-- [Expense Table Demo Video](https://ucsd.zoom.us/rec/share/DCGwaTLRrUGxJwGFAfEzapobQ8C-g-QjRziu-EKHGQEf_s0hRswmYmKESeZ2MafG.PlrYnOzVH75ITa3r?startTime=1669077082000)(Password: )
+- [Expense Table Demo Video](https://ucsd.zoom.us/rec/share/DCGwaTLRrUGxJwGFAfEzapobQ8C-g-QjRziu-EKHGQEf_s0hRswmYmKESeZ2MafG.PlrYnOzVH75ITa3r?startTime=1669077082000) (Password: )
 
 ### Jack: 
 - (Jack/David) Fixed add and remove reminders and the html structure of the reminder section, implemented scroll for reminders
