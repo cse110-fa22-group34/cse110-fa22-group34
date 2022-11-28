@@ -81,7 +81,7 @@
             <td colspan="2"></td>
         </tr>
       </table>
-      <button class="btn save_budget_btn" onclick="saveBudget()">Save Budget</button>
+      <button class="btn save_budget_btn" id = 'btn_save_budget'onclick="saveBudget()">Save Budget</button>
       <br/>
     </div>
       
@@ -96,9 +96,8 @@
         <span class="title">Budget Remaining</span>
         <span  class="textview" id="budget-remaining-amount">$ 0.0</span>
 
-        <span class="title">Budget Goal</span>
-        <input class="total_amount_of_budget_input" type="number" id="total-budget" name="total-budget"
-       min="0" max="10000000">
+        <span class="title">Budget</span>
+        <input class="total_amount_of_budget_input" type="number" id="total-budget" name="total-budget">
       </div>
         
 
@@ -111,6 +110,7 @@
             <option value="">-----Select Chart-----</option>
             <option value="line_graph">Line Graph</option>
             <option value="pie_chart">Pie Chart</option>
+            <option value="character">Character</option>
           </select>
         <div id="visualization_figure"></div>
       </div>
