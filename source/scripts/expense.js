@@ -185,8 +185,10 @@ function deleteBudget() {
         // not the first row since the first row is the table header row
         tb.deleteRow(1);
     }
-    // clear localStorage
-    localStorage.clear();
+    // clear the following items associated with the expense table in localStorage
+    localStorage.removeItem('expenseData');
+    localStorage.removeItem('totalCost');
+    localStorage.removeItem('expenseTable');
     // update the total cost
     updateTotalCost();
 }
