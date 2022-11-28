@@ -11,7 +11,7 @@
 - Yash
 - Xu
 - Raphael
-- Jiaxin Ye
+- Jiaxin
 - Derrick
 - David
 
