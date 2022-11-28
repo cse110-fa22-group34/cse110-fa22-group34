@@ -15,30 +15,30 @@
 }
 
 
-ul {
+#top-bar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #80916d
-  }
+}
   
-  li {
+#top-bar li {
     float: left;
-  }
+}
   
-  li a {
+#top-bar li a {
     display: block;
     color:  #FBFAF4;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+}
   
-  li a:hover:not(.active) {
+#top-bar li a:hover:not(.active) {
     background-color: #E9E0D7;
-  }
+}
 
-  .active {
+#top-bar .active {
     background-color: #D1B9A4;
-  }
+}

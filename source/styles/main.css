@@ -109,8 +109,8 @@ table {
     display: inline-block;
   }
   
-  /* Tooltip text */
-  .tooltip .tooltiptext {
+/* Tooltip text */
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: #80916d;
@@ -124,12 +124,12 @@ table {
     z-index: 1;
     top: -5px;
     left: 105%;
-  }
+}
   
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .tooltip:hover .tooltiptext {
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
     visibility: visible;
-  }
+}
 
 
 
