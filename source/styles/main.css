@@ -29,6 +29,9 @@ div {
     color: #FBFAF4 !important ;
 }
 
+.btn:hover{
+    background-color: #E3E7D7 !important;;
+}
 
 /*
 styling budget component
