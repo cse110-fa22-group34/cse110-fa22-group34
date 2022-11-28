@@ -29,6 +29,9 @@ div {
     color: #FBFAF4 !important ;
 }
 
+.btn:hover{
+    background-color: #E3E7D7 !important;;
+}
 
 /*
 styling budget component
@@ -102,7 +105,13 @@ table {
     width: 100%;
 }
 
-
+#previous, #next {
+    border-width: 0 !important;
+    border-radius: 50px !important;
+    width: 200px !important;
+    height: 50px !important;
+}
+/* End of Calendar Styling */
 
 .tooltip {
     position: relative;

@@ -40,7 +40,7 @@
         <h1 id="main-logo">DON'T BUDGE, DO BUDGET</h1>
         <nav>
           <ul>
-            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#export">Export</a></li>
             <li><a href="team.html">Meet the Team</a></li>
           </ul>      
@@ -52,7 +52,7 @@
 
     <!-- Expenses -->
     <div id="expenses">
-      <div class="tooltip"><h1>Expenses Table</h1>
+      <div class="tooltip" style="display:block"><h1>Expenses Table</h1>
         <span class="tooltiptext">Type your reminder in the text box below. Once you finish typing, click the '+' to add it to the reminder list. Click on the '-' once you complete a reminder in order to remove it from the list.</span>
       </div>
       <button class="btn create_btn" style="margin:5px;" onclick="createBudget()">+ Create New Budget</button>
@@ -90,7 +90,7 @@
       <!-- Budget/remaining field -->
       
       <div id="budget">
-        <div class="tooltip"><h1>Budget</h1>
+        <div class="tooltip" style="background-color:#E9E0D7"><h1>Budget</h1>
           <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
         </div>
         <span class="title">Budget Remaining</span>
@@ -103,7 +103,7 @@
 
       <!-- Chart -->
       <div id="visualization">
-          <div class="tooltip"><h1>Visualization</h1>
+          <div class="tooltip" style="background-color:#E9E0D7"><h1>Visualization</h1>
             <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
           </div>
           <select id="visualization_type">
