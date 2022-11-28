@@ -36,6 +36,6 @@ This week's sprint was all about coding the back end of our budget website. We d
 - Fixed the bug in the delete selected row feature so that when we delete a certain row, the row numbers will get updated
 - [Expense Table Demo Video](https://ucsd.zoom.us/rec/share/DCGwaTLRrUGxJwGFAfEzapobQ8C-g-QjRziu-EKHGQEf_s0hRswmYmKESeZ2MafG.PlrYnOzVH75ITa3r?startTime=1669077082000) (Password: )
 
-### Jack: 
-- (Jack/David) Fixed add and remove reminders and the html structure of the reminder section, implemented scroll for reminders
+### Jack & David: 
+- Fixed add and remove reminders and the html structure of the reminder section, implemented scroll for reminders
 - [Reminders Demo Video](https://www.youtube.com/watch?v=MSxD4KMRCbg)
