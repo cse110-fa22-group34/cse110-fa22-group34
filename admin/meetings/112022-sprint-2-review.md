@@ -30,9 +30,6 @@ This week's sprint was all about coding the back end of our budget website. We d
 - Deleted the view chart button now as user change the option the image displays itself   
 [line graph](/specs/sprint-2-review/lineGraph.png)   
 [pie chart](/specs/sprint-2-review/pieChart.png)
-- Deleted the view chart button now as user change the option the image displays itself
-[visualization pie chart](specs/sprint-2-review/Screen Shot 2022-11-28 at 18.11.31.png)
-[visualization line graph](specs/sprint-2-review/Screen Shot 2022-11-28 at 18.11.21.png)
 
 ### Jiaxin & Derrick:
 - Implemented the add row and delete row feature
