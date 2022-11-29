@@ -11,11 +11,21 @@ describe('Basic user flow for Website', () => {
     it('1', async () => {
       expect(1).toBe(1);
     });
-    // Next, check to make sure that there's no local storage about expense upon refreshing
-    it('Initial Home Page - Check for local storage', async () => {
 
-      
+    // 1st Test
+    // Check to make sure that as the page first loads its local storage for expenseTable & expenseData & totalCost are undefined
+    // and that only "create budget" button's display is block and the remaining elements have their display as none
+    it('Check for Initial Home Page', async () => {     
+      const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
+      expenseData_LS = `${localStorage.expenseData}`;
+      console.log(expenseData_LS);
+      expect(expenseData_LS).toBe("undefined");
+    });
 
+    // 2nd Test
+    // Check to make sure that after clicking the create budget button, the button's display becomes none,
+    // and the display of remaining elements become inline or block
+    it('Check for Create Budget Button', async () => {     
       const createBudgetButton = await page.$('.create_btn');
       console.log(createBudgetButton);
       await createBudgetButton.click();
@@ -35,12 +45,37 @@ describe('Basic user flow for Website', () => {
       const saveBudgetButton = await page.evaluateHandle(() => document.querySelector('.save_budget_btn'));
       console.log(saveBudgetButton);
       await saveBudgetButton.click();
-    
-      
-      const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
-      expenseData_LS = `${localStorage.expenseData}`;
-      console.log(expenseData_LS);
-      //expect(expenseData_LS).toBe(null);
+    });
+
+    // 3rd Test
+    // Check to make sure that save budget button saves the expenseTable & expenseData & totalCost into local storage.
+    it('Check for Save Budget Button', async () => {     
+    });
+
+    // 3rd Test
+    // Check to make sure that after add rows button the HTML elements are updated and the "no" is updated correctly
+    it('Check for Add Rows Button', async () => {     
+    });
+
+    // 4th Test
+    // Check to make sure that after delete selected button the HTML elements are removed and the "no" is updated correctly
+    it('Check for Delete Selected Button', async () => {     
+    });
+
+    // 5th Test
+    // Click save budget button, then check for the total cost 
+    it('Check for total cost', async () => {     
+    });
+
+    // 6th Test
+    // Check to make sure that it remembers us removing everything from the cart
+    it('Check for Refreshing', async () => {     
+    });
+
+    // 7th Test
+    // Check to make sure that as the Delete Budget Button is clicked its local storage for expenseTable & expenseData & totalCost are undefined
+    // and that only "create budget" button's display is block and the remaining elements have their display as none
+    it('Check for Delete Budget Button', async () => {     
     });
 });
 
