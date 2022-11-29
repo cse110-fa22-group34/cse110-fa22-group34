@@ -15,7 +15,7 @@ name: Codacy
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "Expense-Jiaxin-Derrick" ]
 
 jobs:
   codacy:
