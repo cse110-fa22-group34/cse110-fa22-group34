@@ -5,6 +5,10 @@
     padding: 20px 10px;
 }
 
+.today {
+    font-weight: bold;
+}
+
 .bg-info {
     background-color: #E9E0D7;
 }
@@ -15,10 +19,6 @@
 
 .bg-info-light-green {
     background-color: rgb(131, 182, 146, 0.5);
-}
-
-.bg-info-neutral {
-    background-color: white;
 }
 
 .bg-info-light-red {
