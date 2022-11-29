@@ -25,8 +25,9 @@ This week's sprint was all about coding the back end of our budget website. We d
 - Implemented the JavaScript of the calendar, have real time dates on the calendar, include previous/next buttons that navigate through different months of the calendar
 
 ### Raphael & Xu:
-- Deleted the view chart button now as user change the option the image displays itself
-
+- Deleted the view chart button now as user change the option the image displays itself   
+[line graph](/specs/sprint-2-review/lineGraph.png)   
+[pie chart](/specs/sprint-2-review/pieChart.png)
 ### Jiaxin & Derrick:
 - Implemented the add row and delete row feature
 - Implemented the feature when we click “create new budget”, an empty expense table will be displayed
