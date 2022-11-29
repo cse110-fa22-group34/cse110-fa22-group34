@@ -19,15 +19,17 @@
 This week's sprint was all about coding the back end of our budget website. We did Stand-Ups as both pairs and individuals as the work was divided among pairs. Each pair presented their code and we took appropriate documentation so we could review. Our TA joined the meeting at 8:30 PM and gave us many suggestions that we will take into account and make changes accordingly for our third sprint meeting.
 
 ### Alessia & Spencer:
-- Fixed colors and made color layout correct, worked on Team Page HTML and style sheet
+- Fixed colors and made color layout correct, worked on Team Page HTML and style sheet    
+[teamPage](/specs/sprint-2-review/teamPage.png)      
+[colors](/specs/sprint-2-review/colors.png)
 
 ### Sisy & Yash:
 - Implemented the JavaScript of the calendar, have real time dates on the calendar, include previous/next buttons that navigate through different months of the calendar
 
 ### Raphael & Xu:
-- Deleted the view chart button now as user change the option the image displays itself
-[visualization pie chart](specs/sprint-2-review/Screen Shot 2022-11-28 at 18.11.31.png)
-[visualization line graph](specs/sprint-2-review/Screen Shot 2022-11-28 at 18.11.21.png)
+- Deleted the view chart button now as user change the option the image displays itself   
+[line graph](/specs/sprint-2-review/lineGraph.png)   
+[pie chart](/specs/sprint-2-review/pieChart.png)
 
 ### Jiaxin & Derrick:
 - Implemented the add row and delete row feature
