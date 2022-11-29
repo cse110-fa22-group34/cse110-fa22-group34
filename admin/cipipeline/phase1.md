@@ -27,7 +27,7 @@
 ### Progress
 
 - We have a structure for our codebase, which includes the following folders:
-    - `src` - contains all of our source code
+-- `src` - contains all of our source code
     - `scripts` - contains all of our JS scripts
     - `styles` - contains all of our CSS styles
     - `index.html` - contains the main HTML for our website
