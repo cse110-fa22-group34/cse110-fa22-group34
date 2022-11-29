@@ -3,9 +3,31 @@ html {
   }
   
   *, *:before, *:after {
+    margin: 0px;
     box-sizing: inherit;
     background-color: #FBFAF4;
     font-family: 'Roboto', sans-serif;
+  }
+
+  /* Apply Grid Layout to make all boxes even */
+  .row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 40px;
+  }
+
+  nav {
+    margin-top: 20px;
+  }
+
+  #home {
+    margin-left: 15px;
+    padding: 10px 10px;
+    background-color: #FBFAF4;
+    color: #80916d;
+    text-decoration: none;
+    border: #80916d solid 1px;
+    border-radius: 15px;
   }
   
   .page-title{
@@ -14,12 +36,19 @@ html {
     text-size-adjust: auto;
     color: #D1B9A4;
   }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+  }
+
   .column {
     float: left;
-    width: 20%;
+    width: auto;
     margin-bottom: 16px;
     padding: 0 8px;
-    
   }
   
   @media screen and (max-width: 650px) {
@@ -70,6 +99,7 @@ html {
   .github{
     background-color: #E3E7D7;
     color: #80916d;
+    width: auto;
   }
 
 
