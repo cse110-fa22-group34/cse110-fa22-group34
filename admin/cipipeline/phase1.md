@@ -27,10 +27,10 @@
 ### Progress
 
 - We have a structure for our codebase, which includes the following folders:
--- `src` - contains all of our source code
-    - `scripts` - contains all of our JS scripts
-    - `styles` - contains all of our CSS styles
-    - `index.html` - contains the main HTML for our website
+  - `src` - contains all of our source code
+  - `scripts` - contains all of our JS scripts
+  - `styles` - contains all of our CSS styles
+  - `index.html` - contains the main HTML for our website
 
 - We have begun working on the front-end of our website, dividing up main components of the home page into separate files (CSS and JS). We have divided up the task of completing the components in pairs, following one coherent UI design and style. 
 
