@@ -20,11 +20,18 @@ describe('Basic user flow for Website', () => {
       console.log(createBudgetButton);
       await createBudgetButton.click();
 
+      //method 1 of clicking save budget
       //const saveBudgetButton = await page.$('.save_budget_btn');
       //console.log(saveBudgetButton);
       //await saveBudgetButton.click();
+
+      //method 2 of clicking save budget
       //await page.click(".save_budget_btn");
+
+      //method 3 of clicking save budget
       //await page.$eval('.save_budget_btn', elem => elem.click());
+
+      //method 4 of clicking save budget 
       const saveBudgetButton = await page.evaluateHandle(() => document.querySelector('.save_budget_btn'));
       console.log(saveBudgetButton);
       await saveBudgetButton.click();
