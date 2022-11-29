@@ -15,7 +15,7 @@ name: Codacy
 
 on:
   push:
-    branches: [ "main", "Expense-Jiaxin-Derrick" ]
+    branches: [ "master", "main", "Expense-Jiaxin-Derrick" ]
 
 jobs:
   codacy:
@@ -26,4 +26,4 @@ jobs:
         uses: actions/checkout@main
 
       - name: Run Codacy
-        uses: codacy/codacy-analysis-cli-action@main
+        uses: codacy/codacy-analysis-cli-action@master
