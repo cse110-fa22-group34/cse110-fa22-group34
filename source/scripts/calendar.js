@@ -3,10 +3,6 @@ today = new Date();
 currentMonth = today.getMonth();
 currentYear = today.getFullYear();
 
-
-
-
-
 // Get the DOM elements for the calendar (updated with event listeners)
 selectYear = document.getElementById("year");
 selectMonth = document.getElementById("month");
@@ -123,13 +119,10 @@ function showCalendar(month, year) {
                 row.appendChild(cell);
                 date++;
             }
-
-
         }
 
         tbl.appendChild(row); // appending each row into calendar body.
     }
-
 }
 
 /** 
@@ -143,11 +136,14 @@ function daysInMonth(iMonth, iYear) {
 }
 
 function dayToString(day, month, year) {
+    if (day < 10) {
+        day = "0" + day;
+    }
     return `${year}-${month+1}-${day}`;
 }
 
 /**
- * @param {number} day - The date to check.
+ * @param {number} dayInString - The date in the string format.
  * @param {number} month - The date to check.
  * @param {number} year - The date to check.
  * 
@@ -167,46 +163,44 @@ function colorCell(dayInString, month, year) {
     let totalBudget = localStorage.getItem("Total Budget");
 
     let dayTotalSpent = 0;
-    let budget = totalBudget / daysInMonth(month, year);
+    let dailyBudget = totalBudget / daysInMonth(month, year);
 
-    expensesData.forEach(expense => {
+    for (let idx = 0; idx < expensesData.length; idx++) {
+        let expense = expensesData[idx];
         let date = expense['date'];
         let cost = expense['cost'];
-
-        console.log(date)
-        console.log(dayInString)
 
         // If it's the same day (same day,month, and year), increment to the day's total.
         if (date === dayInString) {
             dayTotalSpent += cost;
         }
+    }
 
-        
+    let calc = dayTotalSpent / dailyBudget;
 
-        console.log(totalBudget)
-        console.log(daysInMonth(month, year))
-        console.log("Budget: " + budget);
-
-        // Dark-Red Case
-        if (dayTotalSpent / budget > 1.5) {
-            color = "dark-red";
-        }
-        // Light-Red Case
-        else if (dayTotalSpent / budget > 1.1) {
-            color = "light-red";
-        }
-        // Light-Green Case
-        else if (dayTotalSpent / budget > 0.9) {
-            color = "light-green";
-        }
-        // Dark-Green Case
-        else if (dayTotalSpent / budget > 0.5) {
-            color = "dark-green";
-        }
-      });
+    // Dark-Red Case
+    if (calc > 1.2) {
+        color = "dark-red";
+    }
+    // Light-Red Case
+    else if (calc > 1) {
+        color = "light-red";
+    }
+    // Light-Green Case
+    else if (calc > 0.8) {
+        color = "light-green";
+    }
+    // Dark-Green Case
+    else if (calc > 0) {
+        color = "dark-green";
+    }
+    
 
     return color;
+}
 
+window.onclick = function(event) {
+    showCalendar(currentMonth, currentYear);
 }
 
     
