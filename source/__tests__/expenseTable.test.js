@@ -17,9 +17,19 @@ describe('Basic user flow for Website', () => {
     // and that only "create budget" button's display is block and the remaining elements have their display as none
     it('Check for Initial Home Page', async () => {     
       const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
+      let Passed = true;
       expenseData_LS = `${localStorage.expenseData}`;
-      console.log(expenseData_LS);
-      expect(expenseData_LS).toBe("undefined");
+      expenseTable_LS = `${localStorage.expenseTable}`;
+      totalCost_LS = `${localStorage.totalCost}`;
+      if (expenseData_LS != "undefined") { Passed = false; }
+      if (expenseTable_LS != "undefined") { Passed = false; }
+      if (totalCost_LS != "undefined") { Passed = false; }
+
+      const createBudgetButton = await page.$('.create_btn');
+      display = await createBudgetButton.getProperty('display');
+      console.log(display);
+      expect(Passed).toBe(true);
+
     });
 
     // 2nd Test
@@ -44,7 +54,7 @@ describe('Basic user flow for Website', () => {
       //method 4 of clicking save budget 
       const saveBudgetButton = await page.evaluateHandle(() => document.querySelector('.save_budget_btn'));
       console.log(saveBudgetButton);
-      await saveBudgetButton.click();
+      //await saveBudgetButton.click();
     });
 
     // 3rd Test
