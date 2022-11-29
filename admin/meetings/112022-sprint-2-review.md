@@ -20,7 +20,7 @@ This week's sprint was all about coding the back end of our budget website. We d
 
 ### Alessia & Spencer:
 - Fixed colors and made color layout correct, worked on Team Page HTML and style sheet    
-[teamPage](/specs/sprint-2-review/teamPage.png)
+[teamPage](/specs/sprint-2-review/teamPage.png)      
 [colors](/specs/sprint-2-review/colors.png)
 
 ### Sisy & Yash:
