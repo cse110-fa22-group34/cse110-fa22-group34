@@ -1,7 +1,7 @@
 # 11/10/2022 Meeting 
 
 ## Time
-2:00 PM - 3:00 PM; Location: Geisel Library Room 721 & Zoom 
+2:00 PM - 3:00 PM; Location: Geisel Library Room 721 & Zoom
 
 ## Attendance
 - Sisy
@@ -12,7 +12,7 @@
 - Derrick
 - David
 - Alessia
-- Raphael 
+- Raphael
 
 ## Agenda
 1. Discuss the structure of the coding files
@@ -23,6 +23,6 @@
 ## Tasks (due 11/13)
 1. Background/Floating Words - Alessia, Spencer
 2. Expense Table - Derrick, Jiaxin
-3. Visualization - Xu, Raphael 
+3. Visualization - Xu, Raphael
 4. Reminders - David, Jack
 5. Calendar - Yash, Sisy

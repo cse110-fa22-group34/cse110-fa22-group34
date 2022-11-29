@@ -2,7 +2,7 @@
 
 #budget {
     height: 25%;
-    background-color: #FBFAF4;
+    /*background-color: #FBFAF4;*/
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -11,7 +11,7 @@
 
 #visualization {
     height: 65%;
-    background-color: #E9E0D7;
+    /*background-color: #E9E0D7;*/
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -93,8 +93,16 @@ select[id="visualization_type"] {
 }
 
 div[id="visualization_figure"] {
-    width: 25vw;
+    width: 20vw;
     height: auto;
     display: none;
     margin: 8px;
+}
+
+img[id='visualization_character'] {
+    width: 20vw;
+    padding: 24px;
+    background-color: #E9E0D7;
+    /* To remove inline elements white-space. */
+    display: block; 
 }

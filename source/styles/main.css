@@ -15,7 +15,7 @@ body {
 div.main-body {
     display: grid;   
     height: 100vh; 
-    grid-template-columns: 3fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 2fr;
     grid-template: max-content;
 }
 /* make all text within divs green */
@@ -29,6 +29,9 @@ div {
     color: #FBFAF4 !important ;
 }
 
+.btn:hover{
+    background-color: #E3E7D7 !important;;
+}
 
 /*
 styling budget component
@@ -55,7 +58,14 @@ styling budget component
 /*START OF VISUALIZATION STYLING*/
 
 .budget-vis-container {
-    background-color: #EBE4DD !important;
+    background-color: #E9E0D7 !important;
+}
+#budget{
+    background-color: #E9E0D7;
+}
+
+#visualization{
+    background-color: #E9E0D7;
 }
 
 /* END OF VISUALIZATION STYLING */
@@ -71,6 +81,7 @@ styling budget component
 }
 /* END */ 
 
+/* START OF CALENDAR STYLING */
 table th {
    background-color: #FBFAF4 !important;
    color: #99AA84
@@ -84,3 +95,50 @@ table th {
 .calendar-header {
     color : #99AA84;
 }
+
+.card-calendar{
+    width: 4fr
+}
+
+table {
+    table-layout: auto !important;
+    width: 100%;
+}
+
+#previous, #next {
+    border-width: 0 !important;
+    border-radius: 50px !important;
+    width: 200px !important;
+    height: 50px !important;
+}
+/* End of Calendar Styling */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #80916d;
+    color: #FBFAF4;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+  
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+

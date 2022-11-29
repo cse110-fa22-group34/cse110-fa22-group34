@@ -1,3 +1,5 @@
+
+let page;
 describe('Basic user flow for Website', () => {
     // First, visit the don't budge website
     beforeAll(async () => {
@@ -6,7 +8,9 @@ describe('Basic user flow for Website', () => {
       await page.goto('http://127.0.0.1:5501/source/',{
         waitUntil: 'domcontentloaded'});
     });
-  
+    it('1', async () => {
+      expect(1).toBe(1);
+    });
     // Next, check to make sure that there's no local storage about expense upon refreshing
     it('Initial Home Page - Check for local storage', async () => {
 

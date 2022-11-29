@@ -16,12 +16,12 @@ Everyone was present.
 ## Team Status Video
 1. Intro - Alessia
 2. Website Demo
-    - Expenses - Derrick
-    - Budget - Xu
-    - Visualization - Xu
-    - Reminders - Jack
-    - Calendar - Sisy
-    - Team Page - Alessia
+  - Expenses - Derrick
+  - Budget - Xu
+  - Visualization - Xu
+  - Reminders - Jack
+  - Calendar - Sisy
+  - Team Page - Alessia
 3. Function of Pipeline - Jiaxin
 4. Health of Team - Spencer
 5. Challenges - David
