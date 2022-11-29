@@ -79,27 +79,32 @@ html {
   .name{
     background-color: #E3E7D7;
     color: #80916d;
+    margin: 10px 0;
   }
 
   .title {
     background-color: #E3E7D7;
     color: #D1B9A4;
+    margin: 10px 0;
   }
    
   .description{
     background-color: #E3E7D7;
     color: #80916d;
+    margin: 10px 0;
   }
 
   .email{
     background-color: #E3E7D7;
     color: #80916d;
+    margin: 10px 0;
   }
 
   .github{
     background-color: #E3E7D7;
     color: #80916d;
     width: auto;
+    margin: 10px 0;
   }
 
 
