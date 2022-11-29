@@ -15,7 +15,7 @@ name: Codacy
 
 on:
   push:
-    branches: [ "master", "main", "Expense-Jiaxin-Derrick", "alessia-spencer-popup" ]
+    branches: [ "master", "main", "Expense-Jiaxin-Derrick", "alessia-spencer-popup", "Raphael(current)" ]
 
 jobs:
   codacy:
