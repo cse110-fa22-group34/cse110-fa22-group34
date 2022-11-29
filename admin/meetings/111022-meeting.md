@@ -1,4 +1,4 @@
-{ 11/10/2022 Meeting 
+# 11/10/2022 Meeting 
 
 ## Time
 2:00 PM - 3:00 PM; Location: Geisel Library Room 721 & Zoom
