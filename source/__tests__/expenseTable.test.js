@@ -71,7 +71,7 @@ describe('Basic user flow for Website', () => {
     */
     it('Check for "Save Budget" Button and its ripple effects', async () => {     
       let passed = true;
-      let lengthOfEmptyExpenseTable = 602;
+      let lengthOfEmptyExpenseTable = 876;
       const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
 
       expenseDataLS = `${localStorage.expenseData}`;
@@ -89,7 +89,7 @@ describe('Basic user flow for Website', () => {
     */
     it('Check for "Add Rows" Button and its ripple effects', async () => {     
       let passed = true;
-      let lengthOf10rowsExpenseTable = 1095;
+      let lengthOf10rowsExpenseTable = 1094;
 
       const addRowButton = await page.$('.add_btn');
       for (let i = 0; i < 10; i++) {
@@ -108,7 +108,7 @@ describe('Basic user flow for Website', () => {
     */
     it('Check for "Delete Selected Rows" Button and its ripple effects', async () => {     
       let passed = true;
-      let lengthOf5rowsExpenseTable = 574;
+      let lengthOf5rowsExpenseTable = 573;
   
       for (var i = 1; i < 6; i++) {
         var checkID = '#check' + `${i}`;
@@ -121,9 +121,8 @@ describe('Basic user flow for Website', () => {
 
       const expenseTableJSHandle = await page.$('#expensetable');
       const expenseTableHTML = await expenseTableJSHandle.getProperty('innerText');
-      const expenseTablejsonValue = await expenseTableHTML.jsonValue();
-      if (expenseTablejsonValue.length != lengthOf5rowsExpenseTable) {passed = false; }
-
+      const expenseTableJsonValue = await expenseTableHTML.jsonValue();
+      if (expenseTableJsonValue.length != lengthOf5rowsExpenseTable) {passed = false; }
       expect(passed).toBe(true);
     });
 
