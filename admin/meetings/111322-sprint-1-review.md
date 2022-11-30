@@ -44,7 +44,7 @@ This week's sprint was all about designing the front end of our budget website a
 - (Jiaxin) The expense table can be removed from page by clicking the ‘Delete Budget’ button
 - [Expense Table Demo](/specs/sprint-1-review/Expense%20Table%20Video%20Demo%20by%20Jaxin&Derrick.mp4)
 
-### Jack (- on behalf of him and David): 
+### Jack & David: 
 - (Jack) Created Reminder’s section which is a that is a list designed to be added to and deleted from
 - (Jack/David) The addition is created from a button html element connected to the bottom of the list and powered with javascript to make new list elements
 - (Jack/David) The deletion is next to each reminder and removes that specific element from the list
