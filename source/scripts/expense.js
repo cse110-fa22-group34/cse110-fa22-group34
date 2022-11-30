@@ -208,7 +208,7 @@ function updateTotalCost() {
     var storage = JSON.parse(localStorage.getItem('expenseData'));
     // if storage is null, set the total cost cell to be "$ 0"
     if (storage == null) {
-        document.getElementById('total cost').innerHTML = `<td id="total cost">$ 0</td>`;
+        document.getElementById('totalCost').innerHTML = `<td id="totalCost">$ 0</td>`;
     }
     // otherwise
     else {
@@ -225,7 +225,7 @@ function updateTotalCost() {
         // store totalCostVal into the item called totalCost in localStorage
         localStorage.setItem('totalCost', totalCostVal);
         // update the total cost cell with the current totalCostVal
-        document.getElementById('total cost').innerHTML = `<td id="total cost">$ ${totalCostVal}</td>`;
+        document.getElementById('totalCost').innerHTML = `<td id="totalCost">$ ${totalCostVal}</td>`;
     }
 }
 
