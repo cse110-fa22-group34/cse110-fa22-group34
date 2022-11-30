@@ -50,7 +50,7 @@
 
 ## Conclusion
 - We've talked about
-  - settling down the rules
-  - finishing jobs
-  - next meeting with the TA (10.16.2022 8:30pm on zoom) (details in the [```rules.md```](../misc/rules.md))
+    - settling down the rules
+    - finishing jobs
+    - next meeting with the TA (10.16.2022 8:30pm on zoom) (details in the [```rules.md```](../misc/rules.md))
     - creating the team video (unfinished)
