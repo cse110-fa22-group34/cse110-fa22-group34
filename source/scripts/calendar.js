@@ -139,7 +139,11 @@ function dayToString(day, month, year) {
     if (day < 10) {
         day = "0" + day;
     }
-    return `${year}-${month+1}-${day}`;
+    month = month + 1;
+    if (month < 10) {
+        month = "0" + month;
+    }
+    return `${year}-${month}-${day}`;
 }
 
 /**
@@ -169,6 +173,9 @@ function colorCell(dayInString, month, year) {
         let expense = expensesData[idx];
         let date = expense['date'];
         let cost = expense['cost'];
+
+        console.log("Date from localStorage:" + date)
+        console.log("Day passed in:" + dayInString)
 
         // If it's the same day (same day,month, and year), increment to the day's total.
         if (date === dayInString) {
