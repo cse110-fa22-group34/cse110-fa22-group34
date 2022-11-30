@@ -1,5 +1,45 @@
 var globalReminderIndex = 0
+window.addEventListener('DOMContentLoaded', checkLocalStorage);
 
+var reminderData = new Array();
+/**	
+ * This function checks the local storage of the website and performs different
+ * actions based on the status of local storage.
+ *  
+ * @param none
+ */
+ function checkLocalStorage() {
+  // if the reminder data storage is not null
+  globalReminderIndex = 0;
+  if (JSON.parse(localStorage.getItem('reminderData')) != null) {
+      // call the add reminder() 
+      reminderData = JSON.parse(localStorage.getItem("reminderData"));
+      reminderData.forEach(reminder => {
+        console.log(reminder);
+        loadReminder(reminder);
+      });
+  }
+ }
+
+/**	
+ * This function takes in a string from the local storage data and creates a
+ * new reminder for that note.
+ *  
+ * @param newReminder a string that holds the note that has been already saved
+ */
+function loadReminder(newReminder) {
+   let reminderListHTML= document.getElementById("reminderList");
+   
+   reminderListHTML.innerHTML += ` <li id=\"${globalReminderIndex}\">
+                                      <button class="upArrow" onclick="swapReminders(${globalReminderIndex}, 'up');">&uarr;</button>
+                                      <button class="downArrow" onclick="swapReminders(${globalReminderIndex}, 'down');">&darr;</button>
+                                      &emsp;${newReminder}
+                                      <button class="remove" onclick="removeReminder(${globalReminderIndex});">&minus;</button>
+                                    </li>`;
+  globalReminderIndex++;
+  document.getElementById("reminder").value = "";
+  }
+  
 function addReminder() {
   let reminderListHTML= document.getElementById("reminderList");
   let newReminder = document.getElementById("reminder").value;
@@ -14,12 +54,19 @@ function addReminder() {
                                     </li>`;
     document.getElementById("reminder").value = "";
     globalReminderIndex++;
+    reminderData.push(newReminder);
+    localStorage.setItem("reminderData", JSON.stringify(reminderData));
   }
 }
 
 function removeReminder(reminderId) {
   let reminder = document.getElementById(reminderId.toString(10));
   reminder.remove();
+  let index = reminderData.indexOf(reminder.innerText.substring(1, reminder.innerText.length - 1));
+  
+  console.log(reminder.innerText.substring(130, reminder.innerText.length - 1));
+  reminderData.splice(index, 1);
+  localStorage.setItem("reminderData", JSON.stringify(reminderData));
 }
 
 function swapReminders(reminderId, direction){
