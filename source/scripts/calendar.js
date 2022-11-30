@@ -72,6 +72,8 @@ function showCalendar(month, year) {
     selectYear.value = year;
     selectMonth.value = month;
 
+    let expenseData = JSON.parse(localStorage.getItem("expenseData"));
+
     // Create the cells of the calendar one row at a time.
     let date = 1;
     for (let i = 0; i < 6; i++) {
@@ -99,11 +101,15 @@ function showCalendar(month, year) {
             else {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(date);
-
+                
                 // Color today's cell.
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                     cell.classList.add("today");
+                }
+                // If expenseDate doesn't exist.
+                else if (expenseData === null) {
+                    // Do nothing - shows the plain calendar even with no data.
                 }
                 // Color the cell based on the budget.
                 else {
@@ -202,7 +208,6 @@ function colorCell(dayInString, month, year) {
         color = "dark-green";
     }
     
-
     return color;
 }
 
