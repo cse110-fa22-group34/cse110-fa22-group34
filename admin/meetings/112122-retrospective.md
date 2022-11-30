@@ -2,6 +2,6 @@
 
 ## Retrium Screenshots:
 
-![](admin/misc/retrospective_pdf.pdf)
+![](cse110-fa22-group34/admin/misc/112122-retrospective.csv)
 
 ## Retrium CSV Download
