@@ -108,8 +108,10 @@ table {
 #previous, #next {
     border-width: 0 !important;
     border-radius: 50px !important;
-    width: 200px !important;
+    width: 150px !important;
     height: 50px !important;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 /* End of Calendar Styling */
 
