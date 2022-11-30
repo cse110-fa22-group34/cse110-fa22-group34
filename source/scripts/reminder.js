@@ -10,13 +10,13 @@ var reminderData = new Array();
  */
  function checkLocalStorage() {
   // if the reminder data storage is not null
-  globalReminderIndex = 0;
   if (JSON.parse(localStorage.getItem('reminderData')) != null) {
       // call the add reminder() 
       reminderData = JSON.parse(localStorage.getItem("reminderData"));
       reminderData.forEach(reminder => {
-        console.log(reminder);
-        loadReminder(reminder);
+        console.log(reminder.id);
+        console.log(reminder.name);
+        loadReminder(reminder.name, reminder.id);
       });
   }
  }
@@ -27,16 +27,15 @@ var reminderData = new Array();
  *  
  * @param newReminder a string that holds the note that has been already saved
  */
-function loadReminder(newReminder) {
+function loadReminder(newReminder, id) {
    let reminderListHTML= document.getElementById("reminderList");
    
-   reminderListHTML.innerHTML += ` <li id=\"${globalReminderIndex}\">
-                                      <button class="upArrow" onclick="swapReminders(${globalReminderIndex}, 'up');">&uarr;</button>
-                                      <button class="downArrow" onclick="swapReminders(${globalReminderIndex}, 'down');">&darr;</button>
+   reminderListHTML.innerHTML += ` <li id=\"${id}\">
+                                      <button class="upArrow" onclick="swapReminders(${id}, 'up');">&uarr;</button>
+                                      <button class="downArrow" onclick="swapReminders(${id}, 'down');">&darr;</button>
                                       &emsp;${newReminder}
-                                      <button class="remove" onclick="removeReminder(${globalReminderIndex});">&minus;</button>
+                                      <button class="remove" onclick="removeReminder(${id});">&minus;</button>
                                     </li>`;
-  globalReminderIndex++;
   document.getElementById("reminder").value = "";
   }
   
@@ -54,7 +53,9 @@ function addReminder() {
                                     </li>`;
     document.getElementById("reminder").value = "";
     globalReminderIndex++;
-    reminderData.push(newReminder);
+    reminderData.push({
+      name : newReminder,
+      id : globalReminderIndex});
     localStorage.setItem("reminderData", JSON.stringify(reminderData));
   }
 }
@@ -62,11 +63,19 @@ function addReminder() {
 function removeReminder(reminderId) {
   let reminder = document.getElementById(reminderId.toString(10));
   reminder.remove();
-  let index = reminderData.indexOf(reminder.innerText.substring(1, reminder.innerText.length - 1));
-  
-  console.log(reminder.innerText.substring(130, reminder.innerText.length - 1));
-  reminderData.splice(index, 1);
-  localStorage.setItem("reminderData", JSON.stringify(reminderData));
+  let index = -1;
+  console.log(reminderId);
+  for (let i = 0; i < reminderData.length; i++){
+    if (reminderData[i].id == reminderId){
+      console.log(reminderData[i].id);
+      index = reminderData[i].id;
+      console.log(index);
+      reminderData.splice(index, 1);
+      localStorage.setItem("reminderData", JSON.stringify(reminderData));
+      return;
+    }
+  }
+
 }
 
 function swapReminders(reminderId, direction){
