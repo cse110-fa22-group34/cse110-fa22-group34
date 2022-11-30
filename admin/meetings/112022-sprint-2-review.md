@@ -19,7 +19,8 @@
 This week's sprint was all about coding the back end of our budget website. We did Stand-Ups as both pairs and individuals as the work was divided among pairs. Each pair presented their code and we took appropriate documentation so we could review. Our TA joined the meeting at 8:30 PM and gave us many suggestions that we will take into account and make changes accordingly for our third sprint meeting.
 
 ### Alessia & Spencer:
-- Fixed colors and made color layout correct, worked on Team Page HTML and style sheet    
+- Fixed colors and made color layout correct
+- Worked on Team Page HTML and style sheet    
 - [teamPage](/specs/sprint-2-review/teamPage.png)
 - [colors](/specs/sprint-2-review/colors.png)
 
@@ -47,6 +48,7 @@ This week's sprint was all about coding the back end of our budget website. We d
 - [Expense Table Demo Video](https://ucsd.zoom.us/rec/share/DCGwaTLRrUGxJwGFAfEzapobQ8C-g-QjRziu-EKHGQEf_s0hRswmYmKESeZ2MafG.PlrYnOzVH75ITa3r?startTime=1669077082000) (Password: p4RW%%ps)
 
 ### Jack & David: 
-- Fixed add and remove reminders and the html structure of the reminder section, implemented scroll for reminders
+- Fixed add and remove reminders and the html structure of the reminder section
+- Implemented scroll for reminders
 - [Reminders Demo Video](https://www.youtube.com/watch?v=MSxD4KMRCbg)
 
