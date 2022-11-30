@@ -9,7 +9,7 @@
 
 
 /**
- * ???
+ * call the checkLocalStorage function whenever we loads the page
  */
 window.addEventListener('DOMContentLoaded', checkLocalStorage);
 
@@ -28,8 +28,13 @@ function checkLocalStorage() {
     }
     // if the expense data storage is null
     else {
-        // hide the "save budget" button
+        // show the "create budget" button
+        document.querySelector(".create_btn").style.display = "inline";
+        // hide the "save budget", "delete budget", "delete selected" buttons, and the table
         document.querySelector(".save_budget_btn").style.display = "none";
+        document.getElementById("expensetable").style.display = "none";
+        document.querySelector(".del_select_btn").style.display = "none";
+        document.querySelector(".del_budget_btn").style.display = "none";
     }
 }
 
