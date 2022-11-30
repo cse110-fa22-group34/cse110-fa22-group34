@@ -9,6 +9,11 @@ var reminderData = new Array();
  * @param none
  */
  function checkLocalStorage() {
+  if (localStorage.getItem("globalReminderIndex") == null) {
+    globalReminderIndex = 0;
+  } else {
+    globalReminderIndex = localStorage.getItem("globalReminderIndex");
+  }
   // if the reminder data storage is not null
   if (JSON.parse(localStorage.getItem('reminderData')) != null) {
       // call the add reminder() 
@@ -36,7 +41,7 @@ function loadReminder(newReminder, id) {
                                       &emsp;${newReminder}
                                       <button class="remove" onclick="removeReminder(${id});">&minus;</button>
                                     </li>`;
-  document.getElementById("reminder").value = "";
+   document.getElementById("reminder").value = "";
   }
   
 function addReminder() {
@@ -52,30 +57,26 @@ function addReminder() {
                                       <button class="remove" onclick="removeReminder(${globalReminderIndex});">&minus;</button>
                                     </li>`;
     document.getElementById("reminder").value = "";
-    globalReminderIndex++;
     reminderData.push({
       name : newReminder,
       id : globalReminderIndex});
+    globalReminderIndex++;
     localStorage.setItem("reminderData", JSON.stringify(reminderData));
+    localStorage.setItem("globalReminderIndex", globalReminderIndex);
   }
 }
 
 function removeReminder(reminderId) {
   let reminder = document.getElementById(reminderId.toString(10));
   reminder.remove();
-  let index = -1;
   console.log(reminderId);
   for (let i = 0; i < reminderData.length; i++){
     if (reminderData[i].id == reminderId){
-      console.log(reminderData[i].id);
-      index = reminderData[i].id;
-      console.log(index);
-      reminderData.splice(index, 1);
+      reminderData.splice(i, 1);
       localStorage.setItem("reminderData", JSON.stringify(reminderData));
       return;
     }
   }
-
 }
 
 function swapReminders(reminderId, direction){
@@ -94,6 +95,11 @@ function swapReminders(reminderId, direction){
     reminderArr[currentIndex-1] = currentReminder;
     reminderArr[currentIndex] = aboveReminder;
 
+    let temp = reminderData[currentIndex-1]
+    reminderData[currentIndex-1] = reminderData[currentIndex];
+    reminderData[currentIndex] = temp;
+    localStorage.setItem("reminderData", JSON.stringify(reminderData));
+
     let reminderListHTML= document.getElementById("reminderList")
     reminderListHTML.innerHTML = ""
     for (let reminder of reminderArr){
@@ -108,6 +114,11 @@ function swapReminders(reminderId, direction){
     
     reminderArr[currentIndex+1] = currentReminder;
     reminderArr[currentIndex] = belowReminder;
+
+    let temp = reminderData[currentIndex+1]
+    reminderData[currentIndex+1] = reminderData[currentIndex];
+    reminderData[currentIndex] = temp;
+    localStorage.setItem("reminderData", JSON.stringify(reminderData));
 
     let reminderListHTML= document.getElementById("reminderList")
     reminderListHTML.innerHTML = ""
