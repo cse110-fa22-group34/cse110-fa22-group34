@@ -20,12 +20,6 @@ describe('Basic user flow for Website', () => {
       if (expenseData_LS != "undefined") { Passed = false; }
       if (expenseTable_LS != "undefined") { Passed = false; }
       if (totalCost_LS != "undefined") { Passed = false; }
-
-      const createBudgetButton = await page.$('.create_btn');
-      console.log(createBudgetButton.jsonValue());
-      display = await createBudgetButton.getProperty('dispslay');
-      plainValue = await display.jsonValue();
-      //expect(display.jsonValue()).toBe("inline");
       expect(Passed).toBe(true); //?????????????
     });
 
