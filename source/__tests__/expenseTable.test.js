@@ -8,7 +8,7 @@ describe('Basic user flow for Website', () => {
         waitUntil: 'domcontentloaded'});
     });
 
-    /* 1st Test
+    /* 1st Test:
     Check to make sure that as the page first loads,
     its local storage for expenseTable & expenseData & totalCost are undefined, 
     and that only 'create budget' button is displayed whereas the remaining buttons & table are not displayed.
@@ -40,7 +40,7 @@ describe('Basic user flow for Website', () => {
 
     });
 
-    /* 2nd Test
+    /* 2nd Test:
     Check to make sure as the 'create budget' button is clicked,
     the 'crete budget button' is hide, and the remaining buttons & table are displayed.
     */
