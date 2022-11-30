@@ -42,15 +42,15 @@
     - Deadline: 10/15/2022
   - Create [```rules.md```](../misc/rules.md) & format: David & Jack
     - Deadline: 10/15/2022
-- Reasoning for the role assignment: we promote self-volunteering as each of us know best about what we're capable of doing. If there are conflicts, the team lead and the members will then discuss to make accomodations. For this week, everyone is working on their desired tasks. 
+- Reasoning for the role assignment: we promote self-volunteering as each of us know best about what we're capable of doing. If there are conflicts, the team lead and the members will then discuss to make accomodations. For this week, everyone is working on their desired tasks.
 - Everyone has worked until 3:10pm.
 
 ## Unfinished Business
 - Team video planning, filming, editing
 
 ## Conclusion
-- We've talked about 
+- We've talked about
   - settling down the rules
   - finishing jobs
   - next meeting with the TA (10.16.2022 8:30pm on zoom) (details in the [```rules.md```](../misc/rules.md))
-  - creating the team video (unfinished)
+    - creating the team video (unfinished)
