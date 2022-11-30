@@ -243,6 +243,8 @@ function saveBudget() {
     updateTotalCost();
     // store the expense table innerHTML into local storage
     saveExpenseTable();
+    // call the showCalendar function to update the color in calendar when we save the budget
+    showCalendar();
 }
 
 /**	
