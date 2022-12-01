@@ -44,35 +44,62 @@ div {
 styling budget component
 */
 #expensetable {
-    color: #99AA84 !important;
+    color: white !important;
+    width: 60%;
+    margin-left: 2%;
+
 }
 
 #expensetable th {
-    background-color: #E3E7D7 !important;
+    background-color: white !important;
+    color: black !important;
 }
 
 #expensetable td {
-    background-color: #E3E7D7 !important;
+    background-color: white !important;
 }
 
 #expensetable input {
-    background-color: #E3E7D7 !important;
-    color: #99AA84;
+    background-color: white !important;
+    color: black !important;
+}
+.del_budget_btn{
+    background-color: #eb6969 !important;
+    margin-left: 5% !important;
 }
 
+.del_select_btn{
+    background-color: #eb6969 !important;
+    margin-left: -12% !important;
+}
+
+.save_budget_btn{
+    background-color: rgb(132,229,132) !important;
+}
+
+.add_btn{
+    background-color: white !important;
+    color: black !important;
+    border-radius: 50px;
+    border-width: 2px !important;
+    border-color: black !important
+}
 /* END OF EXPENSES COMPONENT STYLING*/
 
 /*START OF VISUALIZATION STYLING*/
 
 .budget-vis-container {
-    background-color: #E9E0D7 !important;
+    background-color: #FBFAF4 !important;
+    margin: auto;
 }
 #budget{
-    background-color: #E9E0D7;
+    background-color: #FBFAF4 !important;
+    color: black !important;
 }
 
 #visualization{
-    background-color: #E9E0D7;
+    background-color: #FBFAF4 !important;
+    
 }
 
 /* END OF VISUALIZATION STYLING */
@@ -81,17 +108,22 @@ styling budget component
 
 #reminders {
     background-color:#FBFAF4 !important;
+    color: black !important;
 }
 
 #reminders li {
     color : #99AA84;
+}
+
+#inputReminder{
+    color:black !important;
 }
 /* END */ 
 
 /* START OF CALENDAR STYLING */
 table th {
    background-color: #FBFAF4 !important;
-   color: #99AA84
+   color: black;
 }
 
 /*table td {
@@ -104,7 +136,7 @@ table th {
 }
 
 .card-calendar{
-    width: 4fr
+    width: 4fr;
 }
 
 table {
