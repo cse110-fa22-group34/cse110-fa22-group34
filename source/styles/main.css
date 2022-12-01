@@ -64,17 +64,22 @@ styling budget component
     color: black !important;
 }
 .del_budget_btn{
-    background-color: #eb6969 !important;
-    margin-left: 5% !important;
+    background-color: #e2b4bd  !important;
+    /* margin-left: 5% !important; */
 }
 
 .del_select_btn{
-    background-color: #eb6969 !important;
-    margin-left: -12% !important;
+    background-color: #e2b4bd !important;
+    margin-left: -25%; 
+    color: white!important
 }
 
 .save_budget_btn{
-    background-color: rgb(132,229,132) !important;
+    background-color: #e2b4bd !important;
+    border-radius: 50px !important;
+    width: 200px !important;
+    height: 50px !important;
+    font-size: medium;
 }
 
 .add_btn{

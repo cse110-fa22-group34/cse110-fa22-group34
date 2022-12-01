@@ -62,8 +62,8 @@
         <span class="tooltiptext">Type your reminder in the text box below. Once you finish typing, click the '+' to add it to the reminder list. Click on the '-' once you complete a reminder in order to remove it from the list.</span>
       </div>
       <button class="btn create_btn" style="margin:5px;" onclick="createBudget()">+ Create New Budget</button>
-      <button class="btn del_select_btn" style="margin:5px;" onclick="deleteSelectedRows()">Delete Selected</button>
-      <button class="btn del_budget_btn" style="margin:5px;" onclick="deleteBudget()">Delete Budget</button>
+      <!-- <button class="btn del_select_btn" style="margin:5px;" onclick="deleteSelectedRows()">Delete Selected</button>
+      <button class="btn del_budget_btn" style="margin:5px;" onclick="deleteBudget()">Delete Budget</button> -->
       <table id="expensetable" border="1" cellspacing="1">
         <tr>
             <th>No.</th>
@@ -87,7 +87,9 @@
             <td colspan="2"></td>
         </tr>
       </table>
-      <button class="btn save_budget_btn" id = 'btn_save_budget'onclick="saveBudget()">Save Budget</button>
+      <button class="btn del_select_btn"  onclick="deleteSelectedRows()">Delete Selected</button>
+      <button class="btn del_budget_btn"  onclick="deleteBudget()">Delete Budget</button>
+      <button class="btn save_budget_btn" id ='btn_save_budget'onclick="saveBudget()">Save Budget</button>
       <br/>
     </div>
       
