@@ -43,7 +43,7 @@ div {
 /*
 styling budget component
 */
-#expensetable {
+#expenseTable {
     color: white !important;
     width: 60%;
     margin-left: 2%;
@@ -91,7 +91,7 @@ styling budget component
 }
 
 .titleBudge{
-    
+
 }
 /* END OF EXPENSES COMPONENT STYLING*/
 
