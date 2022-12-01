@@ -211,8 +211,8 @@ function colorCell(dayInString, month, year) {
     return color;
 }
 
-// window.onclick = function(event) {
-//     showCalendar(currentMonth, currentYear);
-// }
+window.onclick = function(event) {
+    showCalendar(currentMonth, currentYear);
+}
 
     
