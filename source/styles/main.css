@@ -15,8 +15,15 @@ body {
 div.main-body {
     display: grid;   
     height: 100vh; 
-    grid-template-columns: 1fr 1fr 2fr;
     grid-template: max-content;
+}
+
+.toggleOFF {
+    grid-template-columns: auto auto;
+}
+  
+.toggleON {
+    grid-template-columns: 1fr 1fr 2fr;
 }
 /* make all text within divs green */
 div {
