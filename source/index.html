@@ -12,7 +12,7 @@
 
   <!-- Main Stylesheets & Scripts -->
   <link rel="stylesheet" href="/source/styles/main.css"/>
-  <script src="assets/scripts/main.js" type="module"></script>
+  <script src="/source/scripts/main.js" type="text/javascript"></script>
 
   <!-- Expense Stylesheets & Scripts -->
   <link href="./expense.css" rel="stylesheet" type="text/css">
@@ -49,8 +49,14 @@
     </div>
   </header>
   <main>
-    <div class="main-body">
 
+      <!-- Button that Hides the Reminders and Calendar -->
+    <div class="button-toggle">
+      <button id="toggleButton" onclick="hideShowButton()">Toggle</button>
+    </div>
+
+
+    <div class="main-body  toggleOFF"> 
     <!-- Expenses -->
     <div id="expenses">
       <div class="tooltip" style="display:block"><h1>Expenses Table</h1>
@@ -58,10 +64,11 @@
       </div>
       <!-- create the create budget button, delete selected button, and delete budget button -->
       <button class="btn create_btn" style="margin:5px;" onclick="createBudget()">+ Create New Budget</button>
-      <button class="btn del_select_btn" style="margin:5px;" onclick="deleteSelectedRows()">Delete Selected</button>
-      <button class="btn del_budget_btn" style="margin:5px;" onclick="deleteBudget()">Delete Budget</button>
-      <!-- create the expense table for tracking the budget -->
-      <table id="expenseTable" border="1" cellspacing="1">
+
+      <!-- <button class="btn del_select_btn" style="margin:5px;" onclick="deleteSelectedRows()">Delete Selected</button>
+      <button class="btn del_budget_btn" style="margin:5px;" onclick="deleteBudget()">Delete Budget</button> -->
+      <table id="expensetable" border="1" cellspacing="1">
+
         <tr>
           <!-- The header of the table with 6 columns: No., checkbox, date, cost, item, label -->
             <th>No.</th>
@@ -87,8 +94,11 @@
             <td colspan="2"></td>
         </tr>
       </table>
-      <!-- Create the save budget button -->
-      <button class="btn save_budget_btn" id = 'btn_save_budget'onclick="saveBudget()">Save Budget</button>
+
+      <button class="btn del_select_btn"  onclick="deleteSelectedRows()">Delete Selected</button>
+      <button class="btn del_budget_btn"  onclick="deleteBudget()">Delete Budget</button>
+      <button class="btn save_budget_btn" id ='btn_save_budget'onclick="saveBudget()">Save Budget</button>
+
       <br/>
     </div>
       
@@ -97,7 +107,7 @@
       <!-- Budget/remaining field -->
       
       <div id="budget">
-        <div class="tooltip" style="background-color:#E9E0D7"><h1>Budget</h1>
+        <div class="tooltip"><h1 id="titleBudge">Budget</h1>
           <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
         </div>
         <span class="title">Budget Remaining</span>
@@ -110,7 +120,7 @@
 
       <!-- Chart -->
       <div id="visualization">
-          <div class="tooltip" style="background-color:#E9E0D7"><h1>Visualization</h1>
+          <div class="tooltip"><h1>Visualization</h1>
             <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
           </div>
           <select id="visualization_type">
@@ -124,7 +134,7 @@
     </div>
       
 
-    <div class="reminders-calendar-container">
+    <div class="reminders-calendar-container" style="display:none">
       <!-- Reminders -->
       <div class="tooltip"><h1>Reminders</h1>
         <span class="tooltiptext">Type your reminder in the text box below. Once you finish typing, click the '+' to add it to the reminder list. Click on the '-' once you complete a reminder in order to remove it from the list.</span>
