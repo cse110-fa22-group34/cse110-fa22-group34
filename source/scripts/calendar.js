@@ -175,13 +175,15 @@ function colorCell(dayInString, month, year) {
     let dayTotalSpent = 0;
     let dailyBudget = totalBudget / daysInMonth(month, year);
 
+    console.log("Daily Budget: " + dailyBudget);
+
     for (let idx = 0; idx < expensesData.length; idx++) {
         let expense = expensesData[idx];
         let date = expense['date'];
         let cost = expense['cost'];
 
-        console.log("Date from localStorage:" + date)
-        console.log("Day passed in:" + dayInString)
+        // console.log("Date from localStorage:" + date)
+        // console.log("Day passed in:" + dayInString)
 
         // If it's the same day (same day,month, and year), increment to the day's total.
         if (date === dayInString) {
