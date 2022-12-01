@@ -44,7 +44,7 @@ describe('Basic user flow for Website', () => {
     Check to make sure as the 'create budget' button is clicked,
     the 'crete budget button' is hide, and the remaining buttons & table are displayed.
     */
-    it('Check for "Create Budget" Button and its ripple effects', async () => {
+    it('Check for "Create Budget" Button and Its Ripple Effects', async () => {
       let passed = true;
       const createBudgetButton = await page.$('.create_btn');
       await createBudgetButton.click();
@@ -69,7 +69,7 @@ describe('Basic user flow for Website', () => {
     Check to make sure that as 'save budget button' is clicked,
     it saves the expenseTable & expenseData & totalCost into local storage.
     */
-    it('Check for "Save Budget" Button and its ripple effects', async () => {     
+    it('Check for "Save Budget" Button and Its Ripple Effects', async () => {     
       let passed = true;
       let lengthOfEmptyExpenseTable = 876;
       const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
@@ -87,7 +87,7 @@ describe('Basic user flow for Website', () => {
     Check to make sure that as the 'add rows' button is clicked,
     the HTML elements are updated correspondingly.
     */
-    it('Check for "Add Rows" Button and its ripple effects', async () => {     
+    it('Check for "Add Rows" Button and Its Ripple Effects', async () => {     
       let passed = true;
       let lengthOf10rowsExpenseTable = 1094;
 
@@ -106,7 +106,7 @@ describe('Basic user flow for Website', () => {
     Check to make sure that as the 'delete selected rows' button is clicked,
     the HTML elements are removed correspondingly.
     */
-    it('Check for "Delete Selected Rows" Button and its ripple effects', async () => {     
+    it('Check for "Delete Selected Rows" Button and Its Ripple Effects', async () => {     
       let passed = true;
       let lengthOf5rowsExpenseTable = 573;
   
@@ -128,7 +128,7 @@ describe('Basic user flow for Website', () => {
 
     // 6th Test
     // Input some data, Click save budget button, then check for the total cost 
-    it('Check for total cost', async () => {  
+    it('Check for "Total Cost"', async () => {  
       for (var i = 1; i < 6; i++) {
         var costID = '#cost' + `${i}`;
         var cost = await page.$(costID);
@@ -150,7 +150,7 @@ describe('Basic user flow for Website', () => {
     // 7th Test
     // Check to make sure that as the Delete Budget Button is clicked its local storage for expenseTable & expenseData & totalCost are undefined
     // and that only "create budget" button's display is block and the remaining elements have their display as none
-    it('Check for Delete Budget Button', async () => {  
+    it('Check for Delete Budget Button and Its Ripple Effects', async () => {  
       let passed = true;
       const deleteBudgetButton = await page.$('.del_budget_btn');
       await deleteBudgetButton.click();
