@@ -159,7 +159,7 @@ function dayToString(day, month, year) {
  * 
  * Function to determine the color of the cell based on the budget.
  * If the date is in the future, return neutral.
- * If the date is today, return ____. @TODO
+ * If the date is today, return ____. 
  * If the date is in the past, return "danger" if the budget is exceeded.
  */
 function colorCell(dayInString, month, year) {
