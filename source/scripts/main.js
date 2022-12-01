@@ -21,7 +21,7 @@ function hideShowButton() {
       grid.classList.remove('toggleON');
       grid.classList.toggle('toggleOFF');
       x.style.display = "none";
-      del_btn.style.marginLeft =  "-25%";
+      del_btn.style.marginLeft =  "-24%";
     }
   })
 }
