@@ -17,6 +17,7 @@
   <!-- Expense Stylesheets & Scripts -->
   <link href="./expense.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="/source/scripts/expense.js"></script>
+  <script type="text/javascript" src="/source/scripts/calendar.js"></script>
 
   <!-- Visualization Stylesheets & Scripts -->
   <link rel="stylesheet" href="/source/styles/visualization.css" />
@@ -55,11 +56,14 @@
       <div class="tooltip" style="display:block"><h1>Expenses Table</h1>
         <span class="tooltiptext">Type your reminder in the text box below. Once you finish typing, click the '+' to add it to the reminder list. Click on the '-' once you complete a reminder in order to remove it from the list.</span>
       </div>
+      <!-- create the create budget button, delete selected button, and delete budget button -->
       <button class="btn create_btn" style="margin:5px;" onclick="createBudget()">+ Create New Budget</button>
       <button class="btn del_select_btn" style="margin:5px;" onclick="deleteSelectedRows()">Delete Selected</button>
       <button class="btn del_budget_btn" style="margin:5px;" onclick="deleteBudget()">Delete Budget</button>
-      <table id="expensetable" border="1" cellspacing="1">
+      <!-- create the expense table for tracking the budget -->
+      <table id="expenseTable" border="1" cellspacing="1">
         <tr>
+          <!-- The header of the table with 6 columns: No., checkbox, date, cost, item, label -->
             <th>No.</th>
             <th>
                 <input type="checkbox" checked disabled>
@@ -67,20 +71,23 @@
             <th>Date</th>
             <th>Cost</th>
             <th>Item</th>
-            <th>Labels</th>
+            <th>Label</th>
         </tr>
+        <!-- The row with the add row button: whenever we click this button, a new empty row will be added to the table -->
         <tr>
             <td colspan="6">
                 <button class="btn add_btn" onclick="addRow()">+ Add Row</button>
             </td>
         </tr>
+        <!-- The row to calculate the total cost -->
         <tr>
             <td colspan="2"></td>
             <td>Total Cost:</td>
-            <td id="total cost">$</td>
+            <td id="totalCost">$</td>
             <td colspan="2"></td>
         </tr>
       </table>
+      <!-- Create the save budget button -->
       <button class="btn save_budget_btn" id = 'btn_save_budget'onclick="saveBudget()">Save Budget</button>
       <br/>
     </div>
