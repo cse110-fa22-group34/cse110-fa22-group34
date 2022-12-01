@@ -10,4 +10,4 @@ General Guide of Repository:
 
 [Pitch](./specs/pitch)
 
-[github site](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html)
+CLICK HERE EVERYONE!!!!!!!! [github site](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html)
