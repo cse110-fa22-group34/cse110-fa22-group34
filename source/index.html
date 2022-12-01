@@ -12,7 +12,7 @@
 
   <!-- Main Stylesheets & Scripts -->
   <link rel="stylesheet" href="/source/styles/main.css"/>
-  <script src="assets/scripts/main.js" type="module"></script>
+  <script src="/source/scripts/main.js" type="text/javascript"></script>
 
   <!-- Expense Stylesheets & Scripts -->
   <link href="./expense.css" rel="stylesheet" type="text/css">
@@ -48,8 +48,14 @@
     </div>
   </header>
   <main>
-    <div class="main-body">
 
+      <!-- Button that Hides the Reminders and Calendar -->
+    <div class="button-toggle">
+      <button id="toggleButton" onclick="hideShowButton()">Toggle</button>
+    </div>
+
+
+    <div class="main-body">
     <!-- Expenses -->
     <div id="expenses">
       <div class="tooltip" style="display:block"><h1>Expenses Table</h1>
