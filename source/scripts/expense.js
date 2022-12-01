@@ -32,7 +32,7 @@ function checkLocalStorage() {
         document.querySelector(".create_btn").style.display = "inline";
         // hide the "save budget", "delete budget", "delete selected" buttons, and the table
         document.querySelector(".save_budget_btn").style.display = "none";
-        document.getElementById("expensetable").style.display = "none";
+        document.getElementById("expenseTable").style.display = "none";
         document.querySelector(".del_select_btn").style.display = "none";
         document.querySelector(".del_budget_btn").style.display = "none";
     }
@@ -49,7 +49,7 @@ function checkLocalStorage() {
  * @param none
  */
 function createBudget() {
-    document.getElementById("expensetable").style.display = "block";
+    document.getElementById("expenseTable").style.display = "block";
     document.querySelector(".del_select_btn").style.display = "inline";
     document.querySelector(".del_budget_btn").style.display = "inline";
     document.querySelector(".save_budget_btn").style.display = "inline";
@@ -63,7 +63,7 @@ function createBudget() {
  */
 function addRow() {
     // select the table element
-    var tb = document.getElementById("expensetable");
+    var tb = document.getElementById("expenseTable");
     // store the number of rows in the variable rowCount
     var rowCount = tb.getElementsByTagName("tr").length;
     // store the index of the to-be-added row in the variable nextRowNum
@@ -114,7 +114,7 @@ function addRow() {
  */
 function deleteSelectedRows() {
     // select the table element
-    var tb = document.getElementById("expensetable");
+    var tb = document.getElementById("expenseTable");
     // select the tr element, which means the rows of the table
     var rows = tb.getElementsByTagName("tr");
     // store the count of rows in rowCount
@@ -172,13 +172,13 @@ function deleteSelectedRows() {
  */
 function deleteBudget() {
     // hide all buttons except for the "create new budget" button
-    document.getElementById("expensetable").style.display = "none";
+    document.getElementById("expenseTable").style.display = "none";
     document.querySelector(".del_select_btn").style.display = "none";
     document.querySelector(".del_budget_btn").style.display = "none";
     document.querySelector(".save_budget_btn").style.display = "none";
     document.querySelector(".create_btn").style.display = "block";
     // select the table element
-    var tb = document.getElementById("expensetable");
+    var tb = document.getElementById("expenseTable");
     // select the tr element, which means the rows of the table
     var rows = tb.getElementsByTagName("tr");
     // store the count of rows in rowCount
@@ -256,7 +256,7 @@ function saveBudgetToLocal() {
     // create an empty array to store the row data
     var expenseData = new Array();
     // select the table element
-    var tb = document.getElementById("expensetable");
+    var tb = document.getElementById("expenseTable");
     // select the tr element, which means the rows of the table
     var rows = tb.getElementsByTagName("tr");
     // store the count of rows in rowCount
@@ -290,7 +290,7 @@ function saveBudgetToLocal() {
  */
 function saveExpenseTable(){
     // select the table element
-    var tb = document.getElementById("expensetable");
+    var tb = document.getElementById("expenseTable");
     // store the innerHTML of the expense table into local storage
     tbHTML = tb.innerHTML;
     localStorage.setItem("expenseTable",tbHTML);
@@ -303,7 +303,7 @@ function saveExpenseTable(){
  */
 function loadExpenseTable(){
     // select the table element
-    var tb = document.getElementById("expensetable");
+    var tb = document.getElementById("expenseTable");
     // set the innerHTML of the table to be the one stored in the local storage
     tb.innerHTML = localStorage.getItem("expenseTable");
 

@@ -26,7 +26,7 @@ describe('Basic user flow for Website', () => {
       if (totalCostLS != "undefined") { passed = false; }
 
       const createBudgetDisplay = await page.$eval('.create_btn', el => getComputedStyle(el).getPropertyValue('display'));
-      const expenseTableDisplay = await page.$eval('#expensetable', el => getComputedStyle(el).getPropertyValue('display'));
+      const expenseTableDisplay = await page.$eval('#expenseTable', el => getComputedStyle(el).getPropertyValue('display'));
       const deleteSelectedDisplay = await page.$eval('.del_select_btn', el => getComputedStyle(el).getPropertyValue('display'));
       const deleteBudgetDisplay = await page.$eval('.del_budget_btn', el => getComputedStyle(el).getPropertyValue('display'));
       const saveBudgetDisplay = await page.$eval('.save_budget_btn', el => getComputedStyle(el).getPropertyValue('display'));
@@ -52,7 +52,7 @@ describe('Basic user flow for Website', () => {
       await saveBudgetButton.click();
 
       const createBudgetDisplay = await page.$eval('.create_btn', el => getComputedStyle(el).getPropertyValue('display'));
-      const expenseTableDisplay = await page.$eval('#expensetable', el => getComputedStyle(el).getPropertyValue('display'));
+      const expenseTableDisplay = await page.$eval('#expenseTable', el => getComputedStyle(el).getPropertyValue('display'));
       const deleteSelectedDisplay = await page.$eval('.del_select_btn', el => getComputedStyle(el).getPropertyValue('display'));
       const deleteBudgetDisplay = await page.$eval('.del_budget_btn', el => getComputedStyle(el).getPropertyValue('display'));
       const saveBudgetDisplay = await page.$eval('.save_budget_btn', el => getComputedStyle(el).getPropertyValue('display'));
@@ -95,7 +95,7 @@ describe('Basic user flow for Website', () => {
       for (let i = 0; i < 10; i++) {
         await addRowButton.click();
       }
-      const expenseTableJSHandle = await page.$('#expensetable');
+      const expenseTableJSHandle = await page.$('#expenseTable');
       const expenseTableHTML = await expenseTableJSHandle.getProperty('innerText');
       const expenseTablejsonValue = await expenseTableHTML.jsonValue();
       if (expenseTablejsonValue.length != lengthOf10rowsExpenseTable) {passed = false;}
@@ -119,7 +119,7 @@ describe('Basic user flow for Website', () => {
       const delRowButton = await page.$('.del_select_btn');
       await delRowButton.click();
 
-      const expenseTableJSHandle = await page.$('#expensetable');
+      const expenseTableJSHandle = await page.$('#expenseTable');
       const expenseTableHTML = await expenseTableJSHandle.getProperty('innerText');
       const expenseTableJsonValue = await expenseTableHTML.jsonValue();
       if (expenseTableJsonValue.length != lengthOf5rowsExpenseTable) {passed = false; }
@@ -165,7 +165,7 @@ describe('Basic user flow for Website', () => {
       if (totalCostLS != "undefined") { passed = false; }
 
       const createBudgetDisplay = await page.$eval('.create_btn', el => getComputedStyle(el).getPropertyValue('display'));
-      const expenseTableDisplay = await page.$eval('#expensetable', el => getComputedStyle(el).getPropertyValue('display'));
+      const expenseTableDisplay = await page.$eval('#expenseTable', el => getComputedStyle(el).getPropertyValue('display'));
       const deleteSelectedDisplay = await page.$eval('.del_select_btn', el => getComputedStyle(el).getPropertyValue('display'));
       const deleteBudgetDisplay = await page.$eval('.del_budget_btn', el => getComputedStyle(el).getPropertyValue('display'));
       const saveBudgetDisplay = await page.$eval('.save_budget_btn', el => getComputedStyle(el).getPropertyValue('display'));
