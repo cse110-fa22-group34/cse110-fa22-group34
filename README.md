@@ -9,3 +9,5 @@ General Guide of Repository:
 [Brainstorm](./specs/brainstorm)
 
 [Pitch](./specs/pitch)
+
+[github site](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html)
