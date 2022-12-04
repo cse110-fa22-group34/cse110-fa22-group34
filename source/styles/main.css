@@ -81,7 +81,7 @@ styling budget component
 
 .del_select_btn{
     background-color: #e2b4bd !important;
-    margin-left: -25%; 
+    margin-left: -22%; 
     color: white!important
 }
 
@@ -99,6 +99,10 @@ styling budget component
     border-radius: 50px;
     border-width: 2px !important;
     border-color: black !important
+}
+
+.expTitle {
+    margin-left: -18%; 
 }
 
 /* END OF EXPENSES COMPONENT STYLING*/

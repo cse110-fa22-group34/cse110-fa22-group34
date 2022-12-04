@@ -51,14 +51,14 @@
 
       <!-- Button that Hides the Reminders and Calendar -->
     <div class="button-toggle">
-      <button id="toggleButton" onclick="hideShowButton()">Show Reminders and Calender</button>
+      <button id="toggleButton" onclick="hideShowButton()" value="OFF">Show Reminders and Calender</button>
     </div>
 
 
     <div class="main-body  toggleOFF"> 
     <!-- Expenses -->
     <div id="expenses">
-      <div class="tooltip" style="display:block"><h1>Expenses Table</h1>
+      <div class="tooltip" style="display:block"><h1 class = expTitle>Expenses Table</h1>
         <span class="tooltiptext">Type your reminder in the text box below. Once you finish typing, click the '+' to add it to the reminder list. Click on the '-' once you complete a reminder in order to remove it from the list.</span>
       </div>
       <!-- create the create budget button, delete selected button, and delete budget button -->
@@ -118,13 +118,13 @@
             <option value="character">Character</option>
           </select>
         <div id="budget-visualization">
-          <span class="title">Amount of Money Left for the Month</span>
-          <span  class="textview" id="budget-remaining-amount">$ 0.0</span>
+          <span class="title" style="display:block">Amount of Money Left for the Month</span>
+          <span  class="textview" id="budget-remaining-amount" style="display:block">$ 0.0</span>
 
-          <span class="title">Average Amount of Money Left per Day</span>
-          <span  class="textview" id="budget-remaining-day">$ 0.0</span>
+          <span class="title" style="display:block">Average Amount of Money Left per Day</span>
+          <span  class="textview" id="budget-remaining-day" style="display:block">$ 0.0</span>
         </div>
-        <div id="visualization_figure"></div>
+        <div id="visualization_figure" style="width:500px;height:400px"></div>
       </div>
     </div>
       
