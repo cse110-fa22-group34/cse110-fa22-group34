@@ -43,6 +43,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
     */
     it('Check for the Add Reminder Button and Its Ripple Effects', async () => {
       let passed = true;
+      // add reminder 1
       const addReminderButton = await page.$("#add");
       var input = await page.$("#reminder");
       input.type("reminder1");
@@ -55,6 +56,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
       if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
       if (globalReminderIndexLS != 1) { passed = false; }
 
+      // add reminder 2
       input.type("reminder2");
       await page.waitForTimeout(500);
       await addReminderButton.click();
@@ -80,6 +82,8 @@ describe('Basic user flow for REMINDER section of the website', () => {
       const upArrow2 = await page.$('[id="1"] > button.upArrow');
       const downArrow1 = await page.$('[id="0"] > button.downArrow');
       const downArrow2 = await page.$('[id="1"] > button.downArrow');
+
+      // try to move reminder 1 up
       await upArrow1.click();
       localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
       reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
@@ -88,6 +92,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
       if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
       if (globalReminderIndexLS != 2) { passed = false; }
 
+      // try to move reminder 1 down
       await downArrow1.click();
       localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
       reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
@@ -96,6 +101,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
       if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
       if (globalReminderIndexLS != 2) { passed = false; }
 
+      // try to move reminder 1 up again
       await upArrow1.click();
       localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
       reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
@@ -104,6 +110,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
       if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
       if (globalReminderIndexLS != 2) { passed = false; }
 
+      // try to move reminder 2 down
       await downArrow2.click();
       localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
       reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
@@ -112,6 +119,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
       if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
       if (globalReminderIndexLS != 2) { passed = false; }
 
+      // try to move reminder 2 up
       await upArrow2.click();
       localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
       reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
@@ -120,6 +128,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
       if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
       if (globalReminderIndexLS != 2) { passed = false; }
 
+      // try to move reminder 2 down again
       await downArrow2.click();
       localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
       reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
@@ -140,6 +149,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
         jest.setTimeout(300000)
         let passed = true;
 
+        // add reminder 3
         const addReminderButton = await page.$("#add");
         var input = await page.$("#reminder");
         input.type("reminder3");
@@ -156,6 +166,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
         const remove2 = await page.$('[id="1"] > button.remove');
         const remove3 = await page.$('[id="2"] > button.remove');
 
+        // remove reminder 2
         await remove2.click();
         localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
         reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
@@ -164,6 +175,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
         if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
         if (globalReminderIndexLS != 3) { passed = false; }
 
+        // remove reminder 1
         await remove1.click();
         localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
         reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
@@ -172,6 +184,7 @@ describe('Basic user flow for REMINDER section of the website', () => {
         if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
         if (globalReminderIndexLS != 3) { passed = false; }
 
+        // remove reminder 3
         await remove3.click();
         localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
         reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
