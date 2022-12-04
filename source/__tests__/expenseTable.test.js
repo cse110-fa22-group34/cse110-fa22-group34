@@ -4,7 +4,7 @@ describe('Basic user flow for Website', () => {
     beforeAll(async () => {
       jest.setTimeout(300000);
       page = await browser.newPage();
-      await page.goto('http://127.0.0.1:5501/source/',{
+      await page.goto('https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html',{
         waitUntil: 'domcontentloaded'});
     });
 
@@ -71,7 +71,7 @@ describe('Basic user flow for Website', () => {
     */
     it('Check for "Save Budget" Button and its ripple effects', async () => {     
       let passed = true;
-      let lengthOfEmptyExpenseTable = 876;
+      let lengthOfEmptyExpenseTable = 877;
       const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
 
       expenseDataLS = `${localStorage.expenseData}`;
