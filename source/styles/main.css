@@ -40,6 +40,17 @@ div {
     background-color: #E3E7D7 !important;;
 }
 
+
+#toggleButton{
+    background-color: #e2b4bd !important;
+    border-radius: 50px !important;
+    width: 200px !important;
+    height: 50px !important;
+    font-size: medium;
+    color: white!important;
+    align-self: flex-end;
+}
+
 /*
 styling budget component
 */
@@ -90,9 +101,6 @@ styling budget component
     border-color: black !important
 }
 
-.titleBudge{
-
-}
 /* END OF EXPENSES COMPONENT STYLING*/
 
 /*START OF VISUALIZATION STYLING*/

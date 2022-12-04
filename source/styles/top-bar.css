@@ -1,7 +1,7 @@
 @import url(../styles/global.css);
 
 #top-bar {
-    background-color: #80916d;
+    background-color: #E3E7D7;
     height: 75px;
     padding: 10px;
     display: flex;
@@ -12,6 +12,7 @@
 #main-logo {
     font-size: 2.5rem;
     font-weight: 1000;
+    color: #99AA84;
 }
 
 
@@ -20,7 +21,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #80916d
+    background-color: #E3E7D7;
 }
   
 #top-bar li {
@@ -29,10 +30,12 @@
   
 #top-bar li a {
     display: block;
-    color:  #FBFAF4;
+    color:  #99AA84;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.25rem;
 }
   
 #top-bar li a:hover:not(.active) {
