@@ -51,12 +51,13 @@ div {
 
 #toggleButton{
     background-color: #e2b4bd !important;
-    border-radius: 50px !important;
-    width: 200px !important;
-    height: 50px !important;
-    font-size: medium;
+    border-radius: 20px;
+    width: 100px !important;
+    height: 25px !important;
     color: white!important;
-    align-self: flex-end;
+    position:absolute;
+    top: 85px;
+    right:5px;
 }
 
 /*

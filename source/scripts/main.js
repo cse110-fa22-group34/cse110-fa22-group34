@@ -17,7 +17,10 @@ function hideShowButton() {
   var container = document.getElementsByClassName("reminders-calendar-container");
   //get the grid to work
   var grid = document.querySelector("div.main-body");
+  //grab delete button to ensure smooth layout
   var del_btn = document.querySelector(".del_select_btn");
+  //
+  var toggleButton = document.getElementById('toggleButton');
 
   //getElementsByClassName returns an array so for every single one display if
   //set to none or vice versa
@@ -28,12 +31,15 @@ function hideShowButton() {
       grid.classList.toggle('toggleON');
       x.style.display = "block"; 
       del_btn.style.marginLeft =  "5%";
+      toggleButton.innerHTML = '☰ Hide';
+
     } 
     else {
       grid.classList.remove('toggleON');
       grid.classList.toggle('toggleOFF');
       x.style.display = "none";
       del_btn.style.marginLeft =  "-24%";
+      toggleButton.innerHTML = '☰ Show More';
     }
   })
 }
