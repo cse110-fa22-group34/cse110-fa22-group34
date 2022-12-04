@@ -68,7 +68,7 @@
     <div class="main-body  toggleOFF"> 
     <!-- Expenses -->
     <div id="expenses">
-      <div class="tooltip" style="display:block"><h1>Expenses Table</h1>
+      <div class="tooltip" style="display:block"><h1 class = expTitle>Expenses Table</h1>
         <span class="tooltiptext">Click Add Row and fill out appropriate information. Click 'Save Budget' when done</span>
       </div>
       <!-- create the create budget button, delete selected button, and delete budget button -->
@@ -129,12 +129,12 @@
           </select>
         <div id="budget-visualization">
           <span class="title">$ Left for the Month</span>
-          <span  class="textview" id="budget-remaining-amount">$ 0.0</span>
+          <span  class="textview" id="budget-remaining-amount" style="display:block">$ 0.0</span>
 
           <span class="title">Average $ Left per Day</span>
-          <span  class="textview" id="budget-remaining-day">$ 0.0</span>
+          <span  class="textview" id="budget-remaining-day" style="display:block">$ 0.0</span>
         </div>
-        <div id="visualization_figure"></div>
+        <div id="visualization_figure" style="width:500px;height:400px"></div>
       </div>
     </div>
       
