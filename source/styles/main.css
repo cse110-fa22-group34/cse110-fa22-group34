@@ -1,3 +1,11 @@
+/**
+ * This file is the main CSS file for our website. It ensures that
+ * colors and the sizing of everything is uniform across our wesbite.
+ * 
+ * References: 
+ *       MDN Web Docs
+ */
+
 @import url(../styles/global.css);
 @import url(../styles/calendar.css);
 @import url(../styles/expenses.css);
@@ -43,12 +51,14 @@ div {
 
 #toggleButton{
     background-color: #e2b4bd !important;
-    border-radius: 50px !important;
-    width: 200px !important;
-    height: 50px !important;
-    font-size: medium;
+
+    border-radius: 20px;
+    width: 100px !important;
+    height: 25px !important;
     color: white!important;
-    align-self: flex-end;
+    position:absolute;
+    top: 85px;
+    right:5px;
 }
 
 /*
@@ -101,9 +111,11 @@ styling budget component
     border-color: black !important
 }
 
+
 .expTitle {
     margin-left: -18%; 
 }
+
 
 /* END OF EXPENSES COMPONENT STYLING*/
 

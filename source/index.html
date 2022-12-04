@@ -1,3 +1,13 @@
+<!-- 
+ * This file is the HTML page for the main page of our website. This
+ * implements all the HTML for the index page and is separated by divs
+ * by feature.
+ * 
+ * References: 
+ *       MDN Web Docs
+ *
+ * -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,15 +61,15 @@
 
       <!-- Button that Hides the Reminders and Calendar -->
     <div class="button-toggle">
-      <button id="toggleButton" onclick="hideShowButton()" value="OFF">Show Reminders and Calender</button>
+      <button id="toggleButton" onclick="hideShowButton()">☰ Show More</button>
     </div>
 
 
     <div class="main-body  toggleOFF"> 
     <!-- Expenses -->
     <div id="expenses">
-      <div class="tooltip" style="display:block"><h1 class = expTitle>Expenses Table</h1>
-        <span class="tooltiptext">Type your reminder in the text box below. Once you finish typing, click the '+' to add it to the reminder list. Click on the '-' once you complete a reminder in order to remove it from the list.</span>
+      <div class="tooltip" style="display:block"><h1>Expenses Table</h1>
+        <span class="tooltiptext">Click Add Row and fill out appropriate information. Click 'Save Budget' when done</span>
       </div>
       <!-- create the create budget button, delete selected button, and delete budget button -->
       <button class="btn create_btn" style="margin:5px;" onclick="createBudget()">+ Create New Budget</button>
@@ -109,7 +119,7 @@
           <!-- <div class="tooltip"><h1>Visualization</h1>
             <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
           </div> -->
-          <span class="title">Enter Desired Monthly Budget:</span>
+          <span class="title">Enter Monthly Budget:</span>
           <input class="total_amount_of_budget_input" type="number" id="total-budget" name="total-budget">
           <select id="visualization_type">
             <option value="">Text View</option>
@@ -118,13 +128,13 @@
             <option value="character">Character</option>
           </select>
         <div id="budget-visualization">
-          <span class="title" style="display:block">Amount of Money Left for the Month</span>
-          <span  class="textview" id="budget-remaining-amount" style="display:block">$ 0.0</span>
+          <span class="title">$ Left for the Month</span>
+          <span  class="textview" id="budget-remaining-amount">$ 0.0</span>
 
-          <span class="title" style="display:block">Average Amount of Money Left per Day</span>
-          <span  class="textview" id="budget-remaining-day" style="display:block">$ 0.0</span>
+          <span class="title">Average $ Left per Day</span>
+          <span  class="textview" id="budget-remaining-day">$ 0.0</span>
         </div>
-        <div id="visualization_figure" style="width:500px;height:400px"></div>
+        <div id="visualization_figure"></div>
       </div>
     </div>
       
@@ -132,7 +142,7 @@
     <div class="reminders-calendar-container" style="display:none">
       <!-- Reminders -->
       <div class="tooltip"><h1>Reminders</h1>
-        <span class="tooltiptext">Type your reminder in the text box below. Once you finish typing, click the '+' to add it to the reminder list. Click on the '-' once you complete a reminder in order to remove it from the list.</span>
+        <span class="tooltiptext">Add '+' reminders below. Use arrows to prioritize. Use '-' to delete.</span>
       </div>
       <div id="reminders">
         <ul id="reminderList">
@@ -147,7 +157,7 @@
         <!-- Calendar -->
         <div class="container-calendar">
           <div class="tooltip"><h1>Calendar</h1>
-            <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
+            <span class="tooltiptext">Shows spending over month. Red means over budget per day. Green means under budget per day</span>
           </div>
           <div class="card-calendar">
               <h3 class="calendar-header" id="monthAndYear"></h3>

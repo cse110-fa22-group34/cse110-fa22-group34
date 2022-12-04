@@ -1,4 +1,14 @@
-/*
+/**
+ * A Javascript file which deals with the functionality of the toggle button.
+ * This will either show or hide the reminders and calendar pop up, and fix the
+ * layout as shown.
+ * 
+ * References: 
+ *          MDN Web Docs
+ *          TA - Shubham 12/1
+ */
+
+/**
  * Hide the Reminders and Class on click of toggle button and fix the containers
  * @param - none
  */
@@ -34,23 +44,29 @@ visualizationTypeSelect.addEventListener('change',function(){
 });
 }
 function hideShowButton() {
-  //get the class to disappeear
+  //get the class to disappear
   var container = document.getElementsByClassName("reminders-calendar-container");
   //get the grid to work
   let visualizationTypeSelect = document.getElementById('visualization_type');
   var grid = document.querySelector("div.main-body");
+  //grab delete button to ensure smooth layout
   var del_btn = document.querySelector(".del_select_btn");
   let calendarHeading = document.querySelector(".expTitle");
   let visualizationDiv = document.getElementById("visualization_figure");
   let togglebutton = document.getElementById("toggleButton");
+  var toggleButton = document.getElementById('toggleButton');
+  
+  
   //getElementsByClassName returns an array so for every single one display if
   //set to none or vice versa
   Array.from(container).forEach((x) => {
     if (x.style.display === "none") {
+      //this changes the grid to the correct layout
       grid.classList.remove('toggleOFF');
       grid.classList.toggle('toggleON');
       togglebutton.setAttribute("value","ON");
       x.style.display = "block"; 
+
       del_btn.style.marginLeft =  "4%";
       calendarHeading.style.marginLeft = "2%";
       visualizationDiv.style.width = "300px";
@@ -60,7 +76,9 @@ function hideShowButton() {
       calendarHeading.style.marginLeft = "0%";
       if(visualizationTypeSelect.value == ""){
         del_btn.style.marginLeft =  "0%";
-      }
+      del_btn.style.marginLeft =  "5%";
+      toggleButton.innerHTML = '☰ Hide';
+
     } 
     else {
       grid.classList.remove('toggleON');
@@ -76,6 +94,8 @@ function hideShowButton() {
         del_btn.style.marginLeft =  "-8%";
         calendarHeading.style.marginLeft = "-7%";
       }
+      del_btn.style.marginLeft =  "-24%";
+      toggleButton.innerHTML = '☰ Show More';
     }
   })
 }
