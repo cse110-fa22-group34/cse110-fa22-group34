@@ -1,3 +1,11 @@
+/**
+ * This file is the javascript for the unit tests of the reminder section
+ * It includes the test for the initial state of the local storage, add 
+ * and remove reminders, and changing the priority/order of the reminders
+ * 
+ * References: MDN Web Docs
+ */
+
 // compares 2 objects and returns true if they are equivalent and false if not
 const objectsEqual = (o1, o2) => 
     typeof o1 === 'object' && Object.keys(o1).length > 0 
@@ -5,7 +13,7 @@ const objectsEqual = (o1, o2) =>
             && Object.keys(o1).every(p => objectsEqual(o1[p], o2[p]))
         : o1 === o2;
 let page;
-describe('Basic user flow for Website', () => {
+describe('Basic user flow for REMINDER section of the website', () => {
     // First, visit the don't budge website
     beforeAll(async () => {
         jest.setTimeout(300000);
