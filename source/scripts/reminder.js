@@ -48,7 +48,7 @@ function loadReminder(name, id) {
   reminderListHTML.innerHTML += ` <li id=\"${id}\">
                                     <button class="upArrow" onclick="swapReminders(${id}, 'up');">&uarr;</button>
                                     <button class="downArrow" onclick="swapReminders(${id}, 'down');">&darr;</button>
-                                    &emsp;${name}
+                                    <div class="reminderText">&emsp;${name}</div>
                                     <button class="remove" onclick="removeReminder(${id});">&minus;</button>
                                   </li>`;
 }
@@ -70,7 +70,7 @@ function addReminder() {
     reminderListHTML.innerHTML += ` <li id=\"${globalReminderIndex}\">
                                       <button class="upArrow" onclick="swapReminders(${globalReminderIndex}, 'up');">&uarr;</button>
                                       <button class="downArrow" onclick="swapReminders(${globalReminderIndex}, 'down');">&darr;</button>
-                                      &emsp;${newReminder}
+                                      <div class="reminderText">&emsp;${newReminder}</div>
                                       <button class="remove" onclick="removeReminder(${globalReminderIndex});">&minus;</button>
                                     </li>`;
 
