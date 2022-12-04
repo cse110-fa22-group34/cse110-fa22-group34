@@ -1,3 +1,4 @@
+// compares 2 objects and returns true if they are equivalent and false if not
 const objectsEqual = (o1, o2) => 
     typeof o1 === 'object' && Object.keys(o1).length > 0 
         ? Object.keys(o1).length === Object.keys(o2).length 
@@ -7,12 +8,12 @@ let page;
 describe('Basic user flow for Website', () => {
     // First, visit the don't budge website
     beforeAll(async () => {
-      jest.setTimeout(300000);
-      page = await browser.newPage();
-      await page.goto('http://127.0.0.1:5501/source/',{
-        waitUntil: 'domcontentloaded'});
-      const toggleButton = await page.$("#toggleButton");
-      await toggleButton.click();
+        jest.setTimeout(300000);
+        page = await browser.newPage();
+        await page.goto('http://127.0.0.1:5501/source/',{
+            waitUntil: 'domcontentloaded'});
+        const toggleButton = await page.$("#toggleButton");
+        await toggleButton.click();
     });
 
     /* 1st Test:
@@ -20,13 +21,13 @@ describe('Basic user flow for Website', () => {
     its local storage for reminderData & globalReminderIndex are undefined
     */
     it('Check for Local Storage Initial State', async () => {
-      let passed = true;
-      const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
-      reminderDataLS = `${localStorage.reminderData}`;
-      globalReminderIndexLS = `${localStorage.globalReminderIndex}`;
-      if (reminderDataLS != "undefined") { passed = false; }
-      if (globalReminderIndexLS != "undefined") { passed = false; }
-      expect(passed).toBe(true);
+        let passed = true;
+        const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
+        reminderDataLS = `${localStorage.reminderData}`;
+        globalReminderIndexLS = `${localStorage.globalReminderIndex}`;
+        if (reminderDataLS != "undefined") { passed = false; }
+        if (globalReminderIndexLS != "undefined") { passed = false; }
+        expect(passed).toBe(true);
     });
 
     /* 2nd Test:
@@ -120,5 +121,57 @@ describe('Basic user flow for Website', () => {
       if (globalReminderIndexLS != 2) { passed = false; }
 
       expect(passed).toBe(true);
+    });
+
+    /* 4th Test
+    Check to make sure that as remove button is clicked, 
+    the corresponding reminder in local storage is deleted 
+    while the order of the rest of the reminders stays the same
+    */
+    it('Check for Up and Down Arrow Button and Its Ripple Effects', async () => {
+        jest.setTimeout(300000)
+        let passed = true;
+
+        const addReminderButton = await page.$("#add");
+        var input = await page.$("#reminder");
+        input.type("reminder3");
+        await page.waitForTimeout(500);
+        await addReminderButton.click();
+        let localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
+        reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
+        globalReminderIndexLS = `${localStorage.globalReminderIndex}`;
+        let expected = [{"name":"reminder1","id":0}, {"name":"reminder2","id":1}, {"name":"reminder3","id":2}]
+        if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
+        if (globalReminderIndexLS != 3) { passed = false; }
+
+        const remove1 = await page.$('[id="0"] > button.remove');
+        const remove2 = await page.$('[id="1"] > button.remove');
+        const remove3 = await page.$('[id="2"] > button.remove');
+
+        await remove2.click();
+        localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
+        reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
+        globalReminderIndexLS = `${localStorage.globalReminderIndex}`;
+        expected = [{"name":"reminder1","id":0}, {"name":"reminder3","id":2}]
+        if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
+        if (globalReminderIndexLS != 3) { passed = false; }
+
+        await remove1.click();
+        localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
+        reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
+        globalReminderIndexLS = `${localStorage.globalReminderIndex}`;
+        expected = [{"name":"reminder3","id":2}]
+        if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
+        if (globalReminderIndexLS != 3) { passed = false; }
+
+        await remove3.click();
+        localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
+        reminderDataLS = JSON.parse(`${localStorage.reminderData}`);
+        globalReminderIndexLS = `${localStorage.globalReminderIndex}`;
+        expected = []
+        if (!(reminderDataLS.length === expected.length && reminderDataLS.every((o, idx) => objectsEqual(o, expected[idx])))){ passed = false; }
+        if (globalReminderIndexLS != 3) { passed = false; }
+
+        expect(passed).toBe(true);
     });
 });
