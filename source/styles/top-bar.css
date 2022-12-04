@@ -1,3 +1,15 @@
+/**
+ * This file is the CSS file for the top bar. This
+ * implements all the necessary style for the top bar on the 
+ * main page.
+ * Inspired by w3schools - navigation bar.
+ * 
+ * References: 
+ *       MDN Web Docs
+ *       https://www.w3schools.com/css/css_navbar.asp
+ *
+ */
+
 @import url(../styles/global.css);
 
 #top-bar {

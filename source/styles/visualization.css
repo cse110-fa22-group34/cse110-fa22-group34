@@ -1,3 +1,12 @@
+/**
+ * This file is the CSS file for the visualization features.
+ * This implements all the necessary style for visualization.
+ * 
+ * References: 
+ *       MDN Web Docs
+ *
+ */
+
 @import url(../styles/global.css);
 
 #budget-visualization {

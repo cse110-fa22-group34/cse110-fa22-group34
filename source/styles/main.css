@@ -1,3 +1,11 @@
+/**
+ * This file is the main CSS file for our website. It ensures that
+ * colors and the sizing of everything is uniform across our wesbite.
+ * 
+ * References: 
+ *       MDN Web Docs
+ */
+
 @import url(../styles/global.css);
 @import url(../styles/calendar.css);
 @import url(../styles/expenses.css);
