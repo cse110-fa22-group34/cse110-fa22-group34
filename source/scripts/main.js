@@ -8,11 +8,13 @@
  *          TA - Shubham 12/1
  */
 
+
+window.addEventListener('DOMContentLoaded', init);
+
 /**
- * Hide the Reminders and Class on click of toggle button and fix the containers
+ * Function that runs when leaded. Asdjusts the size of the visualization
  * @param - none
  */
-window.addEventListener('DOMContentLoaded', init);
   function init(){
   let togglebutton = document.getElementById("toggleButton");
   let visualizationTypeSelect = document.getElementById('visualization_type');
@@ -32,6 +34,11 @@ window.addEventListener('DOMContentLoaded', init);
   }
   });
 }
+
+/**
+ * Hide the Reminders and Class on click of toggle button and fix the containers
+ * @param - none
+ */
 function hideShowButton() {
   //get the class to disappear
   var container = document.getElementsByClassName("reminders-calendar-container");
