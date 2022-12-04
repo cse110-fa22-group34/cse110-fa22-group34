@@ -111,7 +111,7 @@ div[id="visualization_figure"] {
 img[id='visualization_character'] {
     width: 20vw;
     padding: 24px;
-    background-color: #E9E0D7;
+    background-color: #FBFAF4;
     /* To remove inline elements white-space. */
     display: block; 
 }
