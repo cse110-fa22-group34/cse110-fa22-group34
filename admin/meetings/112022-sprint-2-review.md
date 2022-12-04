@@ -30,9 +30,9 @@ This week's sprint was all about coding the back end of our budget website. We d
 - Include previous/next buttons that navigate through different months of the calendar
 - [Calendar](/specs/sprint-2-review/sprint2-calendar-progress.png)
 
-
 ### Raphael & Xu:
-- Deleted the view chart button now as user change the option the image displays itself   
+- Deleted the view chart button now as user change the option the image displays itself
+- Implemented a working visualization feature so that the charts display data from the expenses table
 - [line graph](/specs/sprint-2-review/lineGraph.png)   
 - [pie chart](/specs/sprint-2-review/pieChart.png)
 
@@ -51,4 +51,3 @@ This week's sprint was all about coding the back end of our budget website. We d
 - Fixed add and remove reminders and the html structure of the reminder section
 - Implemented scroll for reminders
 - [Reminders Demo Video](https://www.youtube.com/watch?v=MSxD4KMRCbg)
-

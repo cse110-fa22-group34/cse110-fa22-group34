@@ -251,15 +251,15 @@ function drawLineGraph() {
 
     // If we are under 70% of our total buget, show happy frog :)
     if(totalcost < 0.7*total_budget){
-      image.setAttribute('src', '/source/assets/frog-happy.svg')
+      image.setAttribute('src', '../source/assets/frog-happy.svg')
     }
     // Else if we under our available budget, show neutral frog -_-
     else if(totalcost < total_budget){
-      image.setAttribute('src', '/source/assets/frog-neutral.svg')
+      image.setAttribute('src', '../source/assets/frog-neutral.svg')
     }
     // If we are over our budget, show sad frog :(
     else {
-      image.setAttribute('src', '/source/assets/frog-sad.svg')
+      image.setAttribute('src', '../source/assets/frog-sad.svg')
     }
     // Add the image element to the visualization div.
     visualizationFigure.appendChild(image)
