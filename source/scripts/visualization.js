@@ -67,27 +67,29 @@ function showSelectedVisualization() {
   // Show 'visualization_figure' <div> in which the visualization will be drawn.
   // (It was initially hidden.)
   let visualizationFigure = document.getElementById('visualization_figure');
-  let visualizationBugdet = document.getElementById('budget-visualization');
-  visualizationFigure.style.display = 'block';
+  let visualizationBudget = document.getElementById('budget-visualization');
+  visualizationFigure.innerHTML = ''
 
   // Get selected visualization type and draw it.
   let visualizationTypeSelect = document.getElementById('visualization_type');
   if (visualizationTypeSelect.value == 'pie_chart') {
-    visualizationBugdet.style.display = 'none';
+    visualizationBudget.style.display = 'none';
+    visualizationFigure.style.display = 'block';
     drawPieChart();
   }
   else if (visualizationTypeSelect.value == 'line_graph') {
-    visualizationBugdet.style.display = 'none';
+    visualizationBudget.style.display = 'none';
+    visualizationFigure.style.display = 'block';
     drawLineGraph();
   }
   else if (visualizationTypeSelect.value == 'character') {
-    visualizationBugdet.style.display = 'none';
+    visualizationBudget.style.display = 'none';
+    visualizationFigure.style.display = 'block';
     drawChracter();
   }
   else if (visualizationTypeSelect.value == '') {
-    visualizationBugdet.style.display = 'block';
     visualizationFigure.style.display = 'none';
-    visualizationBugdet.style.display = 'flex';
+    visualizationBudget.style.display = 'flex';
   }
 }
 
