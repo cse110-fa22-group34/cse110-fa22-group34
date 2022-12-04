@@ -126,9 +126,9 @@ function drawPieChart() {
     let totalBudget = parseInt(total_budget_update_button.value) || 0;
 
     // If we are below our total budget, add a new row to the charts data table with lable 'Remaining'.
-    if (totalCost < totalBudget){
-      graphData.push(['Remaining', totalBudget - totalCost]);
-    }
+    // if (totalCost < totalBudget){
+    //   graphData.push(['Remaining', totalBudget - totalCost]);
+    // }
     
     // Custom options for the pie chart.
     let options = {
@@ -189,6 +189,7 @@ function drawLineGraph() {
       }
     });
 
+    //loop through the expenses map to only show the days
     // Restructure the {date:cost} data to match that of Google Charts library.
     let graphData = [
       // Headers for the line graph data table.
@@ -197,11 +198,13 @@ function drawLineGraph() {
 
     // Add the {date:cost} entries to the chart data table.
     for (let [date, cost] of Object.entries(expenses)) {
+      date = date.slice(8,10);
       graphData.push([date, cost]);
     }
     
     // Custom options for the line graph.
     let options = {
+      title: 'Spending Trend',
       // X-axis label.
       hAxis: {
         title: 'Date'

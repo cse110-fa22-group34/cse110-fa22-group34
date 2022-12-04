@@ -22,6 +22,10 @@
     background-color: #edf3f8;
     color: #495164;
     margin: 36px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
 }
 
 
@@ -56,7 +60,7 @@ div[class="budget-vis-container"] input[class='total_amount_of_budget_input']{
     text-align: right;
 }
 
-div[class="budget-vis-container"] button[class="budget_update"]{
+/* div[class="budget-vis-container"] button[class="budget_update"]{
     background-color:#fff;
     color: #495164;
     width: 12vw;
@@ -66,9 +70,9 @@ div[class="budget-vis-container"] button[class="budget_update"]{
     margin: 5px;
     outline: 1px solid #495164;
     text-align: center;
-}
+} */
 
-button[id="view_chart"] {
+/* button[id="view_chart"] {
     background-color: #495164;
     color: #fff;
     border:none;
@@ -76,7 +80,7 @@ button[id="view_chart"] {
     padding:12px;
     font-size: 0.8rem;
     margin: 5px;
-}
+} */
 
 button[id="view_chart"]:hover {
     background-color: #252934;;
@@ -93,8 +97,8 @@ select[id="visualization_type"] {
 }
 
 div[id="visualization_figure"] {
-    width: 20vw;
-    height: auto;
+    width: 35vw;
+    height: 20vw;
     display: none;
     margin: 8px;
 }
