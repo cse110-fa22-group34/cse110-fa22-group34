@@ -71,7 +71,7 @@ describe('Basic user flow for Website', () => {
     */
     it('Check for "Save Budget" Button and its ripple effects', async () => {     
       let passed = true;
-      let lengthOfEmptyExpenseTable = 876;
+      let lengthOfEmptyExpenseTable = 877;
       const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
 
       expenseDataLS = `${localStorage.expenseData}`;
