@@ -83,8 +83,8 @@ function showSelectedVisualization() {
     drawChracter();
   }
   else if (visualizationTypeSelect.value == '') {
-    visualizationBugdet.style.display = 'block';
     visualizationFigure.style.display = 'none';
+    visualizationBugdet.style.display = 'flex';
   }
 }
 
