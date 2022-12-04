@@ -35,8 +35,9 @@ div.main-body {
 }
 /* make all text within divs green */
 div {
-    color: #99AA84;
+    /* color: #99AA84; */
     background-color: #FBFAF4;
+    font-weight:bold;
 }
 /* make all buttons the same color*/
 .btn {
@@ -65,7 +66,7 @@ div {
 styling budget component
 */
 #expenseTable {
-    color: white !important;
+    color: black !important;
     width: 60%;
     margin-left: 2%;
 
@@ -108,12 +109,13 @@ styling budget component
     color: black !important;
     border-radius: 50px;
     border-width: 2px !important;
-    border-color: black !important
+    border-color: black !important;
+    margin-left:"-22%"
 }
 
 
 .expTitle {
-    margin-left: -18%; 
+    margin-left: -22%; 
 }
 
 
@@ -145,7 +147,7 @@ styling budget component
 }
 
 #reminders li {
-    color : #99AA84;
+    color : black !important;
 }
 
 #inputReminder{

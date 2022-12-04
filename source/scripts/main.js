@@ -43,30 +43,24 @@ function hideShowButton() {
   let calendarHeading = document.querySelector(".expTitle");
   let visualizationDiv = document.getElementById("visualization_figure");
   let togglebutton = document.getElementById("toggleButton");
-  
-  
+  let enterBudgeTitle = document.getElementById("enterMonthly");
   //getElementsByClassName returns an array so for every single one display if
   //set to none or vice versa
   Array.from(container).forEach((x) => {
     if (x.style.display === "none") {
-      //this changes the grid to the correct layout
       grid.classList.remove('toggleOFF');
       grid.classList.toggle('toggleON');
       togglebutton.setAttribute("value","ON");
       x.style.display = "block"; 
-      //makes buttons move correctly & fix size of visualization
-      del_btn.style.marginLeft =  "4%";
-      calendarHeading.style.marginLeft = "2%";
       visualizationDiv.style.width = "300px";
       visualizationDiv.style.height = "300px";
-      del_btn.style.marginLeft =  "10%";
-      del_btn.style.marginLeft =  "0%";
-      calendarHeading.style.marginLeft = "0%";
-      if(visualizationTypeSelect.value == ""){
-        del_btn.style.marginLeft =  "0%";
+       if(visualizationTypeSelect.value == ""){
+         del_btn.style.marginLeft =  "0%";
+       }
+       if(visualizationTypeSelect.value == "pie_chart" || visualizationTypeSelect.value ){
+        del_btn.style.marginLeft = "0%";
+        enterBudgeTitle.marginLeft = "0%";
       }
-      del_btn.style.marginLeft =  "5%";
-
     } 
     else {
       //choose the correct grid
@@ -75,16 +69,14 @@ function hideShowButton() {
       togglebutton.setAttribute("value","OFF");
       x.style.display = "none";
       //fix size of buttons and visualization
-      del_btn.style.marginLeft =  "-19%";
-      calendarHeading.style.marginLeft = "-22%";
       visualizationDiv.style.width = "500px";
       visualizationDiv.style.height = "400px";
-      let visualizationTypeSelect = document.getElementById('visualization_type');
-      if(visualizationTypeSelect.value == 'pie_chart' || visualizationTypeSelect.value == 'line_graph'){
-        del_btn.style.marginLeft =  "-8%";
-        calendarHeading.style.marginLeft = "-7%";
+      if(visualizationTypeSelect.value==""){
+        del_btn.style.marginLeft = "-27%"
       }
-      del_btn.style.marginLeft =  "-24%";
+      if(visualizationTypeSelect.value == "pie_chart" || visualizationTypeSelect.value ){
+        del_btn.style.marginLeft = "-9%"
+      }
     }
   });
 }

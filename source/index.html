@@ -68,7 +68,7 @@
     <div class="main-body  toggleOFF"> 
     <!-- Expenses -->
     <div id="expenses">
-      <div class="tooltip" style="display:block"><h1 class = expTitle>Expenses Table</h1>
+      <div class="tooltip" style="display:block"><h1 class = "expTitle" style="color:#99AA84">Expenses Table</h1>
         <span class="tooltiptext">Click Add Row and fill out appropriate information. Click 'Save Budget' when done</span>
       </div>
       <!-- create the create budget button, delete selected button, and delete budget button -->
@@ -119,7 +119,7 @@
           <!-- <div class="tooltip"><h1>Visualization</h1>
             <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
           </div> -->
-          <span class="title">Enter Monthly Budget:</span>
+          <span class="title" id="enterMonthly" style="text-align:left;font-weight:bold;color:#99AA84">Enter Monthly Budget:</span>
           <input class="total_amount_of_budget_input" type="number" id="total-budget" name="total-budget">
           <select id="visualization_type">
             <option value="">Text View</option>
@@ -128,10 +128,10 @@
             <option value="character">Character</option>
           </select>
         <div id="budget-visualization">
-          <span class="title">$ Left for the Month</span>
+          <span class="title" style="color:#99AA84">$ Left for the Month</span>
           <span  class="textview" id="budget-remaining-amount" style="display:block">$ 0.0</span>
 
-          <span class="title">Average $ Left per Day</span>
+          <span class="title" style="color:#99AA84">Average $ Left per Day</span>
           <span  class="textview" id="budget-remaining-day" style="display:block">$ 0.0</span>
         </div>
         <div id="visualization_figure" style="width:500px;height:400px"></div>
@@ -141,7 +141,7 @@
 
     <div class="reminders-calendar-container" style="display:none">
       <!-- Reminders -->
-      <div class="tooltip"><h1>Reminders</h1>
+      <div class="tooltip"><h1 style="color:#99AA84">Reminders</h1>
         <span class="tooltiptext">Add '+' reminders below. Use arrows to prioritize. Use '-' to delete.</span>
       </div>
       <div id="reminders">
@@ -156,7 +156,7 @@
 
         <!-- Calendar -->
         <div class="container-calendar">
-          <div class="tooltip"><h1>Calendar</h1>
+          <div class="tooltip"><h1 style="color:#99AA84">Calendar</h1>
             <span class="tooltiptext">Shows spending over month. Red means over budget per day. Green means under budget per day</span>
           </div>
           <div class="card-calendar">
