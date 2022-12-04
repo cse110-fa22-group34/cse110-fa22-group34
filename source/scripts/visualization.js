@@ -23,12 +23,14 @@ function init() {
   if(localStorage.getItem('Total Budget')){
     total_budget_update_button.value=  localStorage.getItem('Total Budget');
   }
+  let toggleBtn = document.getElementById("toggleButton");
   // Add listeners to the total budget input field so that when it's value is changed, 
   // remaining budget value and visualizations will update accordingly.
   total_budget_update_button.addEventListener('input',update_remaining_budget);
   total_budget_update_button.addEventListener('click',update_remaining_budget);
   total_budget_update_button.addEventListener('input',showSelectedVisualization);
   total_budget_update_button.addEventListener('click',showSelectedVisualization);
+  toggleBtn.addEventListener('click',showSelectedVisualization);
 
   // Get reference to the remaining budget view.
   let remaining_amount = document.getElementById('budget-remaining-amount');
@@ -83,6 +85,7 @@ function showSelectedVisualization() {
     drawChracter();
   }
   else if (visualizationTypeSelect.value == '') {
+    visualizationBugdet.style.display = 'block';
     visualizationFigure.style.display = 'none';
     visualizationBugdet.style.display = 'flex';
   }
@@ -152,9 +155,11 @@ function drawPieChart() {
       pieSliceText: 'value',
       // Set background color of the pie chart.
       backgroundColor: '#edf3f8',
+      //
       // Draw a 3D pie chart. (aesthetics :D)
       is3D: true,
     };
+   
     // Convert data array to dataTable.
     graphData = google.visualization.arrayToDataTable(graphData);
     // Initialize a new pie chart with given data and custom options.

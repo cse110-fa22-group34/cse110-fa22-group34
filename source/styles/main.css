@@ -51,6 +51,7 @@ div {
 
 #toggleButton{
     background-color: #e2b4bd !important;
+
     border-radius: 20px;
     width: 100px !important;
     height: 25px !important;
@@ -90,7 +91,7 @@ styling budget component
 
 .del_select_btn{
     background-color: #e2b4bd !important;
-    margin-left: -25%; 
+    margin-left: -22%; 
     color: white!important
 }
 
@@ -109,6 +110,12 @@ styling budget component
     border-width: 2px !important;
     border-color: black !important
 }
+
+
+.expTitle {
+    margin-left: -18%; 
+}
+
 
 /* END OF EXPENSES COMPONENT STYLING*/
 
