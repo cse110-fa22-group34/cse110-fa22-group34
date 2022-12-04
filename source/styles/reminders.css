@@ -1,10 +1,16 @@
-/* File for Styling The Reminder Section */
+/**
+ * This file is the CSS file for the reminders feature. This
+ * implements all the necessary style for the reminders feature.
+ * 
+ * References: 
+ *       MDN Web Docs
+ */
 @import url(../styles/global.css);
 
 /* the entire reminder section */
 #reminders {
     width: 100%;
-    max-height: 350px;
+    max-height: 200px;
     overflow: scroll;
     display: inline-block;
 }
