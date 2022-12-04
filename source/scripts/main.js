@@ -13,24 +13,24 @@
  * @param - none
  */
 window.addEventListener('DOMContentLoaded', init);
-function init(){
-let togglebutton = document.getElementById("toggleButton");
-let visualizationTypeSelect = document.getElementById('visualization_type');
-let del_btn = document.querySelector(".del_select_btn");
-let calendarHeading = document.querySelector(".expTitle");
-visualizationTypeSelect.addEventListener('change',function(){
-  if(togglebutton.getAttribute("value") == "OFF"){
-  if(visualizationTypeSelect.value == 'pie_chart' || visualizationTypeSelect.value == 'line_graph'){
-    del_btn.style.marginLeft =  "-10%";
+  function init(){
+  let togglebutton = document.getElementById("toggleButton");
+  let visualizationTypeSelect = document.getElementById('visualization_type');
+  let del_btn = document.querySelector(".del_select_btn");
+  let calendarHeading = document.querySelector(".expTitle");
+  visualizationTypeSelect.addEventListener('change',function(){
+    if(togglebutton.getAttribute("value") == "OFF"){
+    if(visualizationTypeSelect.value == 'pie_chart' || visualizationTypeSelect.value == 'line_graph'){
+      del_btn.style.marginLeft =  "-10%";
+    }
+    if(visualizationTypeSelect.value == ""){
+      del_btn.style.marginLeft =  "-22%";
+    }
+    if(visualizationTypeSelect.value == "character"){
+      del_btn.style.marginLeft =  "-10%";
+    }
   }
-  if(visualizationTypeSelect.value == ""){
-    del_btn.style.marginLeft =  "-22%";
-  }
-  if(visualizationTypeSelect.value == "character"){
-    del_btn.style.marginLeft =  "-10%";
-  }
-}
-});
+  });
 }
 function hideShowButton() {
   //get the class to disappear
@@ -43,7 +43,6 @@ function hideShowButton() {
   let calendarHeading = document.querySelector(".expTitle");
   let visualizationDiv = document.getElementById("visualization_figure");
   let togglebutton = document.getElementById("toggleButton");
-  var toggleButton = document.getElementById('toggleButton');
   
   
   //getElementsByClassName returns an array so for every single one display if
@@ -65,9 +64,8 @@ function hideShowButton() {
       calendarHeading.style.marginLeft = "0%";
       if(visualizationTypeSelect.value == ""){
         del_btn.style.marginLeft =  "0%";
+      }
       del_btn.style.marginLeft =  "5%";
-      //change the button text
-      toggleButton.innerHTML = '☰ Hide';
 
     } 
     else {
@@ -87,8 +85,6 @@ function hideShowButton() {
         calendarHeading.style.marginLeft = "-7%";
       }
       del_btn.style.marginLeft =  "-24%";
-      //change button text
-      toggleButton.innerHTML = '☰ Show More';
     }
-  })
+  });
 }
