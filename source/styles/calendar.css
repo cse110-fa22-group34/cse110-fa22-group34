@@ -1,4 +1,11 @@
-/* @import url(../styles/global.css); */
+/**
+ * This file is the CSS file for the calendar feature. This
+ * implements all the necessary style for the calendar feature.
+ * 
+ * References: 
+ *       MDN Web Docs
+ */
+
 
 .container-calendar {
     height: 45%;

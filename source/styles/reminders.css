@@ -1,3 +1,10 @@
+/**
+ * This file is the CSS file for the reminders feature. This
+ * implements all the necessary style for the reminders feature.
+ * 
+ * References: 
+ *       MDN Web Docs
+ */
 @import url(../styles/global.css);
 
 #reminders {
