@@ -12,17 +12,6 @@
  * Hide the Reminders and Class on click of toggle button and fix the containers
  * @param - none
  */
-// window.addEventListener('DOMContentLoaded', init);
-// function init(){
-// let visualizationTypeSelect = document.getElementById('visualization_type');
-// var del_btn = document.querySelector(".del_select_btn");
-// visualizationTypeSelect.addEventListener('change', function(){
-//   if(visualizationTypeSelect.value == 'pie_chart' || visualizationTypeSelect.value == 'line_graph' || visualizationTypeSelect.value == 'character'){
-//     del_btn.style.marginLeft =  "0%";
-//     calendarHeading.style.marginLeft = "0%";
-//   }
-// });
-// }
 window.addEventListener('DOMContentLoaded', init);
 function init(){
 let togglebutton = document.getElementById("toggleButton");
@@ -66,7 +55,7 @@ function hideShowButton() {
       grid.classList.toggle('toggleON');
       togglebutton.setAttribute("value","ON");
       x.style.display = "block"; 
-
+      //makes buttons move correctly & fix size of visualization
       del_btn.style.marginLeft =  "4%";
       calendarHeading.style.marginLeft = "2%";
       visualizationDiv.style.width = "300px";
@@ -77,14 +66,17 @@ function hideShowButton() {
       if(visualizationTypeSelect.value == ""){
         del_btn.style.marginLeft =  "0%";
       del_btn.style.marginLeft =  "5%";
+      //change the button text
       toggleButton.innerHTML = '☰ Hide';
 
     } 
     else {
+      //choose the correct grid
       grid.classList.remove('toggleON');
       grid.classList.toggle('toggleOFF');
       togglebutton.setAttribute("value","OFF");
       x.style.display = "none";
+      //fix size of buttons and visualization
       del_btn.style.marginLeft =  "-19%";
       calendarHeading.style.marginLeft = "-22%";
       visualizationDiv.style.width = "500px";
@@ -95,6 +87,7 @@ function hideShowButton() {
         calendarHeading.style.marginLeft = "-7%";
       }
       del_btn.style.marginLeft =  "-24%";
+      //change button text
       toggleButton.innerHTML = '☰ Show More';
     }
   })
