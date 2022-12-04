@@ -41,8 +41,7 @@
         <h1 id="main-logo">DON'T BUDGE, DO BUDGET</h1>
         <nav>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#export">Export</a></li>
+            <li><a href="../source/index.html">Home</a></li>
             <li><a href="../source/team.html">Meet the Team</a></li>
           </ul>      
         </nav>
@@ -52,7 +51,7 @@
 
       <!-- Button that Hides the Reminders and Calendar -->
     <div class="button-toggle">
-      <button id="toggleButton" onclick="hideShowButton()">Toggle</button>
+      <button id="toggleButton" onclick="hideShowButton()">Show Reminders and Calender</button>
     </div>
 
 
@@ -106,29 +105,25 @@
     <div class="budget-vis-container">
       <!-- Budget/remaining field -->
       
-      <div id="budget">
-        <div class="tooltip"><h1 id="titleBudge">Budget</h1>
-          <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
-        </div>
-        <span class="title">Budget Remaining</span>
-        <span  class="textview" id="budget-remaining-amount">$ 0.0</span>
-
-        <span class="title">Budget</span>
-        <input class="total_amount_of_budget_input" type="number" id="total-budget" name="total-budget">
-      </div>
-        
-
-      <!-- Chart -->
       <div id="visualization">
-          <div class="tooltip"><h1>Visualization</h1>
+          <!-- <div class="tooltip"><h1>Visualization</h1>
             <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
-          </div>
+          </div> -->
+          <span class="title">Enter Desired Monthly Budget:</span>
+          <input class="total_amount_of_budget_input" type="number" id="total-budget" name="total-budget">
           <select id="visualization_type">
-            <option value="">-----Select Chart-----</option>
+            <option value="">Text View</option>
             <option value="line_graph">Line Graph</option>
             <option value="pie_chart">Pie Chart</option>
             <option value="character">Character</option>
           </select>
+        <div id="budget-visualization">
+          <span class="title">Amount of Money Left for the Month</span>
+          <span  class="textview" id="budget-remaining-amount">$ 0.0</span>
+
+          <span class="title">Average Amount of Money Left per Day</span>
+          <span  class="textview" id="budget-remaining-day">$ 0.0</span>
+        </div>
         <div id="visualization_figure"></div>
       </div>
     </div>
