@@ -120,7 +120,7 @@
             <span class="tooltiptext">The calendar tracks whether you had a high spend day (over budget) or low spend day (under budget). It calculates this by dividing your budget by number of days in the month and comparing to what you reported you spent.</span>
           </div> -->
           <div class="tooltip" id="enterMonthly" style="text-align:left;font-weight:bold;color:#99AA84">Enter Monthly Budget:</span>
-            <span class="tooltiptext">Enter your desired monthly budget. Can be updated at any time.</span>
+            <span class="tooltiptext" style="font-weight:normal">Enter your desired monthly budget. Can be updated at any time.</span>
           </div>
           <input class="total_amount_of_budget_input" type="number" id="total-budget" name="total-budget">
           <select id="visualization_type">
@@ -130,10 +130,10 @@
             <option value="character">Character</option>
           </select>
         <div id="budget-visualization">
-          <span class="title" style="color:#99AA84">$ Left for the Month</span>
+          <span class="title" style="color:#99AA84;font-weight:bold">$ Left for the Month</span>
           <span  class="textview" id="budget-remaining-amount" style="display:block">$ 0.0</span>
 
-          <span class="title" style="color:#99AA84">Average $ Left per Day</span>
+          <span class="title" style="color:#99AA84;font-weight:bold">Average $ Left per Day</span>
           <span  class="textview" id="budget-remaining-day" style="display:block">$ 0.0</span>
         </div>
         <div id="visualization_figure" style="width:500px;height:400px"></div>
@@ -144,7 +144,7 @@
     <div class="reminders-calendar-container" style="display:none">
       <!-- Reminders -->
       <div class="tooltip" style="margin-top:10%"><h1 style="color:#99AA84;margin-top:0%">Reminders</h1>
-        <span class="tooltiptext">Add '+' reminders below. Use arrows to prioritize. Use '-' to delete.</span>
+        <span class="tooltiptext" style="width:min-content">Add '+' reminders below. Use arrows to prioritize. Use '-' to delete.</span>
       </div>
       <div id="reminders">
         <ul id="reminderList">
