@@ -2,7 +2,8 @@ let page;
 describe('Basic user flow for Website', () => {
     // First, visit the don't budge website
     beforeAll(async () => {
-      jest.setTimeout(300000);
+      jest.clearAllMocks();
+      jest.setTimeout(300000000000);
       page = await browser.newPage();
       await page.goto('https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html',{
         waitUntil: 'domcontentloaded'});

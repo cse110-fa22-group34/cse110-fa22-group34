@@ -2,7 +2,8 @@ let page;
 describe('Visualization of the budget/expenses data', () => {
     // Before all tests, we visit the project website.
     beforeAll(async () => {
-        jest.setTimeout(300000);
+        jest.clearAllMocks();
+        jest.setTimeout(300000000000);
         page = await browser.newPage();
 
         // If any helper alert appears, we dismiss it and move on with the rest of the test/s.

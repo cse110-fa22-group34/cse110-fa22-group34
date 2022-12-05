@@ -16,7 +16,8 @@ let page;
 describe('Basic user flow for REMINDER section of the website', () => {
     // First, visit the don't budge website
     beforeAll(async () => {
-        jest.setTimeout(300000);
+        jest.clearAllMocks();
+        jest.setTimeout(300000000000);
         page = await browser.newPage();
         await page.goto('http://127.0.0.1:5501/source/',{
             waitUntil: 'domcontentloaded'});
