@@ -1,3 +1,12 @@
+/**
+ * This file is the javascript for the calendar section of the website.
+ * It includes the implementation of creating a real time calendar, changing the
+ * color of the cells according to expense data, and navigating through different
+ * months using previous/next buttons.
+ * 
+ * References: MDN Web Docs, https://medium.com/@nitinpatel_20236/challenge-of-building-a-calendar-with-pure-javascript-a86f1303267d
+ */
+
 // Set up variables for the calendar based on the current date
 today = new Date();
 currentMonth = today.getMonth();
