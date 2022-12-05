@@ -32,13 +32,11 @@ Everyone was present.
 -	More serious video
 
 ## Post-Meeting To-Dos
-1.	Record individually (everyone except jiaxin can also do this during Wednesday meeting):
--	30 sec.
--	Introduce yourself
--	What we did
--	What ur proud of
--	Challenges
--	More instructions on canvas
+1.	Record individually a 30 sec. vid:
+  -	Introduce yourself
+  -	What you did
+  -	What you're proud of
+  -	Challenges
+  -	More instructions on canvas
 2.	Update stand-ups
-3.	Update progress for 3rd sprint (last Thursday) & put screenshots/demos to github repo under specs/sprint-3-review
-4.	Everything except jiaxin should be at CSE building on Wednesday 11:30 AM to film video
+3.	Update progress & put screenshots/demos to github repo under specs/sprint-3-review
