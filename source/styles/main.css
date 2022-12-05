@@ -37,7 +37,7 @@ div.main-body {
 div {
     /* color: #99AA84; */
     background-color: #FBFAF4;
-    font-weight:bold;
+    /* font-weight:bold; */
 }
 /* make all buttons the same color*/
 .btn {
@@ -52,7 +52,7 @@ div {
 
 #toggleButton{
     background-color: #e2b4bd !important;
-
+    border-color: #e2b4bd;
     border-radius: 20px;
     width: 100px !important;
     height: 25px !important;
