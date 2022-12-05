@@ -13,16 +13,23 @@ Everyone was present.
   - Interviews & individual contributions
   - Public & private video
 
-## Public Video
--	Demo
+## Public Video (~4 min)
+-	App demo
 -	What we learned from it
--	Creative
+-	Challenges faced & how we overcame them
+-	Brief point of advice for future students
+-	Should be creative
 
-## Private Video
--	Features implemented (code)
--	Design
--	Challenges
--	More serious vid
+## Private Video (6~15 min)
+-	How to access our repo
+-	Features implemented
+-	How we came up with the design
+-	Our coding & build process
+-	Our Agile practices
+-	What we're proud of
+-	Challenges we faced
+-	What's next?
+-	More serious video
 
 ## Post-Meeting To-Dos
 1.	Record individually (everyone except jiaxin can also do this during Wednesday meeting):
