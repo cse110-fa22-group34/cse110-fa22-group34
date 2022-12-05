@@ -52,7 +52,7 @@ div {
 
 #toggleButton{
     background-color: #e2b4bd !important;
-    border-color: #e2b4bd;
+    /* border-color: #e2b4bd !important; */
     border-radius: 20px;
     width: 100px !important;
     height: 25px !important;
@@ -62,6 +62,9 @@ div {
     right:5px;
 }
 
+input{
+    font-weight: bold;
+}
 /*
 styling budget component
 */

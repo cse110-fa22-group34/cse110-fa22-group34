@@ -22,15 +22,15 @@ window.addEventListener('DOMContentLoaded', init);
   let calendarHeading = document.querySelector(".expTitle");
   visualizationTypeSelect.addEventListener('change',function(){
     if(togglebutton.getAttribute("value") == "OFF"){
-      if(visualizationTypeSelect.value == 'pie_chart' || visualizationTypeSelect.value == 'line_graph'){
-        del_btn.style.marginLeft =  "-10%";
-      }
-      if(visualizationTypeSelect.value == ""){
-        del_btn.style.marginLeft =  "-22%";
-      }
-      if(visualizationTypeSelect.value == "character"){
-        del_btn.style.marginLeft =  "-10%";
-      }
+    if(visualizationTypeSelect.value == 'pie_chart' || visualizationTypeSelect.value == 'line_graph'){
+      del_btn.style.marginLeft =  "-10%";
+    }
+    if(visualizationTypeSelect.value == ""){
+      del_btn.style.marginLeft =  "-22%";
+    }
+    if(visualizationTypeSelect.value == "character"){
+      del_btn.style.marginLeft =  "-10%";
+    }
   }
   });
 }
@@ -58,13 +58,14 @@ function hideShowButton() {
       grid.classList.remove('toggleOFF');
       grid.classList.toggle('toggleON');
       togglebutton.setAttribute("value","ON");
+      togglebutton.innerHTML = "☰ Show Less";
       x.style.display = "block"; 
       visualizationDiv.style.width = "300px";
       visualizationDiv.style.height = "300px";
-      if(visualizationTypeSelect.value == ""){
-        del_btn.style.marginLeft =  "0%";
-      }
-      if(visualizationTypeSelect.value == "pie_chart" || visualizationTypeSelect.value ){
+       if(visualizationTypeSelect.value == ""){
+         del_btn.style.marginLeft =  "0%";
+       }
+       if(visualizationTypeSelect.value == "pie_chart" || visualizationTypeSelect.value ){
         del_btn.style.marginLeft = "0%";
         enterBudgeTitle.marginLeft = "0%";
       }
@@ -74,6 +75,7 @@ function hideShowButton() {
       grid.classList.remove('toggleON');
       grid.classList.toggle('toggleOFF');
       togglebutton.setAttribute("value","OFF");
+      togglebutton.innerHTML = "☰ Show More";
       x.style.display = "none";
       //fix size of buttons and visualization
       visualizationDiv.style.width = "500px";
