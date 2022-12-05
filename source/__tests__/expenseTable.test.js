@@ -1,3 +1,11 @@
+/**
+ * This file is the javascript for the unit tests of the expenseTabel section
+ * It includes the test for the initial state of the local storage, add 
+ * rows, adding a row, saving, delete selected, and delete all.
+ * 
+ * References: MDN Web Docs
+ */
+
 let page;
 describe('Basic user flow for Website', () => {
     // First, visit the don't budge website

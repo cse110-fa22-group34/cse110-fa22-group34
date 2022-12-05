@@ -1,3 +1,11 @@
+/**
+ * This file is the javascript for the unit tests of the visualization section
+ * It includes the test for the initial state of the local storage, and a test
+ * for pie chart, line graph, and character
+ * 
+ * References: MDN Web Docs
+ */
+
 let page;
 describe('Visualization of the budget/expenses data', () => {
     // Before all tests, we visit the project website.
