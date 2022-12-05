@@ -1,3 +1,11 @@
+/**
+ * This file is the main CSS file for our website. It ensures that
+ * colors and the sizing of everything is uniform across our wesbite.
+ * 
+ * References: 
+ *       MDN Web Docs
+ */
+
 @import url(../styles/global.css);
 @import url(../styles/calendar.css);
 @import url(../styles/expenses.css);
@@ -27,8 +35,9 @@ div.main-body {
 }
 /* make all text within divs green */
 div {
-    color: #99AA84;
+    /* color: #99AA84; */
     background-color: #FBFAF4;
+    /* font-weight:bold; */
 }
 /* make all buttons the same color*/
 .btn {
@@ -40,11 +49,24 @@ div {
     background-color: #E3E7D7 !important;;
 }
 
+
+#toggleButton{
+    background-color: #e2b4bd !important;
+    /* border-color: #e2b4bd !important; */
+    border-radius: 20px;
+    width: 100px !important;
+    height: 25px !important;
+    color: white!important;
+    position:absolute;
+    top: 85px;
+    right:5px;
+}
+
 /*
 styling budget component
 */
 #expenseTable {
-    color: white !important;
+    color: black !important;
     width: 60%;
     margin-left: 2%;
 
@@ -70,7 +92,7 @@ styling budget component
 
 .del_select_btn{
     background-color: #e2b4bd !important;
-    margin-left: -25%; 
+    margin-left: -22%; 
     color: white!important
 }
 
@@ -87,12 +109,16 @@ styling budget component
     color: black !important;
     border-radius: 50px;
     border-width: 2px !important;
-    border-color: black !important
+    border-color: black !important;
+    margin-left:"-22%"
 }
 
-.titleBudge{
 
+.expTitle {
+    margin-left: -22%; 
 }
+
+
 /* END OF EXPENSES COMPONENT STYLING*/
 
 /*START OF VISUALIZATION STYLING*/
@@ -121,7 +147,7 @@ styling budget component
 }
 
 #reminders li {
-    color : #99AA84;
+    color : black !important;
 }
 
 #inputReminder{

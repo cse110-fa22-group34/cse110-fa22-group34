@@ -23,12 +23,14 @@ function init() {
   if(localStorage.getItem('Total Budget')){
     total_budget_update_button.value=  localStorage.getItem('Total Budget');
   }
+  let toggleBtn = document.getElementById("toggleButton");
   // Add listeners to the total budget input field so that when it's value is changed, 
   // remaining budget value and visualizations will update accordingly.
   total_budget_update_button.addEventListener('input',update_remaining_budget);
   total_budget_update_button.addEventListener('click',update_remaining_budget);
   total_budget_update_button.addEventListener('input',showSelectedVisualization);
   total_budget_update_button.addEventListener('click',showSelectedVisualization);
+  toggleBtn.addEventListener('click',showSelectedVisualization);
 
   // Get reference to the remaining budget view.
   let remaining_amount = document.getElementById('budget-remaining-amount');
@@ -36,6 +38,15 @@ function init() {
   // then, fetch and populate it.
   if(localStorage.getItem('Remaining')){
     remaining_amount.textContent= '$'+localStorage.getItem('Remaining');
+  }
+
+    // Get reference to the remaining budget view.
+    let remaining_amount_day = document.getElementById('budget-remaining-day');
+
+  // If previous daily remaining budget value already exists in the localStorage
+  // then, fetch and populate it.
+  if(localStorage.getItem('RemainingDay')){
+    remaining_amount_day.textContent= '$'+localStorage.getItem('RemainingDay');
   }
 
   // Get reference to the save budget button.
@@ -56,21 +67,29 @@ function showSelectedVisualization() {
   // Show 'visualization_figure' <div> in which the visualization will be drawn.
   // (It was initially hidden.)
   let visualizationFigure = document.getElementById('visualization_figure');
-  visualizationFigure.style.display = 'block';
+  let visualizationBudget = document.getElementById('budget-visualization');
+  visualizationFigure.innerHTML = ''
 
   // Get selected visualization type and draw it.
   let visualizationTypeSelect = document.getElementById('visualization_type');
   if (visualizationTypeSelect.value == 'pie_chart') {
+    visualizationBudget.style.display = 'none';
+    visualizationFigure.style.display = 'block';
     drawPieChart();
   }
   else if (visualizationTypeSelect.value == 'line_graph') {
+    visualizationBudget.style.display = 'none';
+    visualizationFigure.style.display = 'block';
     drawLineGraph();
   }
   else if (visualizationTypeSelect.value == 'character') {
+    visualizationBudget.style.display = 'none';
+    visualizationFigure.style.display = 'block';
     drawChracter();
   }
   else if (visualizationTypeSelect.value == '') {
     visualizationFigure.style.display = 'none';
+    visualizationBudget.style.display = 'flex';
   }
 }
 
@@ -138,9 +157,11 @@ function drawPieChart() {
       pieSliceText: 'value',
       // Set background color of the pie chart.
       backgroundColor: '#edf3f8',
+      //
       // Draw a 3D pie chart. (aesthetics :D)
       is3D: true,
     };
+   
     // Convert data array to dataTable.
     graphData = google.visualization.arrayToDataTable(graphData);
     // Initialize a new pie chart with given data and custom options.
@@ -266,7 +287,7 @@ function drawLineGraph() {
   }
 
 /**
- * Function that calculates and updates the remaining budget value.
+ * Function that calculates and updates the remaining budget value and remaining per day.
  * 
  * @param none
  */
@@ -285,7 +306,16 @@ function update_remaining_budget(){
   const remaining_value_display = document.getElementById('budget-remaining-amount');
   // Set it to the calculated remaining budget.
   remaining_value_display.textContent = '$'+remaining_value;
+
+  // Calculate remaining budget per day.
+  const remaining_value_day = ((total_budget-totalcost)/30);
+  const r_remaining_value_day = remaining_value_day.toFixed(2);
+  // Get reference to view that shows remaining budget.
+  const remaining_value_day_display = document.getElementById('budget-remaining-day');
+  // Set it to the calculated remaining budget.
+  remaining_value_day_display.textContent = '$'+r_remaining_value_day;
   // Update values in the localStorage.
   localStorage.setItem('Total Budget',total_budget);
   localStorage.setItem('Remaining',remaining_value);
+  localStorage.setItem('RemainingDay', r_remaining_value_day);
 }

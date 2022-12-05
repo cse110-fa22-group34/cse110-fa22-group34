@@ -1,16 +1,35 @@
+/**
+ * This file is the CSS file for the reminders feature. This
+ * implements all the necessary style for the reminders feature.
+ * 
+ * References: 
+ *       MDN Web Docs
+ */
 @import url(../styles/global.css);
 
+/* the entire reminder section */
 #reminders {
     width: 100%;
-    max-height: 350px;
+    max-height: 200px;
+    max-width: 600px;
     overflow: scroll;
     display: inline-block;
 }
 
+/* the reminder text box */
+.reminderText {
+  margin-left: 20%;
+  inline-size: 70%;
+  overflow-wrap: break-word;
+  align-items: center;
+}
+
+/* reminder input box*/
 #reminderInput {
   margin-bottom: 20px;
 }
 
+/* add button for reminder input*/ 
 #add {
   cursor: pointer;
   height: 30px;
@@ -26,6 +45,7 @@
   box-sizing: border-box;
 }
 
+/* reminder list and list items*/
 ul {
   list-style-type: none;
   padding: 0;
@@ -47,6 +67,7 @@ ul li:hover {
   background-color: #eee;
 }
 
+/* remove buttons of reminders */
 .remove {
   cursor: pointer;
   position: absolute;
@@ -60,6 +81,7 @@ ul li:hover {
   background: #bbb;
 }
 
+/* up arrow buttons of reminders */
 .upArrow {
   cursor: pointer;
   position: absolute;
@@ -73,6 +95,7 @@ ul li:hover {
   background: #bbb;
 }
 
+/* down arrow buttons of reminders */
 .downArrow {
   cursor: pointer;
   position: absolute;
