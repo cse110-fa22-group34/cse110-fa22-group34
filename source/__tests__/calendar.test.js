@@ -180,7 +180,7 @@ describe('Basic user flow for Website', () => {
       localStorage.setItem('expenseData', JSON.stringify(userExpenseTable));
     }, userExpenseTable);
     await page.evaluate((totalBudget) => {
-      localStorage.setItem('budget', JSON.stringify(totalBudget));
+      localStorage.setItem('Total Budget', JSON.stringify(totalBudget));
     }, totalBudget);
 
     await page.reload();
@@ -190,7 +190,7 @@ describe('Basic user flow for Website', () => {
       return JSON.parse(localStorage.getItem('expenseData'));
     });
     let localStorageBudget = await page.evaluate(() => {
-      return JSON.parse(localStorage.getItem('totalBudget'));
+      return JSON.parse(localStorage.getItem('Total Budget'));
     });
     console.log(localStorageData);
     console.log(localStorageBudget);
