@@ -15,10 +15,10 @@ As a team of college students, we created a project that will help address a com
 - View the Calendar with the dates colored to represent spending on that particular day (ranging from dark red to dark green - red meaning spending over the allocated daily budget and green meaning spending below that allocated daily budget)
 
 ## Tutorial
-1. ![Step 1](./specs/tutorial/Step1.png) After you open the application and feel ready, click on “Create Budget.”
-2. ![Step 2](./specs/tutorial/Step2.png) Input your data into the expense table and click on “Save Budget” and input your budget for the month. You will see an alert that pop out.
-3. ![Step 3](./specs/tutorial/Step3.png) You will then see that your total cost and your budget as well as your average budget per day left for the month.
-4. ![Step 4](./specs/tutorial/Step4.png) You can click on “Show More” to see visualization of your budget status and create reminders.
+1. After you open the application and feel ready, click on “Create Budget.” ![Step 1](./specs/tutorial/Step1.png)
+2. Input your data into the expense table and click on “Save Budget” and input your budget for the month. You will see an alert that pop out. ![Step 2](./specs/tutorial/Step2.png)
+3. You will then see that your total cost and your budget as well as your average budget per day left for the month. ![Step 3](./specs/tutorial/Step3.png)
+4. You can click on “Show More” to see visualization of your budget status and create reminders. ![Step 4](./specs/tutorial/Step4.png)
 
 ## Design of Our Repo
 These are the folders in our project repo and the materials they contain.
@@ -59,7 +59,7 @@ Specs
 ## Meet the Team:
 - [The Team](./admin/team.md)
 - [Team Intro Video](./admin/videos/teamintro.mp4)
-- The [“Meet The Team”](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/team.html) page on our budget web page introduces all developers who took part in this project and incorporates our team logo. 
+- The [“Meet The Team”](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/team.html) page on our budget web app introduces all developers who took part in this project and incorporates our team logo.
 
 ## Timeline
 1. [Brainstorm](./specs/brainstorm)
