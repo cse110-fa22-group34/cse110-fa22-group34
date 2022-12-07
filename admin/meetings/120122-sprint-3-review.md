@@ -23,6 +23,7 @@ This week's sprint was all about fixing coding errors for our budget website or 
 - Added function headers & comments
 - Made cells change color according to expense table data
 - Changed default color of cells to off-white and today’s cell to beige + bolded number
+- Add documentation and start on unit tests
 - [Calendar](/specs/sprint-3-review/sprint3-calendar-progress.png)
 
 ### Raphael & Xu:
