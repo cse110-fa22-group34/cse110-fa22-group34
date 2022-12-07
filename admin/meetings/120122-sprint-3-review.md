@@ -26,10 +26,12 @@ This week's sprint was all about fixing coding errors for our budget website or 
 - [Calendar](/specs/sprint-3-review/sprint3-calendar-progress.png)
 
 ### Raphael & Xu:
-- Designed and implemented the frog character for visualization
+- Designed and implemented the frog character for visualization, which changes facial expression depending on whether the user is under, over, or right on the budget
 - Designed and implemented tests for budget & visualization 
 - Added more documentations and comments for the visualization javascript file
-- [Visualization](/specs/sprint-3-review/)
+- [Happy Frog](/specs/sprint-3-review/frog-happy.png)
+- [Neutral Frog](/specs/sprint-3-review/frog-neutral.png)
+- [Sad Frog](/specs/sprint-3-review/frog-sad.png)
 
 ### Jiaxin & Derrick:
 - Updated the total cost entry so that each time the user clicks “save budget”, the total cost will be the sum of all costs in the expense table
