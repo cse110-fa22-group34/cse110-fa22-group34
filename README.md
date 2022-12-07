@@ -1,8 +1,8 @@
 # HARDCORE 34's Project for CSE 110 FA '22
 
-DON'T BUDGE, DO BUDGET WEB PAGE: [github site](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html)
+### DON'T BUDGE, DO BUDGET WEB PAGE: [DON'T BUDGE, DO BUDGET](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html)
 
-This README contains a general guide of our repository and an overview of our project.
+This document contains a general guide of our repository and an overview of our project.
 
 ## Explanation of Our Project
 [Starting Pitch](https://github.com/cse110-fa22-group34/cse110-fa22-group34/blob/main/specs/pitch/CSE%20110%20Team%2034%20Pitch%20Presentation.pdf)
@@ -23,7 +23,7 @@ As a team of college students, we created a project that will help address a com
 ## Design of Our Repo
 These are the folders in our project repo and the materials they contain.
 
-Admin:
+Admin Folder:
 - branding : includes our team logo and our branding
 - cipipeline : includes image of our cipipeline and a video explaining it
 - meetings : includes all our meeting notes (including spring meetings and retrospectives)
@@ -32,7 +32,7 @@ Admin:
 - videos : includes our (class-featured) team intro video and our agile spring status videos
 - team.md : a version of our team page in markdown format
 
-Source:
+Source Folder:
 - ___tests__ : includes all our tests for our program. They are jest tests.
 - assets : includes the character images used in our visualization section
 - scripts : includes all javascript files for our website
@@ -40,7 +40,7 @@ Source:
 - index.html : our main html page for the budget
 - team.html : the team html page
 
-Specs
+Specs Folder:
 - adr : includes all our Architectural
 - brainstorm: includes the brainstorming activity we did using Miro
 - pitch: includes pitch presentation, wireframe, and diagram
