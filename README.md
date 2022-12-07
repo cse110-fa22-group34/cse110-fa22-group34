@@ -5,7 +5,7 @@ DON'T BUDGE, DO BUDGET WEB PAGE: [github site](https://cse110-fa22-group34.githu
 This README contains a general guide of our repository and an overview of our project.
 
 ## Explanation of Our Project
-[Pitch](https://github.com/cse110-fa22-group34/cse110-fa22-group34/tree/main/specs/pitch)
+[Pitch](https://github.com/cse110-fa22-group34/cse110-fa22-group34/blob/main/specs/pitch/CSE%20110%20Team%2034%20Pitch%20Presentation.pdf)
 
 As a team of college students, we created a project that will help address a common problem for most university students: financing and budgeting. Our budgeting web application provides several features, including:
 - Input monthly budget limit and expenses (categorized by date, title, cost, and category)
