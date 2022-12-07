@@ -15,12 +15,13 @@ As a team of college students, we created a project that will help address a com
 - View the Calendar with the dates colored to represent spending on that particular day (ranging from dark red to dark green - red meaning spending over the allocated daily budget and green meaning spending below that allocated daily budget)
 
 ## Tutorial
-1. [Step 1](./specs/tutorial/Step1.png) After you open the application and feel ready, click on “Create Budget.”
-2. [Step 2](./specs/tutorial/Step2.png) Input your data into the expense table and click on “Save Budget” and input your budget for the month. You will see an alert that pop out.
-3. [Step 3](./specs/tutorial/Step3.png) You will then see that your total cost and your budget as well as your average budget per day left for the month.
-4. [Step 4](./specs/tutorial/Step4.png) You can click on “Show More” to see visualization of your budget status and create reminders.
+1. ![Step 1](./specs/tutorial/Step1.png) After you open the application and feel ready, click on “Create Budget.”
+2. ![Step 2](./specs/tutorial/Step2.png) Input your data into the expense table and click on “Save Budget” and input your budget for the month. You will see an alert that pop out.
+3. ![Step 3](./specs/tutorial/Step3.png) You will then see that your total cost and your budget as well as your average budget per day left for the month.
+4. ![Step 4](./specs/tutorial/Step4.png) You can click on “Show More” to see visualization of your budget status and create reminders.
 
 ## Design of Our Repo
+These are the folders in our project repo and the materials they contain.
 Admin:
 - Branding : includes our team logo and our branding
 - cipipeline : includes image of our cipipeline and a video explaining it
@@ -38,7 +39,8 @@ Source:
 - index.html : our main html page for the budget
 - team.html : the team html page
 
-Specsadr : includes all our Architectural
+Specs
+- adr : includes all our Architectural
 - brainstorm: includes the brainstorming activity we did using Miro
 - pitch: includes pitch presentation, wireframe, and diagram
 - retrospectives: retrospectives documents
