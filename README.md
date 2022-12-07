@@ -22,6 +22,7 @@ As a team of college students, we created a project that will help address a com
 
 ## Design of Our Repo
 These are the folders in our project repo and the materials they contain.
+
 Admin:
 - Branding : includes our team logo and our branding
 - cipipeline : includes image of our cipipeline and a video explaining it
