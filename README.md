@@ -63,9 +63,9 @@ Specs
 - The [“Meet The Team”](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/team.html) page on our budget web app introduces all developers who took part in this project and incorporates our team logo.
 
 ## Timeline
-1. [Brainstorm](./specs/brainstorm)
-2. [Pitch](./specs/pitch)
-3. [CI Pipeline](./admin/cipipeline)
+1. [Brainstorm](./specs/brainstorm/Miro_Brainstorm.pdf)
+2. [Pitch](https://github.com/cse110-fa22-group34/cse110-fa22-group34/blob/main/specs/pitch/CSE%20110%20Team%2034%20Pitch%20Presentation.pdf)
+3. [CI Pipeline](./admin/cipipeline): [Diagram](./admin/cipipeline/phase1.drawio.png), [Explanation](./admin/cipipeline/phase1.md), [Demo](./admin/cipipeline/phase1.mp4)
 4. [Sprint 1](./admin/meetings/111322-sprint-1-review.md)
 5. [Retrospective 1](./admin/meetings/111322-retrospective.md)
 6. [Sprint 2](./admin/meetings/112022-sprint-2-review.md)
