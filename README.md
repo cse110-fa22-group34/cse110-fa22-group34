@@ -1,8 +1,6 @@
-# cse110-fa22-group34
+# HARDCORE 34's Project for CSE 110 FA '22
 
-Group 34 Project - [Team Page](./admin/team.md)
-
-WEB PAGE: [github site](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html)
+DON'T BUDGE, DO BUDGET WEB PAGE: [github site](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html)
 
 General Guide of Repository:
 
