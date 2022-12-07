@@ -2,7 +2,7 @@
 
 DON'T BUDGE, DO BUDGET WEB PAGE: [github site](https://cse110-fa22-group34.github.io/cse110-fa22-group34/source/index.html)
 
-General Guide of Repository:
+This README contains a general guide of our repository and an overview of our project.
 
 ## Tutorial
 1. [Step 1](./specs/tutorial/Step1.png) After you open the application and feel ready, click on “Create Budget.”
