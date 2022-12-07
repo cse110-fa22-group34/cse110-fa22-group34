@@ -1,4 +1,4 @@
-# Layout Decision
+# Layout / Week 10 Decisions
 
 ## Context and Problem Statement
 
@@ -29,4 +29,11 @@ Professor Powell reccomended the following:
 After weighing all the feedback, we made the following changes.
 
 Considering both the TA's and Professor Powell's feedback:
-- We changed the visualization to default view to a ctext view that shows the amount reamining and average left per day considerining the amount remaining. This incorporated the wording feedback
+- We changed the visualization to default view to a text view that shows the amount remaining and average left per day considerining the amount remaining. This incorporated the wording feedback as well as the clutering feedback between budget and visualization. If we had more time, we would have prefered make it scrollable horizontally instead of using a drop down selector. This way the user can choose what visualization they wanted to see.
+- We made it so you can toggle to be able to see the reminders or calendar by clicking a button in order to make it less clutered on entering
+- Changed the tool tips to be less descriptive and added a full tutorial on the README to make up for it
+- Reminders can be ranked by priority if needed
+- Changed the colors to be less green overall and be nice visually on the eyes
+
+What we did not change:
+- We did not move the input for the expense table to the top because we decided to focus on testing and other features over this. If we had more time, we would have done it!
