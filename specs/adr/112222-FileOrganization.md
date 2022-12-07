@@ -1,4 +1,4 @@
-# File Origanization 
+# File Organization 
 
 ## Context and Problem Statement
 
