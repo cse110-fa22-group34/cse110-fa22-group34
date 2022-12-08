@@ -4,7 +4,7 @@
 
 This document contains a general guide of our repository and an overview of our project.
 
-## Final Video Links:
+## Final Video Links
 
 - [Final Video Public Version](https://youtu.be/eS0JrPJg_6M)
 - [Final Video Private Version]
