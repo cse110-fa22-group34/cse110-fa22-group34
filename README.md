@@ -4,6 +4,11 @@
 
 This document contains a general guide of our repository and an overview of our project.
 
+## Final Video Links:
+
+- [Final Video Public Version](https://youtu.be/eS0JrPJg_6M)
+- [Final Video Private Version]
+
 ## Explanation of Our Project
 [Starting Pitch](https://github.com/cse110-fa22-group34/cse110-fa22-group34/blob/main/specs/pitch/CSE%20110%20Team%2034%20Pitch%20Presentation.pdf)
 
