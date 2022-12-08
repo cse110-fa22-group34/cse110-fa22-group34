@@ -41,7 +41,7 @@ Admin Folder:
 - team.md : a version of our team page in markdown format
 
 Source Folder:
-- ___tests___ : includes all our tests for our program. They are jest tests.
+- _ tests_ : includes all our tests for our program. They are jest tests.
 - assets : includes the character images used in our visualization section
 - scripts : includes all javascript files for our website
 - styles: includes all css files for our website
