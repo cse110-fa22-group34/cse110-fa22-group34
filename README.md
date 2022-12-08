@@ -9,6 +9,7 @@ This document contains a general guide of our repository and an overview of our 
 - [Final Video Public Version](https://youtu.be/eS0JrPJg_6M)
 - [Final Video Private Version](https://youtu.be/P86Tm74DtRE)
   - Due to the time restriction, more information on our workflow and onboarding is written below in this README file.
+  - An explanation of our build process can be found [here](./admin/cipipeline/phase1.md).
   - A short demo of our workflow can be found in our [cipipeline demo](./admin/cipipeline/phase1.mp4).
 
 ## Explanation of Our Project
