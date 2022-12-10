@@ -62,7 +62,7 @@ Specs Folder:
 [ADR Folder](./specs/adr)
 1. [Programming Protocols](./specs/adr/110622-ProgrammingProtocols.md)
 2. [Accessibility](./specs/adr/111322-AccessibilityDecision.md)
-3. [File Organization](./specs/adr/112222-FileOrginization.md)
+3. [File Organization](./specs/adr/112222-FileOrganization.md)
 4. [Layout](./specs/adr/120122-LayoutDecisions.md)
 
 ## Meet the Team:
